@@ -1,8 +1,5 @@
-
-export default function page() {
+export default function Dashboard() {
   return (
-    <div>
-        Dashboard
-    </div>
+    <div className="text-xl px-2">Dashboard</div>
   )
 }
