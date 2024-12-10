@@ -2,16 +2,12 @@
 
 import Image from "next/image";
 import products from "../data/products";
-import cart from "../data/cart";
+import { addToCart } from "../data/cart";
 
 export default function Products() {
-  function addToCart(i) {
-    const productToAdd = products[parseInt(i) - 1];
-    cart.push(productToAdd);
-
-    console.log(cart);
+  function addProduct(i) {
+    addToCart(i);
     notifyAdded(i);
-    localStorage.setItem("cart", JSON.stringify(cart));
   }
 
   function notifyAdded(i) {
@@ -43,7 +39,7 @@ export default function Products() {
             <button
               id={product.id}
               className="rounded-md text-gray-700 font-bold px-4 py-2 shadow-md bg-orange-400"
-              onClick={() => addToCart(product.id)}
+              onClick={() => addProduct(product.id)}
             >
               Add to Cart
             </button>
