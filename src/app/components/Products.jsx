@@ -5,6 +5,10 @@ import products from "../data/products";
 import { addToCart } from "../data/cart";
 
 export default function Products() {
+  const quantityOptions = [];
+  for (let i = 0; i < 10; i++) {
+    quantityOptions.push(i + 1);
+  }
   function addProduct(i) {
     addToCart(i);
     notifyAdded(i);
@@ -33,6 +37,18 @@ export default function Products() {
           <div className="p-2 border-t-black border-yellow-400">
             <p className="block ">Name: {product.productName}</p>
             <p className="block ">Price: {product.price}</p>
+          </div>
+
+          <div>
+            <p className="inline">Quantity: </p>
+            <select
+              className="p-0.5 font-bold text-orange-700 border-gray-500 border-2 rounded-md"
+              id="select"
+            >
+              {quantityOptions.map((optionValue) => (
+                <option className="">{optionValue}</option>
+              ))}
+            </select>
           </div>
 
           <div className="mb-2 mt-4">
