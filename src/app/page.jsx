@@ -1,9 +1,8 @@
-import Products from "./components/Products"
-
+import HomeHero from "./components/HomeHero";
 export default function Home() {
   return (
-    <div className="text-center">
-      <Products />
+    <div className="p-4">
+      <HomeHero/>
     </div>
   );
 }
