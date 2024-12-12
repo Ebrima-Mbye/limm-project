@@ -3,12 +3,13 @@ import logo from "../photos/limm.logo.logo 1.png";
 
 export default function HomeHeader() {
   return (
+    // <div className="fixed top-8 left-[5%] bg-white w-[90%] rounded-lg flex justify-between items-center px-6"></div>
     <div className="bg-white w-full rounded-lg flex justify-between items-center px-6">
       <div className="p-2 flex items-start h-[50px]">
         <Image src={logo} alt="Logo" className="w-2/3" />
       </div>
       <div className="h-full flex-1 text-[13px]">
-        <div className=" flex-1 flex items-center justify-between h-4/5">
+        <div className="flex-1 flex items-center justify-between h-4/5">
           <ul className="flex items-center">
             <li className="text-slate-500 mr-8">
               <a href="/">Retail</a>
