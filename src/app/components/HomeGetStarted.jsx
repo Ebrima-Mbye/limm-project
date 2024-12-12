@@ -17,14 +17,14 @@ export default function HomeGetStarted() {
         </a>
       </div>
       <div className="flex gap-14 justify-center items-center">
-        <div className="">
+        <div className="cursor-pointer">
           <Image
             src={appStoreImage}
             alt="app store image"
             className="w-[200px]"
           />
         </div>
-        <div className="">
+        <div className="cursor-pointer">
           <Image
             src={googlePlayStoreImage}
             alt="google play store image"

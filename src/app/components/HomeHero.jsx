@@ -7,7 +7,7 @@ import inventoryIcon from "../photos/inventory-icon.svg";
 
 export default function HomeHero() {
   return (
-    <section className="px-12 overflow-y-clip bg-gray-100 h-[96vh] p-4 rounded-lg">
+    <section className="px-12 overflow-y-clip bg-gray-100 p-4 rounded-lg">
       <HomeHeader />
       <div className="">
         <div className="mt-16 mb-6">
