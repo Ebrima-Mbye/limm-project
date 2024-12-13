@@ -52,19 +52,19 @@ export default function HomeFindSection() {
               touch screen, easy-to-use software options and built-in payments.
             </p>
             <hr className="mt-2 mb-3" />
-            <p className="text-xl font-semibold mt-4 mb-1">Touch Screen</p>
+            <p className="text-xl font-medium mt-4 mb-1">Touch Screen</p>
             <p className="font-light text-[#AAB7C9] my-2">
               Intuitive interface with a responsive touch screen, enhancing user
               interaction and operational efficiency.
             </p>
             <hr className="mt-2 mb-3" />
-            <p className="text-xl font-semibold">QR Code & Bar Code Scanner</p>
+            <p className="text-xl font-medium">QR Code & Bar Code Scanner</p>
             <p className="my-2 text-[#AAB7C9]">
               Advanced scanning capabilities for quick and accurate reading of
               QR and bar codes, streamlining the checkout process.
             </p>
             <hr className="mt-2 mb-3" />
-            <p className="text-xl font-semibold">Thermal Receipt Printer</p>
+            <p className="text-xl font-medium">Thermal Receipt Printer</p>
             <p className="my-2 text-[#AAB7C9]">
               Reliable and fast printing of receipts with a thermal printer that
               ensures clear, long-lasting prints.
@@ -74,7 +74,7 @@ export default function HomeFindSection() {
                 Order now
               </button>
               <p>
-                for <span className="text-xl font-semibold">250.000 F</span>
+                for <span className="text-xl font-medium">250.000 F</span>
               </p>
             </div>
           </div>
@@ -97,18 +97,18 @@ export default function HomeFindSection() {
               app.
             </p>
             <hr className="mt-2 mb-3" />
-            <p className="text-xl font-semibold mt-4 mb-1">Portable</p>
+            <p className="text-xl font-medium mt-4 mb-1">Portable</p>
             <p className="font-light text-[#AAB7C9] my-2">
               Fits in your pocket or bag, allowing you to print receipts
               anywhere, anytime.
             </p>
             <hr className="mt-2 mb-3" />
-            <p className="text-xl font-semibold">Fast and efficient</p>
+            <p className="text-xl font-medium">Fast and efficient</p>
             <p className="my-2 text-[#AAB7C9]">
               Prints receipts instantly with minimal wait time.
             </p>
             <hr className="mt-2 mb-3" />
-            <p className="text-xl font-semibold">Wireless connection</p>
+            <p className="text-xl font-medium">Wireless connection</p>
             <p className="my-2 text-[#AAB7C9]">
               Connects seamlessly to your smartphone or tablet via Bluetooth for
               easy printing.
@@ -118,7 +118,7 @@ export default function HomeFindSection() {
                 Order now
               </button>
               <p>
-                for <span className="text-xl font-semibold">250.000 F</span>
+                for <span className="text-xl font-medium">250.000 F</span>
               </p>
             </div>
           </div>
