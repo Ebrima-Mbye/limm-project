@@ -18,7 +18,7 @@ export default function HomeHeader() {
         <div className="flex-1 flex items-center justify-between h-4/5">
           <ul className="flex items-center">
             <li className="text-slate-500 mr-8">
-              <Link href="/">Retail</Link>
+              <Link href="/retail">Retail</Link>
             </li>
             <li className="text-slate-500 mr-8">
               <Link href="/restaurants">Restaurants</Link>

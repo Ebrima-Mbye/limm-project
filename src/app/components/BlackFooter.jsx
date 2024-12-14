@@ -8,7 +8,7 @@ import twitterLogo from "../photos/twitter-logo.svg";
 import messageIcon from "../photos/message-icon.png";
 import callIcon from "../photos/call-icon.png";
 
-export default function HomeFooter() {
+export default function BlackFooter() {
   return (
     <div className="px-24 pt-12 mt-12 bg-[#001738] flex flex-col">
       <div className="mb-24 flex-1 grid gap-24 grid-cols-1 md:grid-cols-2">
