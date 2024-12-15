@@ -63,8 +63,9 @@ export default function FooterBottom(props) {
               }}
               className="bg-transparent text-[13px]"
             >
-              {supportedLanguage.map((language) => (
+              {supportedLanguage.map((language, index) => (
                 <option
+                  key={index}
                   style={{
                     color: isWhite ? "black" : "white",
                   }}

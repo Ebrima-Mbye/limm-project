@@ -30,7 +30,7 @@ export default function HomeHeader() {
           <div className="flex items-center">
             <Link
               className="block text-center text-slate-500 cursor-pointer"
-              href="/"
+              href="/pricing"
             >
               Pricing
             </Link>
