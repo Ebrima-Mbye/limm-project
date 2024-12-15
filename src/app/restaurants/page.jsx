@@ -1,5 +1,5 @@
 import RestaurantCard from "./components/RestaurantCard";
-import Footer from "./components/Footer";
+import WhiteFooter from "../components/WhiteFooter";
 import manCalculating from "../photos/restaurants/man-calculating.png";
 import smileyWoman from "../photos/restaurants/smiley-woman.png";
 import womanWithTablet from "../photos/restaurants/woman-reading-tablet.png";
@@ -46,8 +46,7 @@ export default function Restaurant() {
           text={texts[2]}
         />
       </div>
-      <hr className="mt-12 mb-5 border-[1px] border-black" />
-      <Footer />
+      <WhiteFooter />
     </div>
   );
 }

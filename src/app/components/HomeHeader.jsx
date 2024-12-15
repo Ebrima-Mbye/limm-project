@@ -24,7 +24,7 @@ export default function HomeHeader() {
               <Link href="/restaurants">Restaurants</Link>
             </li>
             <li className="text-slate-500 mr-8">
-              <Link href="/">Services</Link>
+              <Link href="/services">Services</Link>
             </li>
           </ul>
           <div className="flex items-center">

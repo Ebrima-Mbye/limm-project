@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import arrow from "../../photos/restaurants/arrow.png";
-import phoneImage from "../../photos/restaurants/phone.png";
+import layer1 from "../../photos/services/layer-1.png";
+import layer2 from "../../photos/services/layer-2.png";
 
-export default function RestaurantCard(props) {
+export default function ServiceCard(props) {
   return (
     <div
       style={{
@@ -17,11 +18,10 @@ export default function RestaurantCard(props) {
         <div className="relative">
           <Image src={props.mainImage} alt="man calculating" className="" />
           {props.withSecondImage ? (
-            <Image
-              src={phoneImage}
-              alt="image of phone"
-              className="absolute top-[-100px] left-[-120px]"
-            />
+            <div className="absolute bottom-[-25px] right-[-80px] flex flex-col w-[380px]">
+              <Image src={layer1} alt="layer 1" className="mb-[-20px]" />
+              <Image src={layer2} alt="layer 2" className="mb-[-20px]" />
+            </div>
           ) : (
             ""
           )}
@@ -36,11 +36,7 @@ export default function RestaurantCard(props) {
           <span className="text-[#356BB7]">
             Find the plan that best fits your restaurant
           </span>
-          <Image
-            src={arrow}
-            alt="Arrow Image"
-            className="max-w-[33px] max-h-[11px]"
-          />{" "}
+          <Image src={arrow} alt="Arrow Image" className="max-w-[33px] max-h-[11px]" />
         </Link>
       </div>
     </div>

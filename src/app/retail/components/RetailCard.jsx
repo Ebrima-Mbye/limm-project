@@ -34,11 +34,15 @@ export default function RetailCard(props) {
         <p className="leading-[38px] text-[18px] font-thin mt-4 mb-5">
           {props.text}
         </p>
-        <Link href="/" className="flex gap-2">
+        <Link href="/" className="flex gap-2 items-center">
           <span className="text-[#356BB7]">
             Find the plan that best fits your restaurant
           </span>
-          <Image src={arrow} alt="Arrow Image" className="" />
+          <Image
+            src={arrow}
+            alt="Arrow Image"
+            className="max-w-[33px] max-h-[11px]"
+          />{" "}
         </Link>
       </div>
     </div>
