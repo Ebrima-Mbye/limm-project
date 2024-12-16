@@ -11,7 +11,7 @@ export default function Retail() {
     "Service Excellence",
   ];
   const texts = [
-    "Strengthen client relationships. Limm's customer management tools provide insights, track interactions, and empower you to deliver personalized service with ease.",
+    "Strengthen client relationships. Limm&apos;s customer management tools provide insights, track interactions, and empower you to deliver personalized service with ease.",
     "Efficiently allocate staff and materials, preventing bottlenecks and ensuring your service business operates at its peak efficiency.",
     "Elevate your service game with Limm. From appointment scheduling to client management, we streamline your operations so you can focus on delivering exceptional service.",
   ];
@@ -22,7 +22,7 @@ export default function Retail() {
         Smooth Invoicing, Quick Payments.
         </h1>
         <p className="text-2xl">
-        Get paid faster with Limm's invoicing solution. Accept various payment methods, send invoices with ease, and track payments in real time for a steady cash flow.
+        Get paid faster with Limm&apos;s invoicing solution. Accept various payment methods, send invoices with ease, and track payments in real time for a steady cash flow.
         </p>
 
         <ServiceCard

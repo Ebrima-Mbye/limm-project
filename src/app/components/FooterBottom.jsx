@@ -1,6 +1,7 @@
 import Image from "next/image";
 import globeIcon from "../photos/globeIcon.png";
 import globeBlack from "../photos/globe-black.png";
+import Link from "next/link";
 
 export default function FooterBottom(props) {
   const isWhite = props.isWhite;
@@ -33,15 +34,15 @@ export default function FooterBottom(props) {
             }}
             className="flex gap-10 ml-2 flex-col md:flex-row"
           >
-            <a className="text-center underline cursor-pointer" href="/">
+            <Link className="text-center underline cursor-pointer" href="/">
               COOKIES
-            </a>
-            <a className="text-center underline cursor-pointer" href="/">
+            </Link>
+            <Link className="text-center underline cursor-pointer" href="/">
               PRIVACY POLICY
-            </a>
-            <a className="text-center underline cursor-pointer" href="/">
+            </Link>
+            <Link className="text-center underline cursor-pointer" href="/">
               TERMS & CONDITIONS
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex-[2] flex items-center justify-end pr-8">

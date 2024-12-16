@@ -2,6 +2,7 @@ import Image from "next/image";
 import mainImage from "../photos/man-pointing-with-background.png";
 import appStoreImage from "../photos/get-it-on-apple.png";
 import googlePlayStoreImage from "../photos/get-it-on-google.png";
+import Link from "next/link";
 
 export default function HomeGetStarted() {
   return (
@@ -12,9 +13,9 @@ export default function HomeGetStarted() {
         className="w-[800px] mx-auto"
       />
       <div className="my-12 font-bold text-blue-400 text-center">
-        <a className="text-4xl text-[#356BB7] cursor-pointer" href="/">
+        <Link className="text-4xl text-[#356BB7] cursor-pointer" href="/">
           GET STARTED WITH THE APP NOW
-        </a>
+        </Link>
       </div>
       <div className="flex gap-14 justify-center items-center">
         <div className="cursor-pointer">

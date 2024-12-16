@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-export default function PlanFrequencySelection(props) {
+export default function PlanFrequencySelection() {
   const [isAnnual, setIsAnnual] = useState(false)
 
   return (

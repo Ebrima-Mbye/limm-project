@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import arrowLeft from "../../photos/login/arrow-left.png";
 import logo from "../../photos/limm.logo.logo 1.png";
-import eyeIcon from "../../photos/login/eye-icon.png";
 import MyPasswordField from "../../components/MyPasswordField"
 
 export default function LoginPage() {

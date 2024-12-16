@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import HomeHeader from "./HomeHeader";
 import image1 from "../photos/man-calculating.png";
 import image2 from "../photos/woman-in-clothing-shop.png";
 import bookIcon from "../photos/bookkeeping-icon.svg";
@@ -35,7 +34,7 @@ export default function HomeHero() {
             <p className="mb-14 text-xl font-medium">Inventory Management</p>
             <Image src={inventoryIcon} alt="inventory icon" className="h-12" />
             <p className="mt-8 text-[16px]">
-              Limm's smart inventory management keeps you in control, minimizing
+              Limm&apos;s smart inventory management keeps you in control, minimizing
               stockouts and optimizing ordering.
             </p>
           </div>

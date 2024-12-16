@@ -1,4 +1,3 @@
-import { getClientBuildManifest } from "next/dist/client/route-loader";
 import HomeHeader from "./components/HomeHeader";
 import "./globals.css";
 
