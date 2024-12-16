@@ -4,23 +4,23 @@ import globeBlack from "../photos/globe-black.png";
 
 export default function FooterBottom(props) {
   const isWhite = props.isWhite;
-  const supportedLanguage = ["English", "French", "Arabic"];
+  const supportedLanguages = ["English", "French", "Arabic"];
 
   return (
     <>
       <hr
         style={{ borderColor: isWhite ? "black" : "white" }}
-        className="border-[1px]"
+        className="border-[1px] my-10 md:my-0"
       />
 
       <div
         style={{
           color: isWhite ? "black" : "white",
         }}
-        className="text-white gap-8 h-14 text-[14px] flex justify-between"
+        className="text-white pb-10 md:pb-0 gap-8 h-auto md:h-14 text-[14px] items-center flex justify-between flex-col md:flex-row"
       >
-        <div className="flex-[3] items-center px-8 flex justify-between">
-          <div>
+        <div className="flex-[3] items-center px-8 flex justify-between flex-col md:flex-row">
+          <div className="flex items-center">
             {isWhite ? (
               <span>Copyright &copy; 2024 Limm</span>
             ) : (
@@ -31,7 +31,7 @@ export default function FooterBottom(props) {
             style={{
               color: isWhite ? "#365BB7" : "white",
             }}
-            className="flex gap-10 ml-2"
+            className="flex gap-10 ml-2 flex-col md:flex-row"
           >
             <a className="text-center underline cursor-pointer" href="/">
               COOKIES
@@ -63,7 +63,7 @@ export default function FooterBottom(props) {
               }}
               className="bg-transparent text-[13px]"
             >
-              {supportedLanguage.map((language, index) => (
+              {supportedLanguages.map((language, index) => (
                 <option
                   key={index}
                   style={{

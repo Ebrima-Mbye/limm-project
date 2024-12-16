@@ -1,0 +1,102 @@
+"use client";
+
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import arrowLeft from "../../photos/login/arrow-left.png";
+import logo from "../../photos/limm.logo.logo 1.png";
+import Link from "next/link";
+
+export default function LoginPage() {
+  const router = useRouter();
+  const supportedLanguages = ["En", "Fr", "Ar"];
+  const navigateToHomePage = () => {
+    router.push("/");
+
+    setTimeout(() => {
+      router.refresh();
+    }, 500);
+  };
+
+  return (
+    <div className="w-[100vw] fixed flex flex-col h-screen justify-center items-center bg-gray-50 realtive">
+      {/* Top Left Link */}
+      <div className="absolute top-4 left-4 flex items-center">
+        <button
+          onClick={navigateToHomePage}
+          className="text-gray-500 hover:text-gray-800 transition-colors flex gap-3"
+        >
+          <Image src={arrowLeft} alt="arrow left" className="" />
+          <p className="[text-[24px] text-[#64758D] font-bold leading-[28.8px]">
+            Back to main page
+          </p>
+        </button>
+      </div>
+
+      {/* Top right Language Toggle */}
+      <div className="absolute top-4 right-4">
+        <select
+          id="currency-selector"
+          className="border-black border-2 text-center font-bold px-2 py-2 rounded-full"
+        >
+          {supportedLanguages.map((language, index) => (
+            <option key={index} value={language} className="">
+              {language}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Login Card */}
+      <div className="w-full max-w-sm px-8 py-12 bg-[#EDEFF3] rounded-lg shadow-lg">
+        {/* Logo */}
+        <div className="w-full flex flex-col justify-center items-center mb-6">
+          <Image src={logo} alt="logo" className="mb-6" />
+          <p className="text-gray-500 mt-2 text-[28px] font-medium leading-[38.4px]">
+            Login
+          </p>
+        </div>
+
+        {/* Form */}
+        <form className="space-y-6">
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
+            />
+          </div>
+
+          <div>
+            <input
+              type="password"
+              placeholder="password"
+              className="border-[#AAB7C9] w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <div className="text-right mt-2 mb-9">
+              <Link
+                href="#"
+                className="underline text-[14px] leading-[19.2px] text-[#356BB7] hover:underline"
+              >
+                Forgot Password?
+              </Link>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-[#356BB7] text-white py-2 rounded-[12px] hover:bg-blue-700 transition-colors"
+          >
+            Login
+          </button>
+        </form>
+
+        {/* Sign up Link */}
+        <div className="text-center mt-6">
+          <Link href="/register" className="text-[#356BB7] font-bold leading-[28.8px] hover:underline">
+            Sign up
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

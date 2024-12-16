@@ -37,7 +37,7 @@ export default function HomeHeader() {
             <div className="w-[2px] h-6 bg-slate-100 mx-4"></div>
             <Link
               className="block text-center text-slate-500 cursor-pointer"
-              href="/"
+              href="/login"
             >
               Login
             </Link>
