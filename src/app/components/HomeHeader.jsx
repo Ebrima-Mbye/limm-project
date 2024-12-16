@@ -3,47 +3,67 @@ import logo from "../photos/limm.logo.logo 1.png";
 import Link from "next/link";
 
 export default function HomeHeader() {
+  const leftNavLinks = [
+    {
+      text: "Retail",
+      href: "/retail",
+    },
+    {
+      text: "Restaurants",
+      href: "/restaurants",
+    },
+    {
+      text: "Services",
+      href: "/services",
+    },
+  ];
   return (
     <div
       id="header"
-      className="px-6 fixed w-[92%] top-8 left-[4%] right-[4%] bg-white rounded-lg flex justify-between items-center "
+      className=" h-[75vh] w-[100vw] flex flex-col md:flex-row items-start md:justify-between md:items-center text-[#9A9FAD] text-[24px] leading-[28.8px]
+       font-medium px-6 fixed bg-white rounded-lg top-0 left-0 right-0 md:h-12 md:w-[92%] 
+       md:top-8 md:left-[4%] md:right-[4%] order-4 border-gray-400 shadow-lg md:shadow-none"
     >
       {/* // <div className="bg-white w-full rounded-lg flex justify-between items-center px-6"> */}
-      <div className="p-2 flex items-start h-[50px]">
+      <div className="p-2 flex justify-center md:items-center pt-6 md:pt-0 h-[50px] mb-10 md:mb-0 md:h-full">
         <Link href="/">
-          <Image src={logo} alt="Logo" className="w-2/3" />
+          <Image src={logo} alt="Logo" className="w-full md:w-2/3" />
         </Link>
       </div>
-      <div className="h-full flex-1 text-[13px]">
-        <div className="flex-1 flex items-center justify-between h-4/5">
-          <ul className="flex items-center">
-            <li className="text-slate-500 mr-8">
-              <Link href="/retail">Retail</Link>
-            </li>
-            <li className="text-slate-500 mr-8">
-              <Link href="/restaurants">Restaurants</Link>
-            </li>
-            <li className="text-slate-500 mr-8">
-              <Link href="/services">Services</Link>
-            </li>
+      <div className="h-full flex-1 md:text-[13px] w-full md:w-auto md:items-center">
+        <div className="flex-1 flex flex-col md:flex-row items-center justify-between py-8 md:py-0 h-full w-full md:w-auto">
+          <ul className="flex items-center flex-col md:flex-row w-full md:w-auto gap-6 md:gap-1 md:text-[16px]">
+            {leftNavLinks.map((link, index) => (
+              <li
+                key={index}
+                className="md:mr-8 block w-full
+                           md:inline text-start px-3"
+              >
+                <Link href={link.href}>{link.text}</Link>
+              </li>
+            ))}
           </ul>
-          <div className="flex items-center">
+
+          <div className="flex md:justify-center md:items-center flex-col md:flex-row md:text-[16px] w-full md:w-auto gap-3">
             <Link
-              className="block text-center text-slate-500 cursor-pointer"
+              className="block md:text-center text-start px-3 md:inline"
               href="/pricing"
             >
               Pricing
             </Link>
-            <div className="w-[2px] h-6 bg-slate-100 mx-4"></div>
+            {/* Vertical Line */}
+            <div className="md:w-[2px] w-0 h-0 md:h-6 bg-slate-100 md:mx-1"></div>
             <Link
-              className="block text-center text-slate-500 cursor-pointer"
+              className="block md:text-center text-start px-3 md:inline"
               href="/login"
             >
               Login
             </Link>
-            <button className="ml-4 text-[12px] bg-slate-500 text-white px-3 py-1 text-nowrap rounded-[50px]">
-              Book a Demo
-            </button>
+            <div className="mt-3">
+              <button className="ml-4 text-[12px] bg-slate-500 text-white px-3 py-1 text-nowrap rounded-[50px]">
+                Book a Demo
+              </button>
+            </div>
           </div>
         </div>
       </div>
