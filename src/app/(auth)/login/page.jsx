@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import arrowLeft from "../../photos/login/arrow-left.png";
 import logo from "../../photos/limm.logo.logo 1.png";
 import eyeIcon from "../../photos/login/eye-icon.png";
+import MyPasswordField from "../../components/MyPasswordField"
 
 export default function LoginPage() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function LoginPage() {
   return (
     <div className="w-[100vw] fixed flex flex-col h-screen justify-center items-center bg-gray-50 realtive">
       {/* Top Left Link */}
-      <div className="absolute top-4 left-4 flex items-center">
+      <div className="absolute top-8 left-8 flex items-center">
         <button
           onClick={navigateToHomePage}
           className="text-gray-500 hover:text-gray-800 transition-colors flex gap-3"
@@ -34,7 +35,7 @@ export default function LoginPage() {
       </div>
 
       {/* Top right Language Toggle */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-8 right-8">
         <select
           id="currency-selector"
           className="border-black border-2 text-center font-bold px-2 py-2 rounded-full"
@@ -48,9 +49,9 @@ export default function LoginPage() {
       </div>
 
       {/* Login Card */}
-      <div className="w-full max-w-sm px-8 py-12 bg-[#EDEFF3] rounded-lg shadow-lg">
+      <div className="w-full max-w-sm px-8 py-12 bg-[#EDEFF3] rounded-lg shadow-md">
         {/* Logo */}
-        <div className="w-full flex flex-col justify-center items-center mb-6">
+        <div className="w-full flex flex-col justify-center items-center mb-7">
           <Image src={logo} alt="logo" className="mb-6" />
           <p className="text-gray-500 mt-2 text-[28px] font-medium leading-[38.4px]">
             Login
@@ -68,16 +69,7 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <div className="relative">
-              <input
-                type="password"
-                placeholder="password"
-                className="border-[#AAB7C9] w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-              <div className="absolute inset-y-2 right-4 items-center pointer-events-none">
-                <Image src={eyeIcon} alt="eye icon" className="" />
-              </div>
-            </div>
+            <MyPasswordField placeholder="Password"/>
             <div className="text-right mt-2 mb-9">
               <Link
                 href="#"

@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import arrowLeft from "../../photos/login/arrow-left.png";
 import logo from "../../photos/limm.logo.logo 1.png";
 import selectIcon from "../../photos/login/select-icon.png";
-import eyetIcon from "../../photos/login/eye-icon.png";
+import MyPasswordField from "../../components/MyPasswordField"
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -56,7 +56,7 @@ export default function RegisterPage() {
       </div>
 
       {/* Signup Card */}
-      <div className="w-full max-w-sm p-8 bg-[#EDEFF3] rounded-lg shadow-lg">
+      <div className="w-full max-w-sm p-8 bg-[#EDEFF3] rounded-lg shadow-md">
         {/* Logo */}
         <div className="w-full flex flex-col justify-center items-center mb-6">
           <Image src={logo} alt="logo" className="mb-3" />
@@ -75,27 +75,8 @@ export default function RegisterPage() {
             />
           </div>
 
-          <div className="relative">
-            <input
-              type="password"
-              placeholder="Password"
-              className="placeholder:text-[#AAB7C9] w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
-            />
-            <div className="absolute inset-y-2 right-4 items-center pointer-events-none">
-              <Image src={eyetIcon} alt="eye icon" className="" />
-            </div>
-          </div>
-
-          <div className="relative">
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              className="placeholder:text-[#AAB7C9] w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
-            />
-            <div className="absolute inset-y-2 right-4 items-center pointer-events-none">
-              <Image src={eyetIcon} alt="eye icon" className="" />
-            </div>
-          </div>
+          <MyPasswordField placeholder="Password"/>
+          <MyPasswordField placeholder="Confirm Password"/>
 
           <div className="relative">
             <select className="text-[#AAB7C9] border border-[#AAB7C9] w-full block appearance-none bg-white py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
