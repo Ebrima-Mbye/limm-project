@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import arrowLeft from "../../photos/login/arrow-left.png";
 import logo from "../../photos/limm.logo.logo 1.png";
-import Link from "next/link";
+import eyeIcon from "../../photos/login/eye-icon.png";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -67,11 +68,16 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <input
-              type="password"
-              placeholder="password"
-              className="border-[#AAB7C9] w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="relative">
+              <input
+                type="password"
+                placeholder="password"
+                className="border-[#AAB7C9] w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <div className="absolute inset-y-2 right-4 items-center pointer-events-none">
+                <Image src={eyeIcon} alt="eye icon" className="" />
+              </div>
+            </div>
             <div className="text-right mt-2 mb-9">
               <Link
                 href="#"
@@ -84,7 +90,7 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-[#356BB7] text-white py-2 rounded-[12px] hover:bg-blue-700 transition-colors"
+            className="w-full bg-[#356BB7] text-white py-2 rounded-[12px] hover:bg-blue-600 transition-colors duration-300"
           >
             Login
           </button>
@@ -92,7 +98,10 @@ export default function LoginPage() {
 
         {/* Sign up Link */}
         <div className="text-center mt-6">
-          <Link href="/register" className="text-[#356BB7] font-bold leading-[28.8px] hover:underline">
+          <Link
+            href="/register"
+            className="text-[#356BB7] font-bold leading-[28.8px] hover:underline"
+          >
             Sign up
           </Link>
         </div>
