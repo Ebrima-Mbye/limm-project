@@ -1,5 +1,5 @@
 {
-  "name": "first-next-app",
+  "name": "work-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,7 +12,8 @@
     "first-next-app": "file:",
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react-dom": "19.0.0-rc-66855b96-20241106",
+    "work-website": "file:"
   },
   "devDependencies": {
     "@types/node": "^20",
