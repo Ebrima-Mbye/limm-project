@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import arrowLeft from "../../photos/login/arrow-left.png";
 import logo from "../../photos/limm.logo.logo 1.png";
-import MyPasswordField from "../../components/MyPasswordField"
+import MyPasswordField from "../../components/MyPasswordField";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -18,8 +18,9 @@ export default function LoginPage() {
     }, 500);
   };
 
+  // This Page has more z-index that the main header Component. This way this page effectively hides the header
   return (
-    <div className="w-[100vw] fixed flex flex-col h-screen justify-center items-center bg-gray-50 realtive">
+    <div className="z-[101] w-[100vw] fixed flex flex-col h-screen justify-center items-center bg-gray-50 realtive">
       {/* Top Left Link */}
       <div className="absolute top-8 left-8 flex items-center">
         <button
@@ -48,7 +49,7 @@ export default function LoginPage() {
       </div>
 
       {/* Login Card */}
-      <div className="w-full max-w-sm px-8 py-12 bg-[#EDEFF3] rounded-lg shadow-md">
+      <div className="z-[3] w-full max-w-sm px-8 py-12 bg-[#EDEFF3] rounded-lg shadow-md">
         {/* Logo */}
         <div className="w-full flex flex-col justify-center items-center mb-7">
           <Image src={logo} alt="logo" className="mb-6" />
@@ -68,7 +69,7 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <MyPasswordField placeholder="Password"/>
+            <MyPasswordField placeholder="Password" />
             <div className="text-right mt-2 mb-9">
               <Link
                 href="#"

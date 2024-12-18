@@ -27,7 +27,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="w-[100vw] fixed flex flex-col h-screen justify-center items-center bg-gray-50 realtive">
+    <div className="w-[100vw] z-[101] fixed flex flex-col h-screen justify-center items-center bg-gray-50 realtive">
       {/* Top Left Link */}
       <div className="absolute top-8 left-8 flex items-center">
         <button
@@ -35,7 +35,7 @@ export default function RegisterPage() {
           className="text-gray-500 hover:text-gray-800 transition-colors flex gap-3"
         >
           <Image src={arrowLeft} alt="arrow left" className="" />
-          <p className="[text-[24px] text-[#64758D] font-bold leading-[28.8px]">
+          <p className="text-[#64758D] font-bold leading-[28.8px]">
             Back to main page
           </p>
         </button>
@@ -56,7 +56,7 @@ export default function RegisterPage() {
       </div>
 
       {/* Signup Card */}
-      <div className="w-full max-w-sm p-8 bg-[#EDEFF3] rounded-lg shadow-md">
+      <div className="z-[3] w-full max-w-sm p-8 bg-[#EDEFF3] rounded-lg shadow-md">
         {/* Logo */}
         <div className="w-full flex flex-col justify-center items-center mb-6">
           <Image src={logo} alt="logo" className="mb-3" />
