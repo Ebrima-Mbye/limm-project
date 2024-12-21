@@ -11,16 +11,16 @@ export default function FooterBottom(props) {
     <>
       <hr
         style={{ borderColor: isWhite ? "black" : "white" }}
-        className="border-[1px] my-10 md:my-0"
+        className="border-[1px] my-10 lg:my-0"
       />
 
       <div
         style={{
           color: isWhite ? "black" : "white",
         }}
-        className="text-white pb-10 md:pb-0 gap-8 h-auto md:h-14 text-[14px] items-center flex justify-between flex-col md:flex-row"
+        className="text-white pb-10 lg:pb-0 gap-8 h-auto lg:h-14 text-[14px] items-center flex justify-between flex-col lg:flex-row"
       >
-        <div className="flex-[3] items-center px-8 flex justify-between flex-col md:flex-row">
+        <div className="flex-[3] items-center px-8 flex justify-between flex-col lg:flex-row">
           <div className="flex items-center">
             {isWhite ? (
               <span>Copyright &copy; 2024 Limm</span>
@@ -32,7 +32,7 @@ export default function FooterBottom(props) {
             style={{
               color: isWhite ? "#365BB7" : "white",
             }}
-            className="flex gap-10 ml-2 flex-col md:flex-row"
+            className="flex gap-10 ml-2 flex-col lg:flex-row"
           >
             <Link className="text-center underline cursor-pointer" href="/">
               COOKIES

@@ -11,15 +11,15 @@ import callIcon from "../photos/call-icon.png";
 export default function BlackFooter() {
   return (
     <div className="px-10 text-center md:px-24 pt-12 mt-12 bg-[#001738] flex flex-col">
-      <div className="mb-24 flex-1 grid gap-24 grid-cols-1 md:grid-cols-2">
-        <div className="text-center flex justify-center items-center md:items-start px-2 md:px-12 flex-col">
+      <div className="mb-24 flex-1 grid gap-24 grid-cols-1 lg:grid-cols-2">
+        <div className="text-center flex justify-center items-center lg:items-start px-2 md:px-12 flex-col">
           <Image src={logo} alt="logo" className="mb-4 w-[120px]" />
           <p className="text-[24px] w-full md:w-4/5 md:text-start font-medium text-white">
             Improving business management in Africa.
           </p>
         </div>
         <div className="flex justify-end">
-          <div className="md-mx-auto md:w-2/3 w-full flex flex-col items-start justify-center gap-4">
+          <div className="md-mx-auto lg:w-2/3 w-full flex flex-col items-start justify-center gap-4">
             <div className="mb-10 w-full h-9 flex justify-between">
               <Image
                 src={facebookLogo}
