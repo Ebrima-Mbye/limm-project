@@ -46,8 +46,15 @@ export default function Card(props) {
         <div className="border-red-500 border relative">
           <Image src={props.mainImage} alt="man calculating" className="" />
           {props.withSecondImage ? (
-            <div className="absolute top-[-35%] left-[-20%] md:top-[-100px] md:left-[-120px]">
-              <Image src={phoneImage} alt="image of phone" className="w-full" />
+            <div className="hidden md:block absolute top-[-35%] left-[-20%] md:top-[-100px] md:left-[-120px]">
+              {props.subImages.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt="image of phone"
+                  className="w-full"
+                />
+              ))}
             </div>
           ) : (
             ""
@@ -56,10 +63,8 @@ export default function Card(props) {
       </div>
       <div className="border-red-500 border flex-1 flex flex-col px-1 md:pl-14 lg:px-2 justify-center items-start">
         <h3 className="font-semibold text-2xl">{props.heading}</h3>
-        <p className="leading-[38px] text-[18px] font-thin mt-4 mb-5">
-          {props.text}
-        </p>
-        <Link href="/" className="flex gap-2 items-center">
+        <p className="leading-[38px] text-[18px] mt-4 mb-5">{props.text}</p>
+        <Link href={props.href} className="flex gap-2 items-center">
           <span className="text-[#356BB7] text-[14px] md:text-[16px]">
             Find the plan that best fits your restaurant
           </span>
