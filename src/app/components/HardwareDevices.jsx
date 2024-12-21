@@ -53,7 +53,7 @@ export default function HardwareDevices() {
             style={{
               flexDirection: getFlexDirection(device.id),
             }}
-            className="mb-12 flex gap-4 flex-col lg:flex-row p-5 md:p-14 lg:p-12 rounded-[20px]"
+            className="mb-12 flex gap-4 flex-col lg:flex-row p-5 md:p-14 lg:p-12 rounded-[20px]  border-gray-300 border"
           >
             <div
               style={{

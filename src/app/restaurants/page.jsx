@@ -26,25 +26,27 @@ export default function Restaurant() {
           giving you more time to focus on delivering exceptional cuisine.
         </p>
 
-        <RestaurantCard
-          reversed={false}
-          withSecondImage={true}
-          mainImage={manCalculating}
-          heading={headings[0]}
-          text={texts[0]}
-        />
-        <RestaurantCard
-          reversed={true}
-          mainImage={smileyWoman}
-          heading={headings[1]}
-          text={texts[1]}
-        />
-        <RestaurantCard
-          reversed={false}
-          mainImage={womanWithTablet}
-          heading={headings[2]}
-          text={texts[2]}
-        />
+        <div>
+          <RestaurantCard
+            reversed={false}
+            withSecondImage={true}
+            mainImage={manCalculating}
+            heading={headings[0]}
+            text={texts[0]}
+          />
+          <RestaurantCard
+            reversed={true}
+            mainImage={smileyWoman}
+            heading={headings[1]}
+            text={texts[1]}
+          />
+          <RestaurantCard
+            reversed={false}
+            mainImage={womanWithTablet}
+            heading={headings[2]}
+            text={texts[2]}
+          />
+        </div>
       </div>
       <WhiteFooter />
     </div>

@@ -1,12 +1,9 @@
-"use client"
-
 import Image from "next/image";
 import Link from "next/link";
 import arrow from "../../photos/restaurants/arrow.png";
-import phoneImage from "../../photos/restaurants/phone.png";
 import { useEffect, useState } from "react";
 
-export default function RestaurantCard(props) {
+export default function BusinessCard(props) {
   const [isWideScreen, setIsWideScreen] = useState(false);
   useEffect(() => {
     //Check if the screen width is greater than 800px
