@@ -1,51 +1,49 @@
-import RetailCard from "./components/RetailCard";
-import WhiteFooter from "../components/WhiteFooter";
-import photo1 from "../photos/retail/bio-food-market-woman-stand 1.png"
-import photo2 from "../photos/retail/shallow-focus-african-female-seller-showing-content-phone-customer-market 1.png"
-import photo3 from "../photos/retail/african-american-pharmacist-working-drugstore-hospital-pharmacy-african-healthcare 1.png"
+import photo1 from "../photos/retail/bio-food-market-woman-stand 1.png";
+import photo2 from "../photos/retail/shallow-focus-african-female-seller-showing-content-phone-customer-market 1.png";
+import photo3 from "../photos/retail/african-american-pharmacist-working-drugstore-hospital-pharmacy-african-healthcare 1.png";
+import layer1 from "../photos/retail/layer-1.png";
+import layer2 from "../photos/retail/layer-2.png";
+import layer3 from "../photos/retail/checkout.png";
+import BusinessCards from "../components/BusinessCards";
 
 export default function Retail() {
-  const headings = [
-    "Customer Engagement, Effortless and Effective",
-    "Always Keep the Right Stock.",
-    "Order Management Made Simple",
-  ];
-  const texts = [
-    "Strengthen your customer relationships effortlessly with Limm. Utilize easy customer management tools to keep track of preferences, plan promotion campaigns, and create loyal patrons.",
-    "Experience inventory bliss with Limm. Keep track of stock levels in real-time, prevent overstocking or stockouts, and ensure your shelves are consistently filled with the products your customers desire.",
-    "Simplify your order process with Limm. From purchase to delivery, our platform streamlines the entire process, ensuring accuracy.",
-  ];
-  return (
-    <div className="pt-32 px-12">
-      <div className="px-36">
-        <h1 className="text-[54px] font-bold">
-        Inventory Intelligence, Every Item Counts.
-        </h1>
-        <p className="text-2xl">
-        Manage sales, track inventory, and analyze customer preferences to keep your shelves stocked with what your customers love.
-        </p>
-
-        <RetailCard
-          reversed={false}
-          withSecondImage={true}
-          mainImage={photo1}
-          heading={headings[0]}
-          text={texts[0]}
-        />
-        <RetailCard
-          reversed={true}
-          mainImage={photo2}
-          heading={headings[1]}
-          text={texts[1]}
-        />
-        <RetailCard
-          reversed={false}
-          mainImage={photo3}
-          heading={headings[2]}
-          text={texts[2]}
-        />
-      </div>
-      <WhiteFooter />
-    </div>
-  );
+  const pageDetails = {
+    pageHeading: "Inventory Intelligence, Every Item Counts.",
+    pageDescription:
+      "Manage sales, track inventory, and analyze customer preferences to keep your shelves stocked with what your customers love.",
+    cards: [
+      {
+        id: "1",
+        mainImage: photo1,
+        hasSubImages: true,
+        subImages: [layer1, layer2, layer3],
+        feature: "Customer Engagement, Effortless and Effective",
+        description:
+          "Strengthen your customer relationships effortlessly with Limm. Utilize easy customer management tools to keep track of preferences, plan promotion campaigns, and create loyal patrons.",
+        href: "#",
+        subImagePosition: "bottom-right",
+      },
+      {
+        id: "2",
+        mainImage: photo2,
+        hasSubImages: false,
+        subImages: [],
+        feature: "Always Keep the Right Stock.",
+        description:
+          "Experience inventory bliss with Limm. Keep track of stock levels in real-time, prevent overstocking or stockouts, and ensure your shelves are consistently filled with the products your customers desire.",
+        href: "#",
+      },
+      {
+        id: "3",
+        mainImage: photo3,
+        hasSubImages: false,
+        subImages: [],
+        feature: "Order Management Made Simple",
+        description:
+          "Simplify your order process with Limm. From purchase to delivery, our platform streamlines the entire process, ensuring accuracy.",
+        href: "#",
+      },
+    ],
+  };
+  return <BusinessCards pageDetails={pageDetails} />;
 }

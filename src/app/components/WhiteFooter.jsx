@@ -10,21 +10,20 @@ import Link from "next/link";
 
 export default function Footer() {
   const socialHandles = [facebookLogo, instagramLogo, tiktokLogo, twitterLogo];
-  console.log(footerLinks);
 
   return (
     <div className="flex flex-col mt-12">
       <hr className="mt-12 mb-5 border-[1px] border-black" />
-      <div className="flex gap-2 justify-between">
+      <div className="flex gap-2 justify-center md:justify-between ">
         <div className="p-2">
-          <div>
+          <div className="hidden md:block">
             <Image src={logo} alt="logo" className="" />
           </div>
         </div>
-        <div className="flex-1 flex gap-8 justify-end">
+        <div className="flex-1 flex gap-3 md:gap-8 justify-end">
           {footerLinks.map((footerlink, i1) => (
             <div key={i1} className="flex flex-col">
-              <h1 className="text-2xl font-medium mb-2">
+              <h1 className="text-xl md:text-2xl font-medium mb-2">
                 {footerlink.category}
               </h1>
               {footerlink.links.map((link, i2) => (
@@ -40,7 +39,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="py-7">
+      <div className="py-7 hidden md:block">
         <p>
           Limm is committed to providing a seamless and secure experience for
           small businesses, and users are expected to comply with applicable

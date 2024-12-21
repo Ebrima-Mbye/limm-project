@@ -45,10 +45,10 @@ export default function BusinessCard(props) {
         flexDirection: getFlexDirection(props.index),
       }}
       //   grid gap-8 grid-cols-1 lg:grid-cols-2
-      className="gap-8 mt-24 border-red-500 border"
+      className="gap-8 mt-24"
     >
-      <div className="border-yellow-500 border flex-1 flex justify-center p-4">
-        <div className="border-red-500 border relative">
+      <div className="flex-1 flex justify-center p-4">
+        <div className="relative">
           <Image src={props.mainImage} alt="man calculating" className="" />
           {props.withSecondImage ? (
             <div
@@ -56,18 +56,19 @@ export default function BusinessCard(props) {
                 position: "absolute",
                 top: isTopLeft ? "-35%" : "auto",
                 left: isTopLeft ? "-20%" : "auto",
-                right: isBottomRight ? "-35%" : "auto",
-                bottom: isBottomRight ? "-20%" : "auto",
+                right: isBottomRight ? "-25%" : "auto",
+                bottom: isBottomRight ? "-15%" : "auto",
+                width: isBottomRight ? "350px" : "auto",
               }}
               //   className="hidden md:block absolute top-[-35%] left-[-20%] md:top-[-100px] md:left-[-120px]"
-              className="hidden md:block"
+              className="hidden md:flex flex-col"
             >
               {props.subImages.map((image, index) => (
                 <Image
                   key={index}
                   src={image}
                   alt="image of phone"
-                  className="w-full"
+                  className="w-full max-w-[300px]"
                 />
               ))}
             </div>
@@ -76,7 +77,7 @@ export default function BusinessCard(props) {
           )}
         </div>
       </div>
-      <div className="border-red-500 border flex-1 flex flex-col px-1 md:pl-14 lg:px-2 justify-center items-start">
+      <div className="flex-1 flex flex-col px-1 md:pl-14 lg:px-2 justify-center items-start">
         <h3 className="font-semibold text-2xl">{props.heading}</h3>
         <p className="leading-[38px] text-[18px] mt-4 mb-5">{props.text}</p>
         <Link href={props.href} className="flex gap-2 items-center">

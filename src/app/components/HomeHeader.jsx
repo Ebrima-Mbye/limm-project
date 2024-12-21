@@ -34,8 +34,6 @@ export default function HomeHeader() {
   ];
   const handleMenuButtonClick = (e) => {
     setIsMenuOpen(!isMenuOpen);
-
-    console.log("Button clicked!");
   };
   window.addEventListener("resize", () => {
     setIsMenuOpen(false);
