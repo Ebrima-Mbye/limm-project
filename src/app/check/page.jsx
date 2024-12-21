@@ -1,4 +1,5 @@
-import Cards from "./components/Cards";
+// import Cards from "./components/Cards";
+import BusinessCards from  "../components/BusinessCards";
 import manCalculating from "../photos/restaurants/man-calculating.png";
 import smileyWoman from "../photos/restaurants/smiley-woman.png";
 import phoneImage from "../photos/restaurants/phone.png";
@@ -43,5 +44,5 @@ export default function Restaurant() {
       },
     ],
   };
-  return <Cards pageDetails={pageDetails} />;
+  return <BusinessCards pageDetails={pageDetails} />;
 }
