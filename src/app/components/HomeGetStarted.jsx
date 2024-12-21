@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function HomeGetStarted() {
   return (
-    <section className=" h-[100vh] p-12">
+    <section className="hidden md:block md:h-[100vh] p-12">
       <Image
         src={mainImage}
         alt="man pointing at phone"

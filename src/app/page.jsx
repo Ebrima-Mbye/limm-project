@@ -3,6 +3,7 @@ import HomeGetStarted from "./components/HomeGetStarted";
 import HomeFindSolution from "./components/HomeFindSolution";
 import HomeFAQ from "./components/HomeFAQ";
 import BlackFooter from "./components/BlackFooter";
+import GetTheApp from "./components/GetTheApp";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeHero />
       <HomeGetStarted />
       <HomeFindSolution />
+      <GetTheApp />
       <HomeFAQ />
       <BlackFooter />
     </div>

@@ -17,7 +17,7 @@ export default function RegisterPage() {
     "Consultancy",
     "Law",
   ];
-  const suppertedCountries = ["Gambia", "Senegal", "Mauritania"];
+  const suppertedCountries = ["Select Country", "Gambia", "Senegal", "Mauritania"];
   const navigateToHomePage = () => {
     router.push("/");
 
@@ -93,7 +93,7 @@ export default function RegisterPage() {
 
           <div>
             <div className="relative">
-              <select className="text-[#AAB7C9] border border-[#AAB7C9] w-full block appearance-none bg-white py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
+              <select placeholder="hi" defaultValue="Hi" className="text-[#AAB7C9] border border-[#AAB7C9] w-full block appearance-none bg-white py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
                 {suppertedCountries.map((country, index) => (
                   <option key={index} value={country}>
                     {country}

@@ -5,7 +5,7 @@ import facebookLogo from "../photos/restaurants/facebook-blue.png";
 import twitterLogo from "../photos/restaurants/twitter-blue.png";
 import instagramLogo from "../photos/restaurants/instagram-blue.png";
 import tiktokLogo from "../photos/restaurants/tiktok-blule.png";
-import footerLinks from "./links";
+import footerLinks from "../data/links";
 import Link from "next/link";
 
 export default function Footer() {

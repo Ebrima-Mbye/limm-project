@@ -21,10 +21,26 @@ export default function BlackFooter() {
         <div className="flex justify-end">
           <div className="md-mx-auto md:w-2/3 w-full flex flex-col items-start justify-center gap-4">
             <div className="mb-10 w-full h-9 flex justify-between">
-              <Image src={facebookLogo} alt="facebook logo" className="" />
-              <Image src={instagramLogo} alt="instagram logo" className="" />
-              <Image src={tiktokLogo} alt="tiktok logo" className="" />
-              <Image src={twitterLogo} alt="twitter logo" className="" />
+              <Image
+                src={facebookLogo}
+                alt="facebook logo"
+                className="w-full h-full"
+              />
+              <Image
+                src={instagramLogo}
+                alt="instagram logo"
+                className="w-full h-full"
+              />
+              <Image
+                src={tiktokLogo}
+                alt="tiktok logo"
+                className="w-full h-full"
+              />
+              <Image
+                src={twitterLogo}
+                alt="twitter logo"
+                className="w-full h-full"
+              />
             </div>
             <div className="gap-5 flex justify-between items-center">
               <Image src={messageIcon} alt="message icon" className="" />

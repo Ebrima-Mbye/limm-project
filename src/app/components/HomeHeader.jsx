@@ -55,29 +55,33 @@ export default function HomeHeader() {
         <div className="h-full lg:h-auto">
           {/* Company logo */}
           <Link href="/">
-            <Image src={logo} alt="Logo" className="w-full lg:mt-[-20px] lg:w-4/5" />
+            <Image
+              src={logo}
+              alt="Logo"
+              className="w-full lg:mt-[-20px] lg:w-full"
+            />
           </Link>
         </div>
         {/* Menu button */}
-        <div className="h-8 w-8 visible lg:hidden ">
+        <div className="h-5 w-5 visible lg:hidden ">
           <button
             onClick={handleMenuButtonClick}
             className="relative overflow-y-hidden flex justify-between flex-col w-full h-full"
           >
             {isMenuOpen ? (
               // Diplay and "X" symbol if the menu is open
-              <div className="w-full h-full translate-y-3">
+              <div className="w-full h-full translate-y-2">
                 {/* <span className="absolute translate-y-[250%] block rotate-[45deg] transition-all bg-black w-full h-[5px]"></span>
                 <span className="absolute translate-y-[250%] block rotate-[135deg] transition-all bg-black w-full h-[5px]"></span> */}
-                <span className="absolute block rotate-[45deg] transition-transform bg-black w-full h-[5px]"></span>
-                <span className="absolute block rotate-[135deg] transition-transform bg-black w-full h-[5px]"></span>
+                <span className="absolute block rotate-[45deg] transition-transform bg-black w-full h-[3px]"></span>
+                <span className="absolute block rotate-[134deg] transition-transform bg-black w-full h-[3px]"></span>
               </div>
             ) : (
               // Display three horizontail lines if the menu is not open
               <>
-                <span className="block w-full bg-black h-[5px]"></span>
-                <span className="block w-full bg-black h-[5px]"></span>
-                <span className="block w-full bg-black h-[5px]"></span>
+                <span className="block w-full bg-black h-[3px]"></span>
+                <span className="block w-full bg-black h-[3px]"></span>
+                <span className="block w-full bg-black h-[3px]"></span>
               </>
             )}
           </button>
@@ -109,6 +113,7 @@ export default function HomeHeader() {
                 {link.text}
               </Link>
             ))}
+
             <div className="mt-3 lg:mt-0">
               <button className="ml-4 text-[20px] lg:text-[12px] bg-slate-500 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]">
                 Book a Demo
