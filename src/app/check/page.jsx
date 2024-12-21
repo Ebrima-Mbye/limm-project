@@ -19,6 +19,7 @@ export default function Restaurant() {
         description:
           "Streamlined restaurant management means quicker service, and accurate orders. Elevate customer satisfaction and keep them coming back for more.",
         href: "#",
+        subImagePosition: "top-left",
       },
       {
         id: "2",

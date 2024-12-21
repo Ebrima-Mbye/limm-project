@@ -3,11 +3,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import arrow from "../../photos/restaurants/arrow.png";
-import phoneImage from "../../photos/restaurants/phone.png";
 import { useEffect, useState } from "react";
 
 export default function Card(props) {
   const [isWideScreen, setIsWideScreen] = useState(false);
+  const [isTopLeft, setIsTopLeft] = useState(false);
+  const [isBottomRight, setIsBottomRight] = useState(false);
+
   useEffect(() => {
     //Check if the screen width is greater than 800px
     const handleResize = () => {
@@ -19,6 +21,9 @@ export default function Card(props) {
 
     // Add an event listener to handle window resize
     window.addEventListener("resize", handleResize);
+
+    setIsTopLeft(props.subImagePosition === "top-left");
+    setIsBottomRight(props.subImagePosition === "bottom-right");
 
     // Cleanup event listener on unmount
     return () => window.removeEventListener("resize", handleResize);
@@ -46,7 +51,17 @@ export default function Card(props) {
         <div className="border-red-500 border relative">
           <Image src={props.mainImage} alt="man calculating" className="" />
           {props.withSecondImage ? (
-            <div className="hidden md:block absolute top-[-35%] left-[-20%] md:top-[-100px] md:left-[-120px]">
+            <div
+              style={{
+                position: "absolute",
+                top: isTopLeft ? "-35%" : "auto",
+                left: isTopLeft ? "-20%" : "auto",
+                right: isBottomRight ? "-35%" : "auto",
+                bottom: isBottomRight ? "-20%" : "auto",
+              }}
+              //   className="hidden md:block absolute top-[-35%] left-[-20%] md:top-[-100px] md:left-[-120px]"
+              className="hidden md:block"
+            >
               {props.subImages.map((image, index) => (
                 <Image
                   key={index}

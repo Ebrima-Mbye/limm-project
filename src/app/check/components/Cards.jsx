@@ -20,6 +20,7 @@ export default function Cards({ pageDetails }) {
               text={card.description}
               subImages={card.hasSubImages ? card.subImages : []}
               href={card.href}
+              subImagePosition={card.subImagePosition}
               index={index}
             />
           ))}
