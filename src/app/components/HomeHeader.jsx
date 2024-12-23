@@ -32,12 +32,18 @@ export default function HomeHeader() {
       href: "/login",
     },
   ];
-  const handleMenuButtonClick = (e) => {
+
+  // HANDLER FUNCTIONS
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+  const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
   window.addEventListener("resize", () => {
     setIsMenuOpen(false);
   });
+
   return (
     <div
       style={{
@@ -45,8 +51,12 @@ export default function HomeHeader() {
         overflowY: "hidden",
       }}
       id=" header"
+    //   className="z-[100] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
+    //    lg:items-center text-gray-400 lg:text-gray-500 leading-[28.8px] font-medium lg:px-6 fixed bg-white rounded-lg
+    //    lg:top-8 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
+    // >
       className="z-[100] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
-       lg:items-center text-gray-400 lg:text-gray-500 leading-[28.8px] font-medium lg:px-6 fixed bg-white rounded-lg
+       lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 fixed bg-inherit rounded-lg
        lg:top-8 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
     >
       <div className="px-[12%] w-full mt-3 max-h-[9vh] lg:w-auto lg:p-2 flex justify-between lg:justify-center items-center lg:pt-0 mb-3 lg:mb-0 lg:h-full">
@@ -63,7 +73,7 @@ export default function HomeHeader() {
         {/* Menu button */}
         <div className="h-5 w-5 visible lg:hidden ">
           <button
-            onClick={handleMenuButtonClick}
+            onClick={toggleMenu}
             className="relative overflow-y-hidden flex justify-between flex-col w-full h-full"
           >
             {isMenuOpen ? (
@@ -71,15 +81,15 @@ export default function HomeHeader() {
               <div className="w-full h-full translate-y-2">
                 {/* <span className="absolute translate-y-[250%] block rotate-[45deg] transition-all bg-black w-full h-[5px]"></span>
                 <span className="absolute translate-y-[250%] block rotate-[135deg] transition-all bg-black w-full h-[5px]"></span> */}
-                <span className="absolute block rotate-[45deg] transition-transform bg-black w-full h-[3px]"></span>
-                <span className="absolute block rotate-[134deg] transition-transform bg-black w-full h-[3px]"></span>
+                <span className="absolute block rotate-[45deg] transition-transform bg-gray-500 w-full h-[3px]"></span>
+                <span className="absolute block rotate-[134deg] transition-transform bg-gray-500 w-full h-[3px]"></span>
               </div>
             ) : (
               // Display three horizontail lines if the menu is not open
               <>
-                <span className="block w-full bg-black h-[3px]"></span>
-                <span className="block w-full bg-black h-[3px]"></span>
-                <span className="block w-full bg-black h-[3px]"></span>
+                <span className="block w-full bg-gray-500 h-[3px]"></span>
+                <span className="block w-full bg-gray-500 h-[3px]"></span>
+                <span className="block w-full bg-gray-500 h-[3px]"></span>
               </>
             )}
           </button>
@@ -94,7 +104,11 @@ export default function HomeHeader() {
                 className="lg:mr-8 block w-full
                            lg:inline text-start px-3"
               >
-                <Link href={link.href} className="block w-full">
+                <Link
+                  href={link.href}
+                  onClick={closeMenu}
+                  className="block w-full"
+                >
                   {link.text}
                 </Link>
               </li>
@@ -105,15 +119,16 @@ export default function HomeHeader() {
             {rightLinks.map((link, index) => (
               <Link
                 key={index}
-                className="block w-full lg:text-center text-start px-3 lg:inline"
                 href={link.href}
+                onClick={closeMenu}
+                className="block w-full lg:text-center text-start px-3 lg:inline"
               >
                 {link.text}
               </Link>
             ))}
 
             <div className="mt-3 lg:mt-0">
-              <button className="ml-4 text-[20px] lg:text-[12px] bg-slate-500 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]">
+              <button onClick={closeMenu} className="ml-4 text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]">
                 Book a Demo
               </button>
             </div>

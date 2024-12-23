@@ -19,6 +19,9 @@ export default function HomeGetStarted() {
       </div>
       <div className="flex gap-14 justify-center items-center">
         <div className="cursor-pointer">
+          <div className="flex justify-center">
+            <p>Apple:</p>
+          </div>
           <Image
             src={appStoreImage}
             alt="app store image"
@@ -26,6 +29,9 @@ export default function HomeGetStarted() {
           />
         </div>
         <div className="cursor-pointer">
+          <div className="flex justify-center">
+            <p>Android:</p>
+          </div>
           <Image
             src={googlePlayStoreImage}
             alt="google play store image"

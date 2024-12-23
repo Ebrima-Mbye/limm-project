@@ -36,7 +36,7 @@ export default function Page() {
           <p className="text-[18px] leading-[21.6px] mr-[-6px]">Currency: </p>
           <select
             id="currency-selector"
-            className="border-black border-2 text-center font-bold px-2 py-2 rounded-full"
+            className="border-gray-700 border-2 text-center font-bold px-2 py-2 rounded-full bg-inherit"
           >
             {supportedCurrencies.map((currency, index) => (
               <option key={index} value={currency} className="">

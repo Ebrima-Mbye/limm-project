@@ -47,11 +47,7 @@ export default function FooterBottom(props) {
         </div>
         <div className="flex-[2] flex items-center justify-end pr-8">
           <p className="mr-5">Language:</p>
-          <div
-            style={{
-              borderColor: isWhite ? "#001738" : "white",
-            }}
-            className="flex gap-3 px-3 py-1 border-[1px] rounded-md w-[120px]"
+          <div className="flex gap-3 border-gray-500 border px-3 py-1 rounded-md w-[120px]"
           >
             <Image
               src={isWhite ? globeBlack : globeIcon}
@@ -62,7 +58,7 @@ export default function FooterBottom(props) {
               style={{
                 backgroundColor: isWhite ? "white" : "#001738",
               }}
-              className="bg-transparent text-[13px]"
+              className="bg-inherit text-[13px]"
             >
               {supportedLanguages.map((language, index) => (
                 <option

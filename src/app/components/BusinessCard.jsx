@@ -68,7 +68,10 @@ export default function BusinessCard(props) {
                   key={index}
                   src={image}
                   alt="image of phone"
-                  className="w-full max-w-[300px]"
+                  style={{
+                    width: isBottomRight ? "100%" : "auto",
+                    maxWidth: isBottomRight ? "300px" : "auto",
+                  }}
                 />
               ))}
             </div>
@@ -79,9 +82,9 @@ export default function BusinessCard(props) {
       </div>
       <div className="flex-1 flex flex-col px-1 md:pl-14 lg:px-2 justify-center items-start">
         <h3 className="font-semibold text-2xl">{props.heading}</h3>
-        <p className="leading-[38px] text-[18px] mt-4 mb-5">{props.text}</p>
+        <p className="leading-[38px] text-2xl mt-4 mb-5">{props.text}</p>
         <Link href={props.href} className="flex gap-2 items-center">
-          <span className="text-[#356BB7] text-[14px] md:text-[16px]">
+          <span className="text-[#356BB7] text-[15px] md:text-xl">
             Find the plan that best fits your restaurant
           </span>
           <Image

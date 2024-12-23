@@ -10,12 +10,12 @@ export default function PricingCard({ plan }) {
         {price} F{" "}
         <span className="text-sm font-normal text-[#AAAAAA]">/month</span>
       </p>
-      <button className="my-5 bg-[#356BB7] text-white px-6 py-2 w-full rounded-md hover:bg-blue-600">
+      <button className="my-5 bg-[#356BB7] hover:bg-blue-500 transition-colors duration-150 text-white px-6 py-2 w-full rounded-md">
         {bottonText}
       </button>
       <ul className="text-start text-gray-600 text-sm space-y-2">
         {perks.map((perk, index) => (
-          <li key={index} className="flex gap-3 items-center">
+          <li key={index} className="flex gap-3 items-center md:text-lg">
             <Image
               src={checkMark}
               alt="check mark"

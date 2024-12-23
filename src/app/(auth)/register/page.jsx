@@ -27,7 +27,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="w-[100vw] z-[101] fixed flex flex-col h-screen justify-center items-center bg-gray-50 realtive">
+    <div className="w-[100vw] z-[101] fixed flex flex-col h-screen justify-center items-center bg-inherit realtive">
       {/* Top Left Link */}
       <div className="absolute top-8 left-8 flex items-center">
         <button
@@ -45,10 +45,10 @@ export default function RegisterPage() {
       <div className="absolute top-8 right-8">
         <select
           id="currency-selector"
-          className="border-black border-2 text-center font-bold px-2 py-2 rounded-full"
+          className="border-gray-500 border-2 text-center font-bold px-2 py-2 rounded-full bg-inherit"
         >
           {supportedLanguages.map((language, index) => (
-            <option key={index} value={language} className="">
+            <option key={index} value={language} className="bg-gray-300">
               {language}
             </option>
           ))}

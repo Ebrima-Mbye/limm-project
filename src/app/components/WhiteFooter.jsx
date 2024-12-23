@@ -15,21 +15,21 @@ export default function Footer() {
     <div className="flex flex-col mt-12">
       <hr className="mt-12 mb-5 border-[1px] border-black" />
       <div className="flex gap-2 justify-center md:justify-between ">
-        <div className="p-2">
-          <div className="hidden md:block">
-            <Image src={logo} alt="logo" className="" />
+        <div className="p-2 flex items-center md:items-start">
+          <div className="">
+            <Image src={logo} alt="logo" className="w-full md:w-auto" />
           </div>
         </div>
         <div className="flex-1 flex gap-3 md:gap-8 justify-end">
           {footerLinks.map((footerlink, i1) => (
             <div key={i1} className="flex flex-col">
-              <h1 className="text-xl md:text-2xl font-medium mb-2">
+              <h1 className="text-xl md:text-2xl font-semibold mb-2">
                 {footerlink.category}
               </h1>
               {footerlink.links.map((link, i2) => (
                 <Link
                   key={i2}
-                  className="text-[16px] my-1 font-normal leading-[19.2px]"
+                  className="text-[16px] md:text-xl md:leading[24px] my-1 font-normal leading-[19.2px]"
                   href={link.href}
                 >
                   {link.linkText}
@@ -39,7 +39,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="py-7 hidden md:block">
+      <div className="py-7 hidden md:block text-2xl">
         <p>
           Limm is committed to providing a seamless and secure experience for
           small businesses, and users are expected to comply with applicable

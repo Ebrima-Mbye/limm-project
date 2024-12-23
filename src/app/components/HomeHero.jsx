@@ -10,7 +10,7 @@ export default function HomeHero() {
       {/* <HomeHeader /> */}
       <div className="">
         <div className="mt-16 mb-12 md:mb-6">
-          <p className="text-5xl font-medium text-start">
+          <p className="text-5xl font-medium text-start text-gray-800">
             Empowering Businesses with Innovative <br /> Solutions.
           </p>
         </div>

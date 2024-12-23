@@ -5,7 +5,7 @@ export default function Cards({ pageDetails }) {
   return (
     <div className="pt-32 px-4 lg:px-12">
       <div className="px-4 lg:px-36">
-        <h1 className="text-4xl text-center md:text-start md:text-5xl mb-4 leading-[50px] md:text-[54px] font-semibold md:font-medium">
+        <h1 className="text-4xl text-center md:text-start md:text-5xl md:leading-[54px] mb-4 leading-[50px] md:text-[54px] font-medium">
           {pageDetails.pageHeading}
         </h1>
         <p className="text-2xl">{pageDetails.pageDescription}</p>
