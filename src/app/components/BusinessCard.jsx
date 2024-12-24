@@ -11,22 +11,24 @@ export default function BusinessCard(props) {
   const [isBottomRight, setIsBottomRight] = useState(false);
 
   useEffect(() => {
-    //Check if the screen width is greater than 800px
-    const handleResize = () => {
-      setIsWideScreen(window.innerWidth > 800);
-    };
+    if (typeof window !== "undefined") {
+      // Check if the screen width is greater than 800px
+      const handleResize = () => {
+        setIsWideScreen(window.innerWidth > 800);
+      };
 
-    // Run the check on component mount
-    handleResize();
+      // Run the check on component mount
+      handleResize();
 
-    // Add an event listener to handle window resize
-    window.addEventListener("resize", handleResize);
+      // Add an event listener to handle window resize
+      window.addEventListener("resize", handleResize);
 
-    setIsTopLeft(props.subImagePosition === "top-left");
-    setIsBottomRight(props.subImagePosition === "bottom-right");
+      setIsTopLeft(props.subImagePosition === "top-left");
+      setIsBottomRight(props.subImagePosition === "bottom-right");
 
-    // Cleanup event listener on unmount
-    return () => window.removeEventListener("resize", handleResize);
+      // Cleanup event listener on unmount
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, [props.subImagePosition]);
 
   function getFlexDirection(index) {
