@@ -7,19 +7,21 @@ import { useEffect, useState } from "react";
 export default function HardwareDevices() {
   const [isWideScreen, setIsWideScreen] = useState(false);
   useEffect(() => {
-    //Check if the screen width is greater than 800px
-    const handleResize = () => {
-      setIsWideScreen(window.innerWidth > 800);
-    };
+    if (typeof window !== "undefined") {
+      //Check if the screen width is greater than 800px
+      const handleResize = () => {
+        setIsWideScreen(window.innerWidth > 800);
+      };
 
-    // Run the check on component mount
-    handleResize();
+      // Run the check on component mount
+      handleResize();
 
-    // Add an event listener to handle window resize
-    window.addEventListener("resize", handleResize);
+      // Add an event listener to handle window resize
+      window.addEventListener("resize", handleResize);
 
-    // Cleanup event listener on unmount
-    return () => window.removeEventListener("resize", handleResize);
+      // Cleanup event listener on unmount
+      return () => window.removeEventListener("resize", handleResize);
+    }
   }, []);
 
   function getFlexDirection(id) {
@@ -127,4 +129,3 @@ export default function HardwareDevices() {
     </div>
   );
 }
-

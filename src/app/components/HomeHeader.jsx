@@ -40,9 +40,11 @@ export default function HomeHeader() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  window.addEventListener("resize", () => {
-    setIsMenuOpen(false);
-  });
+  if(typeof window !== 'undefined') {
+    window.addEventListener("resize", () => {
+      setIsMenuOpen(false);
+    });
+  }
 
   return (
     <div
