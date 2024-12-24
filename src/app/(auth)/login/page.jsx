@@ -41,7 +41,7 @@ export default function LoginPage() {
           className="border-gray-500 border-2 text-center font-bold px-2 py-2 rounded-full bg-inherit"
         >
           {supportedLanguages.map((language, index) => (
-            <option key={index} value={language} className="bg-gray-300">
+            <option key={index} value={language} className="bg-background text-foreground">
               {language}
             </option>
           ))}
@@ -64,7 +64,7 @@ export default function LoginPage() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
+              className="w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400 bg-background"
             />
           </div>
 

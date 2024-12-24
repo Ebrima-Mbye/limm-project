@@ -1,48 +1,29 @@
-// import Cards from "./components/Cards";
-import BusinessCards from  "../components/BusinessCards";
-import manCalculating from "../photos/restaurants/man-calculating.png";
-import smileyWoman from "../photos/restaurants/smiley-woman.png";
-import phoneImage from "../photos/restaurants/phone.png";
-import womanWithTablet from "../photos/restaurants/woman-reading-tablet.png";
+export default function Page() {
+  return (
+    <div className="mt-[1000px] flex justify-between items-start gap-8 border-l border-gray-300 pl-8">
+      {/* Left Column */}
+      <div className="w-1/2">
+        <h2 className="text-xl font-semibold">
+          No more juggling between different systems
+        </h2>
+        <p className="mt-2 text-gray-600">
+          Handle every aspect of your business, from processing payments and
+          managing stock to overseeing staff and handling salaries.
+        </p>
+      </div>
 
-export default function Restaurant() {
-  const pageDetails = {
-    pageHeading: "Simplified Restaurant Management.",
-    pageDescription:
-      "Limm simplifies inventory control, staff scheduling, and transactions, giving you more time to focus on delivering exceptional cuisine.",
-    cards: [
-      {
-        id: "1",
-        mainImage: manCalculating,
-        hasSubImages: true,
-        subImages: [phoneImage],
-        feature: "Streamlined Service = Happy Customers",
-        description:
-          "Streamlined restaurant management means quicker service, and accurate orders. Elevate customer satisfaction and keep them coming back for more.",
-        href: "#",
-        subImagePosition: "top-left",
-      },
-      {
-        id: "2",
-        mainImage: smileyWoman,
-        hasSubImages: false,
-        subImages: [],
-        feature: "Inventory Mastery, No Headaches",
-        description:
-          "Optimize your kitchen's efficiency with intuitive inventory tools. Prevent wastage, track ingredients in real-time, and ensure your menu is always well-stocked.",
-        href: "#",
-      },
-      {
-        id: "3",
-        mainImage: womanWithTablet,
-        hasSubImages: false,
-        subImages: [],
-        feature: "Staff Coordination",
-        description:
-          "Keep your kitchen in sync with staff management tools. Simplify scheduling, track shifts, and enhance communication, ensuring a well-coordinated team for smooth operations.",
-        href: "#",
-      },
-    ],
-  };
-  return <BusinessCards pageDetails={pageDetails} />;
+      {/* Divider */}
+      <div className="h-auto w-[1px] bg-gray-300"></div>
+
+      {/* Right Column */}
+      <div className="w-1/2">
+        <h2 className="text-xl font-semibold">Achieve financial clarity</h2>
+        <p className="mt-2 text-gray-600">
+          Take the stress out of accounting with our comprehensive financial
+          tools. Easily track your sales, monitor business data, and manage your
+          accounting—all in one place.
+        </p>
+      </div>
+    </div>
+  );
 }

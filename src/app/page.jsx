@@ -1,18 +1,18 @@
-import HomeHero from "./components/HomeHero";
-import HomeGetStarted from "./components/HomeGetStarted";
-import HomeFindSolution from "./components/HomeFindSolution";
-import HomeFAQ from "./components/HomeFAQ";
+import Hero from "./components/Hero";
+import GetStarted from "./components/GetStarted";
+import FindSolution from "./components/FindSolution";
+import FAQ from "./components/FAQ";
 import BlackFooter from "./components/BlackFooter";
 import GetTheApp from "./components/GetTheApp";
 
 export default function Home() {
   return (
     <div className="pt-4">
-      <HomeHero />
-      <HomeGetStarted />
-      <HomeFindSolution />
+      <Hero />
+      <GetStarted />
+      <FindSolution />
       <GetTheApp />
-      <HomeFAQ />
+      <FAQ />
       <BlackFooter />
     </div>
   );

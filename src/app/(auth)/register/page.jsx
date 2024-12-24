@@ -27,7 +27,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="w-[100vw] z-[101] fixed flex flex-col h-screen justify-center items-center bg-inherit realtive">
+    <div className="w-[100vw] bg-background z-[101] fixed flex flex-col h-screen justify-center items-center realtive">
       {/* Top Left Link */}
       <div className="absolute top-8 left-8 flex items-center">
         <button
@@ -48,7 +48,7 @@ export default function RegisterPage() {
           className="border-gray-500 border-2 text-center font-bold px-2 py-2 rounded-full bg-inherit"
         >
           {supportedLanguages.map((language, index) => (
-            <option key={index} value={language} className="bg-gray-300">
+            <option key={index} value={language} className="bg-background">
               {language}
             </option>
           ))}
@@ -56,7 +56,7 @@ export default function RegisterPage() {
       </div>
 
       {/* Signup Card */}
-      <div className="z-[3] w-full max-w-sm p-8 bg-[#EDEFF3] rounded-lg shadow-md">
+      <div className="z-[3] bg-background w-full max-w-sm p-8 rounded-lg shadow-md border-foreground border">
         {/* Logo */}
         <div className="w-full flex flex-col justify-center items-center mb-6">
           <Image src={logo} alt="logo" className="mb-3" />
@@ -71,7 +71,7 @@ export default function RegisterPage() {
             <input
               type="email"
               placeholder="Email"
-              className="placeholder:text-[#AAB7C9] w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
+              className="text-foreground bg-background w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function RegisterPage() {
           <MyPasswordField placeholder="Confirm Password"/>
 
           <div className="relative">
-            <select className="text-[#AAB7C9] border border-[#AAB7C9] w-full block appearance-none bg-white py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
+            <select className="text-forground bg-background border border-[#AAB7C9] w-full block appearance-none py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
               {supportedSectors.map((sector, index) => (
                 <option key={index} value={sector}>
                   {sector}
@@ -93,7 +93,7 @@ export default function RegisterPage() {
 
           <div>
             <div className="relative">
-              <select placeholder="hi" defaultValue="Hi" className="text-[#AAB7C9] border border-[#AAB7C9] w-full block appearance-none bg-white py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
+              <select placeholder="hi" defaultValue="Hi" className="text-foreground border border-[#AAB7C9] w-full block appearance-none bg-background py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
                 {suppertedCountries.map((country, index) => (
                   <option key={index} value={country}>
                     {country}
@@ -105,7 +105,7 @@ export default function RegisterPage() {
               </div>
             </div>
             <div className="text-[13px] mt-2">
-              By continuing you are acknowledging having read and accepted our
+              By continuing you are acknowledging having read and accepted our&nbsp;
               <Link href="#" className="text-[#356BB7] underline">
                 Terms and Conditions
               </Link>{" "}

@@ -44,7 +44,7 @@ export default function HardwareDevices() {
     <div className="">
       <div className="text-center mb-12">
         <p className="text-[18px] text-[#AAB7C9]">HARDWARE DEVICES</p>
-        <p className="text-[#001738]">
+        <p className="text-foreground">
           Manage all aspects of your Business in one place
         </p>
       </div>

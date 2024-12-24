@@ -14,7 +14,7 @@ export default function MyPasswordField({ placeholder}) {
       <input
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
-        className="placeholder:text-[#AAB7C9] w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
+        className="w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400 bg-background"
       />
       <div
         className="absolute inset-y-2 right-4 items-center cursor-pointer"
