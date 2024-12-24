@@ -27,7 +27,7 @@ export default function BusinessCard(props) {
 
     // Cleanup event listener on unmount
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [subImagePosition]);
 
   function getFlexDirection(index) {
     if (index % 2 !== 0 && isWideScreen) {

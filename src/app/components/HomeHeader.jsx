@@ -3,7 +3,7 @@
 import Image from "next/image";
 import logo from "../photos/limm.logo.logo 1.png";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function HomeHeader() {
   const menuTranslateY = "75vh";
@@ -51,10 +51,6 @@ export default function HomeHeader() {
         overflowY: "hidden",
       }}
       id=" header"
-    //   className="z-[100] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
-    //    lg:items-center text-gray-400 lg:text-gray-500 leading-[28.8px] font-medium lg:px-6 fixed bg-white rounded-lg
-    //    lg:top-8 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
-    // >
       className="z-[100] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
        lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 fixed bg-inherit rounded-lg
        lg:top-8 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
@@ -128,7 +124,10 @@ export default function HomeHeader() {
             ))}
 
             <div className="mt-3 lg:mt-0">
-              <button onClick={closeMenu} className="ml-4 text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]">
+              <button
+                onClick={closeMenu}
+                className="ml-4 text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]"
+              >
                 Book a Demo
               </button>
             </div>
