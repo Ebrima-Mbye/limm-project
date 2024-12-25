@@ -24,6 +24,14 @@ export default function HardwareDevices() {
     }
   }, []);
 
+  function getImageURL(device) {
+    if (device.name.toLowerCase() === "limm bluetooth printer") {
+      return "/images/limm_bluetooth.png";
+    } else if (device.name.toLowerCase() === "limm register") {
+      return "/images/limm_register.png";
+    }
+  }
+
   function getFlexDirection(id) {
     if (id === "1" && isWideScreen) {
       return "row-reverse";
@@ -32,16 +40,14 @@ export default function HardwareDevices() {
     }
   }
   function getBackgroundColor(id) {
-    if (isWideScreen) {
-      return "inherit";
-    } else if (id === "1") {
+    if (id === "1") {
       return "#356BB7";
     } else {
       return "#DFECFF";
     }
   }
   return (
-    <div className="">
+    <div className="mt-16 border-red-500 border">
       <div className="text-center mb-12">
         <p className="text-[18px] text-[#AAB7C9]">HARDWARE DEVICES</p>
         <p className="text-foreground">
@@ -63,7 +69,7 @@ export default function HardwareDevices() {
               }}
               className="md:min-h-[400px] rounded-[20px] flex-1 py-6 px-4 lg:px-8 lg:p-4 flex flex-col justify-center items-center"
             >
-              <div className="lg:hidden lg:flex-[0] flex-1">
+              <div className="lg:flex-[0] flex-1">
                 <p
                   style={{
                     color: device.id === "1" ? "#D9D9D9" : "black",
@@ -82,37 +88,32 @@ export default function HardwareDevices() {
               </div>
               <div className="p-4 h-1/2 items-center justify-center flex-1">
                 <Image
-                  src={isWideScreen ? device.bigImage : device.image}
+                  src={device.image}
+                  width={300}
+                  height={300}
                   alt="Scanner with background"
-                  className=""
+                  className="lg:min-w-[300px] lg:min-h-[300px]"
                 />
               </div>
             </div>
-            <div className="flex-1 p-4 h-4/5 v-4/5">
-              <p className="hidden lg:block text-2xl font-bold text-[#325bb7]">
+            {/* A HARDWARE DEVICE */}
+            <div className="border-red-500 border flex-1 p-4 h-4/5 v-4/5">
+              <p className="hidden text-2xl font-bold text-[#325bb7]">
                 {device.name}
               </p>
-              <p className="hidden lg:block text-[19px] my-2">
-                {device.description}
-              </p>
+              <p className="text-[19px] my-2">{device.description}</p>
               <hr className="mt-2 mb-3" />
-              <p className="text-xl font-medium mt-4 mb-1">Touch Screen</p>
-              <p className="font-light text-[#AAB7C9] my-2">
-                Intuitive interface with a responsive touch screen, enhancing
-                user interaction and operational efficiency.
-              </p>
-              <hr className="mt-2 mb-3" />
-              <p className="text-xl font-medium">QR Code & Bar Code Scanner</p>
-              <p className="my-2 text-[#AAB7C9]">
-                Advanced scanning capabilities for quick and accurate reading of
-                QR and bar codes, streamlining the checkout process.
-              </p>
-              <hr className="mt-2 mb-3" />
-              <p className="text-xl font-medium">Thermal Receipt Printer</p>
-              <p className="my-2 text-[#AAB7C9]">
-                Reliable and fast printing of receipts with a thermal printer
-                that ensures clear, long-lasting prints.
-              </p>
+
+              {device.details.map((detail, index) => (
+                <div key={index}>
+                  <p className="text-xl font-medium mt-4 mb-1">
+                    {detail.heading}
+                  </p>
+                  <p className="font-light text-[#AAB7C9] my-2">
+                    {detail.text}
+                  </p>
+                </div>
+              ))}
               <div className="flex gap-3 items-center mt-10 ">
                 <button className="rounded-full px-4 py-2 text-white bg-[#006df0]">
                   Order now

@@ -1,6 +1,9 @@
 import photo1 from "../photos/services/medium-shot-man-holding-smartphones 1.png";
 import photo2 from "../photos/services/employee-listens-client-car-request 1.png";
 import photo3 from "../photos/services/stylist-woman-taking-care-her-client-afro-hair 1.png";
+// const photo1 = "/images/services/image1.png";
+// const photo2 = "/images/services/image2.png";
+// const photo3 = "/images/services/image3.png";
 import layer1 from "../photos/services/layer-1.png";
 import layer2 from "../photos/services/layer-2.png";
 import BusinessCards from "../components/BusinessCards";

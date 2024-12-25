@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function HomeHeader() {
   const menuTranslateY = "75vh";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [shouldShowLinks, setShouldShowLinks] = useState(true);
   const leftNavLinks = [
     {
       text: "Retail",
@@ -40,7 +41,7 @@ export default function HomeHeader() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  if(typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     window.addEventListener("resize", () => {
       setIsMenuOpen(false);
     });
@@ -51,10 +52,11 @@ export default function HomeHeader() {
       style={{
         height: isMenuOpen ? menuTranslateY : "9vh",
         overflowY: "hidden",
+        backgroundColor: "rgba(255, 255, 255, 0.7)",
       }}
       id=" header"
-      className="z-[100] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
-       lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 lg:fixed bg-inherit rounded-lg
+      className="z-[10] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
+       lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 lg:fixed rounded-lg
        lg:top-8 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
     >
       <div className="px-[12%] w-full mt-3 max-h-[9vh] lg:w-auto lg:p-2 flex justify-between lg:justify-center items-center lg:pt-0 mb-3 lg:mb-0 lg:h-full">
@@ -105,7 +107,10 @@ export default function HomeHeader() {
                 <Link
                   href={link.href}
                   onClick={closeMenu}
-                  className="block w-full"
+                  className="transition-all duration-300 block w-full"
+                  // style={{
+                  //   display: isMenuOpen ? "block" : "none",
+                  // }}
                 >
                   {link.text}
                 </Link>
@@ -119,7 +124,10 @@ export default function HomeHeader() {
                 key={index}
                 href={link.href}
                 onClick={closeMenu}
-                className="block w-full lg:text-center text-start px-3 lg:inline"
+                className="transition-all duration-300 block w-full lg:text-center text-start px-3 lg:inline"
+                // style={{
+                //   display: isMenuOpen ? "block" : "none",
+                // }}
               >
                 {link.text}
               </Link>
@@ -128,7 +136,10 @@ export default function HomeHeader() {
             <div className="mt-3 lg:mt-0">
               <button
                 onClick={closeMenu}
-                className="ml-4 text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]"
+                // style={{
+                //   display: isMenuOpen? "block" : "none",
+                // }}
+                className="ml-4 lg:block text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]"
               >
                 Book a Demo
               </button>

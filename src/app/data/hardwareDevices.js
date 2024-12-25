@@ -1,7 +1,5 @@
-import limmRegister from "../photos/register.png";
-import limmRegisterWithBG from "../photos/register-with-bg.png";
-import limmBluetoothPrinter from "../photos/bluetooth-printer.png";
-import limmBluetoothPrinterWithBG from "../photos/bluetooth-printer-with-bg.png";
+const limmRegister = "/images/limm_register.png";
+const limmBluetoothPrinter = "/images/limm_bluetooth.png";
 
 const hardwareDevices = [
   {
@@ -9,7 +7,6 @@ const hardwareDevices = [
     name: "LIMM REGISTER",
     price: "250.000 F",
     image: limmRegister,
-    bigImage: limmRegisterWithBG,
     description:
       "Our complete user-friendly point-of-sale Register machine with a touch screen, easy-to-use software options and built-in payments.",
     details: [
@@ -32,7 +29,6 @@ const hardwareDevices = [
     name: "LIMM BLUETOOTH PRINTER",
     price: "30.000 F",
     image: limmBluetoothPrinter,
-    bigImage: limmBluetoothPrinterWithBG,
     description:
       "Mini Portable bluetooth receipt printer. Generate instant, receipts and labels for your busioness by connecting to the mobile app.",
     details: [

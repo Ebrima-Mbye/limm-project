@@ -1,5 +1,3 @@
-import type { Config } from "tailwindcss";
-
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,10 +10,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"], // Use Inter as default sans font
+      backgroundImage: {
+        "custom-conic": "conic-gradient(transparent, transparent, cyan)",
+      },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
