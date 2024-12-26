@@ -19,3 +19,21 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Ensure the transition and animation styles are applied */
+.transform {
+  transform: translateY(200px);
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.visible {
+  transform: translateY(0);
+  opacity: 1;
+}

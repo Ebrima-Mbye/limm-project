@@ -1,3 +1,4 @@
+import AnimatedContainer from "../components/AnimatedContainer";
 import restaurantIcon from "../photos/restaurant.png";
 import retailIcon from "../photos/retail.png";
 import servicesIcon from "../photos/services.png";
@@ -54,8 +55,12 @@ export default function HomeFindSection() {
           />
         </div>
       </div>
-      <WhyLimm />
-      <HardwareDevices />
+      <AnimatedContainer>
+        <WhyLimm />
+      </AnimatedContainer>
+      <AnimatedContainer>
+        <HardwareDevices />
+      </AnimatedContainer>
     </section>
   );
 }
