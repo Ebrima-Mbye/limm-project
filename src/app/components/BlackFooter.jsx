@@ -7,14 +7,17 @@ import tiktokLogo from "../photos/tiktok-logo.svg";
 import twitterLogo from "../photos/twitter-logo.svg";
 import messageIcon from "../photos/message-icon.png";
 import callIcon from "../photos/call-icon.png";
+import Link from "next/link";
 
 export default function BlackFooter() {
+  const email = "limm.africa@gmail.com";
+  const phoneNumber = "(+221) 77 400 77 15";
   return (
     <div className="px-10 text-center md:px-24 pt-12 mt-12 bg-[#001738] flex flex-col">
       <div className="mb-24 flex-1 grid gap-24 grid-cols-1 lg:grid-cols-2">
         <div className="text-center flex justify-center items-center lg:items-start px-2 md:px-12 flex-col">
           <Image src={logo} alt="logo" className="mb-4 w-[120px]" />
-          <p className="text-[24px] w-full md:w-4/5 md:text-start font-medium text-white">
+          <p className="text-xl w-full md:w-4/5 md:text-start font-medium text-white">
             Improving business management in Africa.
           </p>
         </div>
@@ -44,11 +47,11 @@ export default function BlackFooter() {
             </div>
             <div className="gap-5 flex justify-between items-center">
               <Image src={messageIcon} alt="message icon" className="" />
-              <p className="text-white text-[18px]">limm.africa@gmail.com</p>
+              <Link href="/" className="text-white cursor-pointer">{email}</Link>
             </div>
             <div className="gap-5 flex justify-between items-center">
               <Image src={callIcon} alt="call icon" className="" />
-              <p className="text-white text-[18px]">(+221) 77 400 77 15</p>
+              <p className="text-white">{phoneNumber}</p>
             </div>
           </div>
         </div>

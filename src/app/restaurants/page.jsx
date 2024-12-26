@@ -1,8 +1,8 @@
 import BusinessCards from "../components/BusinessCards";
-import phoneImage from "../photos/restaurants/phone.png";
 import manCalculating from "../photos/restaurants/man-calculating.png";
 import smileyWoman from "../photos/restaurants/smiley-woman.png";
 import womanWithTablet from "../photos/restaurants/woman-reading-tablet.png";
+const phoneImage = "/images/restaurants/phone.png";
 
 export default function Restaurant() {
   const pageDetails = {

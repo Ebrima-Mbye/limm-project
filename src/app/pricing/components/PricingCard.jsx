@@ -33,16 +33,25 @@ export default function PricingCard({ plan }) {
           {price} F{" "}
           <span className="text-sm font-normal text-[#AAAAAA]">/month</span>
         </p>
-        <button className="my-5 bg-[#356BB7] hover:bg-blue-500 transition-colors duration-150 text-white px-6 py-2 w-full rounded-md">
+        <button
+          style={{
+            background: isPremium()
+              // ? "linear-gradient(to right, #356BB7, #ff9090, #356BB7)"
+              ? "linear-gradient(to right, #FEAC5E, #C779D0, #4BC0C8)"
+              : "#356BB7",
+          }}
+          className="my-5 bg-[#356BB7] hover:bg-blue-500 transition-colors duration-150 text-white px-6 py-2 w-full rounded-md"
+        >
+          {/* className="my-5 bg-[#356BB7] hover:bg-blue-500 transition-colors duration-150 text-white px-6 py-2 w-full rounded-md"> */}
           {bottonText}
         </button>
-        <ul className="text-start text-gray-600 text-sm space-y-2">
+        <ul className="text-start text-gray-600 text-sm space-y-3">
           {perks.map((perk, index) => (
-            <li key={index} className="flex gap-3 items-center md:text-lg">
+            <li key={index} className="flex gap-3 items-center">
               <Image
                 src={checkMark}
                 alt="check mark"
-                className="max-w-[24px] max-h-[24px]"
+                className="max-w-[20px] max-h-[20px]"
               />
               {perk}
             </li>

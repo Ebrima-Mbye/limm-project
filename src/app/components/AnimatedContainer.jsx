@@ -10,7 +10,7 @@ export default function AnimatedContainer({ children }) {
       const rect = ref.current.getBoundingClientRect();
       // Check if the element is in the viewport
       // we add some offset for safety
-      if (rect.top < window.innerHeight + 20 && rect.bottom > 0) {
+      if (rect.top < window.innerHeight + 150 && rect.bottom > 0) {
         ref.current.classList.add("visible");
       } else {
         ref.current.classList.remove("visible");

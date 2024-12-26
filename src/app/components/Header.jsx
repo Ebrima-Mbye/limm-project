@@ -57,7 +57,7 @@ export default function HomeHeader() {
       id=" header"
       className="z-[10] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
        lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 lg:fixed rounded-lg
-       lg:top-8 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
+       lg:top-2 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
     >
       <div className="px-[12%] w-full mt-3 max-h-[9vh] lg:w-auto lg:p-2 flex justify-between lg:justify-center items-center lg:pt-0 mb-3 lg:mb-0 lg:h-full">
         <div className="h-full lg:h-auto">

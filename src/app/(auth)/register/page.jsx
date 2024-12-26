@@ -2,58 +2,30 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import arrowLeft from "../../photos/login/arrow-left.png";
 import logo from "../../photos/limm.logo.logo 1.png";
 import selectIcon from "../../photos/login/select-icon.png";
-import MyPasswordField from "../../components/MyPasswordField"
+import MyPasswordField from "../../components/MyPasswordField";
+import AuthTopBar from "../components/AuthTopBar";
 
 export default function RegisterPage() {
-  const router = useRouter();
-  const supportedLanguages = ["En", "Fr", "Ar"];
   const supportedSectors = [
     "Sector of Activity",
     "Restaurant",
     "Consultancy",
     "Law",
   ];
-  const suppertedCountries = ["Select Country", "Gambia", "Senegal", "Mauritania"];
-  const navigateToHomePage = () => {
-    router.push("/");
-
-    setTimeout(() => {
-      router.refresh();
-    }, 500);
-  };
+  const suppertedCountries = [
+    "Select Country",
+    "Gambia",
+    "Senegal",
+    "Mauritania",
+  ];
 
   return (
     <div className="w-[100vw] bg-background z-[101] fixed flex flex-col h-screen justify-center items-center realtive">
       {/* Top Left Link */}
-      <div className="absolute top-8 left-8 flex items-center">
-        <button
-          onClick={navigateToHomePage}
-          className="text-gray-500 hover:text-gray-800 transition-colors flex gap-3"
-        >
-          <Image src={arrowLeft} alt="arrow left" className="" />
-          <p className="text-[#64758D] font-bold leading-[28.8px]">
-            Back to main page
-          </p>
-        </button>
-      </div>
-
-      {/* Top right Language Toggle */}
-      <div className="absolute top-8 right-8">
-        <select
-          id="currency-selector"
-          className="border-gray-500 border-2 text-center font-bold px-2 py-2 rounded-full bg-inherit"
-        >
-          {supportedLanguages.map((language, index) => (
-            <option key={index} value={language} className="bg-background">
-              {language}
-            </option>
-          ))}
-        </select>
-      </div>
+      <AuthTopBar />
 
       {/* Signup Card */}
       <div className="z-[3] bg-background w-full max-w-sm p-8 rounded-lg shadow-md border-foreground border">
@@ -75,8 +47,8 @@ export default function RegisterPage() {
             />
           </div>
 
-          <MyPasswordField placeholder="Password"/>
-          <MyPasswordField placeholder="Confirm Password"/>
+          <MyPasswordField placeholder="Password" />
+          <MyPasswordField placeholder="Confirm Password" />
 
           <div className="relative">
             <select className="text-forground bg-background border border-[#AAB7C9] w-full block appearance-none py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
@@ -93,7 +65,11 @@ export default function RegisterPage() {
 
           <div>
             <div className="relative">
-              <select placeholder="hi" defaultValue="Hi" className="text-foreground border border-[#AAB7C9] w-full block appearance-none bg-background py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
+              <select
+                placeholder="hi"
+                defaultValue="Hi"
+                className="text-foreground border border-[#AAB7C9] w-full block appearance-none bg-background py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500"
+              >
                 {suppertedCountries.map((country, index) => (
                   <option key={index} value={country}>
                     {country}
@@ -105,7 +81,8 @@ export default function RegisterPage() {
               </div>
             </div>
             <div className="text-[13px] mt-2">
-              By continuing you are acknowledging having read and accepted our&nbsp;
+              By continuing you are acknowledging having read and accepted
+              our&nbsp;
               <Link href="#" className="text-[#356BB7] underline">
                 Terms and Conditions
               </Link>{" "}

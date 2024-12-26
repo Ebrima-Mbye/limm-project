@@ -57,7 +57,7 @@ export default function LimmPerks() {
   ];
 
   return (
-    <section className="max-w-[850px] grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 mt-10">
+    <section className="max-w-[850px] grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-8 mt-10">
       {perksMainList.map((perkList, i1) => (
         <div key={i1} className="flex">
           <div className="">
@@ -68,14 +68,14 @@ export default function LimmPerks() {
                   alt={perk.perkText}
                   className="h-14"
                 />
-                <p className="text-[16px] lg:text-nowrap md:text-xl leading-[28.8px]">
+                <p className="lg:text-nowrap">
                   {perk.perkText}
                 </p>
               </div>
             ))}
           </div>
           {i1 !== perkList.length - 1 ? (
-            <div className="w-[-1px] hidden md:block border-black border h-full md:mx-2 lg:mx-14"></div>
+            <div className="w-[-1px] hidden lg:block border-black border h-full md:mx-2 lg:mx-14"></div>
           ) : (
             ""
           )}
