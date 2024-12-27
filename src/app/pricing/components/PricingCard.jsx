@@ -1,5 +1,5 @@
 import Image from "next/image";
-import checkMark from "../../photos/pricing/check-mark.png";
+const checkMark = "/images/pricing/check-mark.png";
 
 export default function PricingCard({ plan }) {
   const premiumStyles =
@@ -22,7 +22,7 @@ export default function PricingCard({ plan }) {
         style={{
           position: isPremium() ? "absolute" : "static",
           inset: isPremium() ? "3px" : "auto",
-          minHeight: "calc(100% - 6px)",
+          minHeight: "calc(100% - 6px)", // subtract padding
           width: "calc(100% - 6px)",
           maxWidth: "320px",
         }}
@@ -31,7 +31,7 @@ export default function PricingCard({ plan }) {
         <h3 className="text-lg font-semibold text-gray-700 mb-4">{planName}</h3>
         <p className="text-4xl font-bold text-[#356BB7]">
           {price} F{" "}
-          <span className="text-sm font-normal text-[#AAAAAA]">/month</span>
+          <span className="text-sm font-normal text-foreground">/month</span>
         </p>
         <button
           style={{
@@ -47,10 +47,12 @@ export default function PricingCard({ plan }) {
         </button>
         <ul className="text-start text-gray-600 text-sm space-y-3">
           {perks.map((perk, index) => (
-            <li key={index} className="flex gap-3 items-center">
+            <li key={index} className="flex gap-3 items-center font-semibold">
               <Image
                 src={checkMark}
                 alt="check mark"
+                width={20}
+                height={20}
                 className="max-w-[20px] max-h-[20px]"
               />
               {perk}

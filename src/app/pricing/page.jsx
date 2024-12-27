@@ -12,14 +12,14 @@ export default function Page() {
   return (
     <section className="pt-32">
       <div className="w-full px-4 md:px-12 lg:px-24">
-        <div className="flex flex-col lg:flex-row  mb-10 items-center">
+        <div className="flex flex-col lg:flex-row gap-1 mb-10 items-center">
           <div className="flex-1 mb-4">
-            <p className="text-center md:text-start font-semibold md:font-medium text-4xl md:text-[65px] md:leading-[70px]">
+            <p className="text-center md:text-start font-semibold md:font-medium text-4xl  md:text-[60px] md:leading-[65px] lg:text-[65px] lg:leading-[70px]">
               Pricing that Fits your Business needs
             </p>
           </div>
           <div className="flex-1">
-            <p className="text-2xl">
+            <p className="">
               Tailored monthly subscriptions for maximum value. Need help for
               better decision making? Book a Demo.
             </p>
@@ -50,7 +50,7 @@ export default function Page() {
         <PriceTree appType="POS TABLET APP" plans={plansForTabletApp} />
 
         <div>
-          <h3 className="mt-24 text-xl md:text-4xl lg:text-[45px] leading-[55.2px] font-medium">
+          <h3 className="mt-24 text-xl md:text-4xl lg:text-3xl leading-[55.2px] font-medium">
             All Limm plans come with...
           </h3>
 

@@ -49,7 +49,7 @@ export default function HardwareDevices() {
   }
   return (
     <AnimatedContainer>
-      <div className="mt-16 border-red-500 border">
+      <div className="mt-16">
         <div className="text-center mb-12">
           <p className="text-[18px] text-[#AAB7C9]">HARDWARE DEVICES</p>
           <p className="text-foreground">
@@ -63,7 +63,7 @@ export default function HardwareDevices() {
               style={{
                 flexDirection: getFlexDirection(device.id),
               }}
-              className="mb-12 flex gap-4 flex-col lg:flex-row p-5 md:p-14 lg:p-12 rounded-[20px]  border-gray-300 border"
+              className="mb-12 flex gap-4 flex-col lg:flex-row p-5 md:p-14 lg:p-12 rounded-[20px]  border-gray-100 border"
             >
               <div
                 style={{
@@ -99,7 +99,7 @@ export default function HardwareDevices() {
                 </div>
               </div>
               {/* A HARDWARE DEVICE */}
-              <div className="border-red-500 border flex-1 p-4 h-4/5 v-4/5">
+              <div className="flex-1 p-4 h-4/5 v-4/5">
                 <p className="hidden text-2xl font-bold text-[#325bb7]">
                   {device.name}
                 </p>

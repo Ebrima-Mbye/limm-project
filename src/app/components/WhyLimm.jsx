@@ -4,7 +4,7 @@ const womanSmiling = "/images/woman-in-kitchen.png";
 export default function WhyLimm() {
   // This element is only visible on small and middle screens
   return (
-    <div className="border-red-500 border mt-12 flex flex-col items-center">
+    <div className="mt-12 flex flex-col items-center">
       <p className="font-medium text-center text-xl text-[#A7A7A7]">WHY LIMM</p>
       <div>
         <p className="text-center font-medium text-2xl mb-10">

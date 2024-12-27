@@ -7,17 +7,17 @@ import inventoryIcon from "../photos/inventory-icon.svg";
 export default function HomeHero() {
   return (
     // <section className="lg:h-[97vh] px-6 md:px-12 pt-20 pb-28 md:pb-4 mx-4 overflow-y-clip bg-gray-100 rounded-lg">
-    <section className="px-6 md:px-12 pt-20 pb-28 md:pb-4 mx-4 overflow-y-clip bg-gray-100 rounded-lg">
+    <section className="px-6 md:px-12 pt-20 pb-28 md:pb-8 mx-4 overflow-y-clip bg-gray-100 rounded-lg">
       {/* <HomeHeader /> */}
       <div className="">
         <div className="mt-16 mb-12 md:mb-6">
-          <p className="text-5xl font-medium text-start text-gray-800">
+          <p className="text-6xl leading-[4rem] font-medium text-start text-gray-800">
             Empowering Businesses with Innovative <br /> Solutions.
           </p>
         </div>
-        <div className="md:flex h-[300px] gap-3 mb-6 hidden">
+        <div className="md:flex h-[300px] gap-6 my-10 hidden rounded-[10px]">
           <div
-            className="flex-[2] rounded-lg overflow-y-clip 
+            className="max-w-[300px] rounded-lg overflow-y-clip 
               px-3 py-4 bg-cyan-200 text-cyan-700 flex flex-col justify-between"
           >
             <p className="mb text-xl font-medium">Bookkeeping</p>
@@ -29,7 +29,7 @@ export default function HomeHero() {
               bookkeeping, saving you time and ensuring accuracy.
             </p>
           </div>
-          <div className="flex-[0] lg:flex-[3] ">
+          <div className="">
             <Image
               src={image1}
               alt="man calculating"
@@ -37,7 +37,7 @@ export default function HomeHero() {
             />
           </div>
           <div
-            className="flex-[2] rounded-lg overflow-y-clip 
+            className="max-w-[300px] rounded-lg overflow-y-clip 
               px-3 py-4 bg-orange-300 text-orange-700 flex flex-col justify-between"
           >
             <p className="mb text-xl font-medium">Inventory Management</p>
@@ -50,11 +50,11 @@ export default function HomeHero() {
             </p>
           </div>
 
-          <div className="flex-[0] lg:flex-[3]">
+          <div className="">
             <Image
               src={image2}
               alt="woman in clothing shop"
-              className="h-full mx-auto"
+              className="h-full mx-auto rounded-r-[20px]"
             />
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function HomeHero() {
           <p className="text-start text-[20px] md:text-[22px] leading-[24.5px] font-medium mb-1">
             One Platform for Payments, Inventory, and Staff Management for SMWs
           </p>
-          <p className="text-slate-500 font-[18px] md:text-[20px] leading-[28.5px]">
+          <p className="text-slate-500">
             Built for Africa, powered by technology. Limm is your one-stop shop
             for <br /> streamlining operations, growing your business, and
             thriving in the digital age.

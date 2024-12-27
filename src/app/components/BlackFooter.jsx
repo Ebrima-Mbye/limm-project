@@ -17,8 +17,8 @@ export default function BlackFooter() {
       <div className="mb-24 flex-1 grid gap-24 grid-cols-1 lg:grid-cols-2">
         <div className="text-center flex justify-center items-center lg:items-start px-2 md:px-12 flex-col">
           <Image src={logo} alt="logo" className="mb-4 w-[120px]" />
-          <p className="text-xl w-full md:w-4/5 md:text-start font-medium text-white">
-            Improving business management in Africa.
+          <p className="text-center w-full lg:text-start font-medium text-white">
+            Improving business management <br /> in Africa.
           </p>
         </div>
         <div className="flex justify-end">
@@ -47,7 +47,9 @@ export default function BlackFooter() {
             </div>
             <div className="gap-5 flex justify-between items-center">
               <Image src={messageIcon} alt="message icon" className="" />
-              <Link href="/" className="text-white cursor-pointer">{email}</Link>
+              <Link href="/" className="text-white cursor-pointer">
+                {email}
+              </Link>
             </div>
             <div className="gap-5 flex justify-between items-center">
               <Image src={callIcon} alt="call icon" className="" />
