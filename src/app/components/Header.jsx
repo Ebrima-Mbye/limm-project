@@ -59,8 +59,8 @@ export default function HomeHeader() {
        lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 rounded-lg
        lg:top-2 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
     >
-      <div className="px-[12%] flex items-center  w-full mt-0 md:mt-3 max-h-[9vh] lg:w-auto lg:p-2 justify-between lg:justify-center lg:pt-0 mb-3 lg:mb-0 lg:h-full">
-        <div className="h-full lg:h-auto">
+      <div className="px-[12%] flex items-center min-h-[9vh] md:min-h-auto  w-full mt-0 md:mt-3 max-h-[9vh] lg:w-auto lg:p-2 justify-between lg:justify-center mb-3 lg:mb-0 lg:h-full">
+        <div className="h-full lg:h-auto flex items-center">
           {/* Company logo */}
           <Link href="/">
             <Image
@@ -69,15 +69,15 @@ export default function HomeHeader() {
               width={70}
               height={50}
               onClick={closeMenu}
-              className="w-full lg:mt-[-20px] lg:w-full"
+              className="w-full mt-0 lg:mt-[-20px] lg:w-full"
             />
           </Link>
         </div>
         {/* Menu button */}
-        <div className="h-5 w-5 visible lg:hidden ">
+        <div className="visible lg:hidden h-full flex items-center">
           <button
             onClick={toggleMenu}
-            className="relative overflow-y-hidden flex justify-between flex-col w-full h-full"
+            className="relative overflow-y-hidden flex justify-between flex-col h-5 w-5 "
           >
             {isMenuOpen ? (
               // Diplay and "X" symbol if the menu is open
