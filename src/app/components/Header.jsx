@@ -59,7 +59,7 @@ export default function HomeHeader() {
        lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 rounded-lg
        lg:top-2 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
     >
-      <div className="px-[12%] flex items-center min-h-[9vh] md:min-h-auto  w-full mt-0 md:mt-3 max-h-[9vh] lg:w-auto lg:p-2 justify-between lg:justify-center mb-3 lg:mb-0 lg:h-full">
+      <div className="px-[12%] flex items-center min-h-[9vh] md:min-h-[6vh] lg:min-h-auto  w-full mt-0 md:mt-3 max-h-[9vh] lg:w-auto lg:p-2 justify-between lg:justify-center mb-3 lg:mb-0 lg:h-full">
         <div className="h-full lg:h-auto flex items-center">
           {/* Company logo */}
           <Link href="/">
