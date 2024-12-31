@@ -27,7 +27,7 @@ export default function RegisterPage() {
       <AuthTopBar />
 
       {/* Signup Card */}
-      <div className="z-[3] w-full max-w-sm rounded-lg border border-foreground bg-background p-8 shadow-md">
+      <div className="z-[3] w-full max-w-sm rounded-lg border border-gray-200 bg-background p-8 shadow-md">
         {/* Logo */}
         <div className="mb-6 flex w-full flex-col items-center justify-center">
           <Image src={logo} alt="logo" className="mb-3" />

@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import AuthTopBar from "../components/AuthTopBar";
-// import logo from "../../photos/limm.logo.logo 1.png";
 const logo = "/images/limm.logo.logo 1.png";
 import MyPasswordField from "../../components/MyPasswordField";
 
@@ -15,7 +14,7 @@ export default function LoginPage() {
       <AuthTopBar />
 
       {/* Login Card */}
-      <div className="z-[3] w-full max-w-sm rounded-lg border border-foreground bg-background px-8 py-12 shadow-md">
+      <div className="z-[3] w-full max-w-sm rounded-lg border border-gray-200 bg-background px-8 py-12 shadow-md">
         {/* Logo */}
         <div className="mb-7 flex w-full flex-col items-center justify-center">
           <Image

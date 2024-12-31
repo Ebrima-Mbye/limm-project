@@ -103,7 +103,7 @@ export default function HardwareDevices() {
                     <p className="mb-1 mt-4 text-xl font-medium">
                       {detail.heading}
                     </p>
-                    <p className="my-2 font-light text-[#AAB7C9]">
+                    <p className="my-2 font-light text-gray-500">
                       {detail.text}
                     </p>
                   </div>
