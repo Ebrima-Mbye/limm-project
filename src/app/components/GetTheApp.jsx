@@ -6,10 +6,10 @@ import Image from "next/image";
 export default function GetTheApp() {
   // This component is only visible in small and middle screens.
   return (
-    <div className="pl-4 lg:hidden md:text-2xl md:h-40 rounded-xl mx-3 flex md:justify-between h-32 bg-black text-white">
-      <div className="flex-[2] md:flex-1 md:items-start flex flex-col justify-center items-center">
-        <p className="font-bold mb-5">DOWNLOAD THE APP NOW</p>
-        <div className="flex justify-around w-full">
+    <div className="mx-3 flex h-32 rounded-xl bg-black pl-4 text-white md:h-40 md:justify-between md:text-2xl lg:hidden">
+      <div className="flex flex-[2] flex-col items-center justify-center md:flex-1 md:items-start">
+        <p className="mb-5 font-bold">DOWNLOAD THE APP NOW</p>
+        <div className="flex w-full justify-around">
           <Image
             src={getItOnApple}
             alt="get the app on apple"
@@ -22,7 +22,7 @@ export default function GetTheApp() {
           />
         </div>
       </div>
-      <div className="flex-1 relative">
+      <div className="relative flex-1">
         <Image src={iphone14} alt="iphone 14" className="absolute top-[-30%]" />
       </div>
     </div>

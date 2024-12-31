@@ -4,10 +4,10 @@ import minusSign from "../photos/minus-sign.png";
 
 export default function FAQCard({ question, answer }) {
   return (
-    <div className="rounded-lg mb-4 flex justify-between items center p-4 border-gray-300 border">
-      <div className="flex flex-col gap-2 mr-1">
+    <div className="items center mb-4 flex justify-between rounded-lg border border-gray-300 p-4">
+      <div className="mr-1 flex flex-col gap-2">
         <p className="text-[15px] sm:text-lg lg:text-[24px]">{question}</p>
-        <p className="text-[12px] sm:text-[16px] lg:text-xl text-gray-500 ">
+        <p className="text-[12px] text-gray-500 sm:text-[16px] lg:text-xl">
           {answer}
         </p>
       </div>

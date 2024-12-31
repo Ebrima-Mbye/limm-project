@@ -42,7 +42,7 @@ export default function HardwareDevices() {
   return (
     <AnimatedContainer>
       <div className="mt-16">
-        <div className="text-center mb-12">
+        <div className="mb-12 text-center">
           <p className="text-[18px] text-[#AAB7C9]">HARDWARE DEVICES</p>
           <p className="text-foreground">
             Manage all aspects of your Business in one place
@@ -55,20 +55,20 @@ export default function HardwareDevices() {
               style={{
                 flexDirection: getFlexDirection(device.id),
               }}
-              className="mb-12 flex gap-4 flex-col lg:flex-row p-1 md:p-14 lg:p-12 rounded-[20px]  border-gray-100 border"
+              className="mb-12 flex flex-col gap-4 rounded-[20px] border border-gray-100 p-1 md:p-14 lg:flex-row lg:p-12"
             >
               <div
                 style={{
                   backgroundColor: getBackgroundColor(device.id),
                 }}
-                className="md:min-h-[400px] rounded-[20px] flex-1 py-6 px-4 lg:px-8 lg:p-4 flex flex-col justify-center items-center"
+                className="flex flex-1 flex-col items-center justify-center rounded-[20px] px-4 py-6 md:min-h-[400px] lg:p-4 lg:px-8"
               >
-                <div className="lg:flex-[0] flex-1">
+                <div className="flex-1 lg:flex-[0]">
                   <p
                     style={{
                       color: device.id === "1" ? "#D9D9D9" : "black",
                     }}
-                    className="mb-5 font-semibold text-xl"
+                    className="mb-5 text-xl font-semibold"
                   >
                     {device.name}
                   </p>
@@ -80,36 +80,36 @@ export default function HardwareDevices() {
                     {device.description}
                   </p>
                 </div>
-                <div className="p-4 h-1/2 items-center justify-center flex-1">
+                <div className="h-1/2 flex-1 items-center justify-center p-4">
                   <Image
                     src={device.image}
                     width={300}
                     height={300}
                     alt="Scanner with background"
-                    className="lg:min-w-[300px] lg:min-h-[300px]"
+                    className="lg:min-h-[300px] lg:min-w-[300px]"
                   />
                 </div>
               </div>
               {/* A HARDWARE DEVICE */}
-              <div className="flex-1 p-4 h-4/5 v-4/5">
+              <div className="v-4/5 h-4/5 flex-1 p-4">
                 <p className="hidden text-2xl font-bold text-[#325bb7]">
                   {device.name}
                 </p>
-                <p className="text-[19px] my-2">{device.description}</p>
-                <hr className="mt-2 mb-3" />
+                <p className="my-2 text-[19px]">{device.description}</p>
+                <hr className="mb-3 mt-2" />
 
                 {device.details.map((detail, index) => (
                   <div key={index}>
-                    <p className="text-xl font-medium mt-4 mb-1">
+                    <p className="mb-1 mt-4 text-xl font-medium">
                       {detail.heading}
                     </p>
-                    <p className="font-light text-[#AAB7C9] my-2">
+                    <p className="my-2 font-light text-[#AAB7C9]">
                       {detail.text}
                     </p>
                   </div>
                 ))}
-                <div className="flex gap-3 items-center mt-10 ">
-                  <button className="rounded-full px-4 py-2 text-white bg-[#006df0]">
+                <div className="mt-10 flex items-center gap-3">
+                  <button className="rounded-full bg-[#006df0] px-4 py-2 text-white">
                     Order now
                   </button>
                   <p>

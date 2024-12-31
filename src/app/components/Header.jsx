@@ -55,12 +55,10 @@ export default function HomeHeader() {
         backgroundColor: isMenuOpen ? "white" : "rgba(255, 255, 255, 0.6)",
       }}
       id=" header"
-      className="fixed z-[10] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
-       lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 rounded-lg
-       lg:top-2 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
+      className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col rounded-lg border-gray-400 text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-[height] duration-300 lg:left-[4%] lg:right-[4%] lg:top-2 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:px-6 lg:text-xl lg:shadow-none"
     >
-      <div className="px-[12%] flex items-center min-h-[9vh] md:min-h-[6vh] lg:min-h-auto  w-full mt-0 md:mt-3 max-h-[9vh] lg:w-auto lg:p-2 justify-between lg:justify-center mb-3 lg:mb-0 lg:h-full">
-        <div className="h-full lg:h-auto flex items-center">
+      <div className="lg:min-h-auto mb-3 mt-0 flex max-h-[9vh] min-h-[9vh] w-full items-center justify-between px-[12%] md:mt-3 md:min-h-[6vh] lg:mb-0 lg:h-full lg:w-auto lg:justify-center lg:p-2">
+        <div className="flex h-full items-center lg:h-auto">
           {/* Company logo */}
           <Link href="/">
             <Image
@@ -69,48 +67,47 @@ export default function HomeHeader() {
               width={90}
               height={50}
               onClick={closeMenu}
-              className="w-full mt-0 lg:mt-[-20px] lg:w-full"
+              className="mt-0 w-full lg:mt-[-20px] lg:w-full"
             />
           </Link>
         </div>
         {/* Menu button */}
-        <div className="visible lg:hidden h-full flex items-center">
+        <div className="visible flex h-full items-center lg:hidden">
           <button
             onClick={toggleMenu}
-            className="relative overflow-y-hidden flex justify-between flex-col h-5 w-5 "
+            className="relative flex h-5 w-5 flex-col justify-between overflow-y-hidden"
           >
             {isMenuOpen ? (
               // Diplay and "X" symbol if the menu is open
-              <div className="w-full h-full translate-y-2">
+              <div className="h-full w-full translate-y-2">
                 {/* <span className="absolute translate-y-[250%] block rotate-[45deg] transition-all bg-black w-full h-[5px]"></span>
                 <span className="absolute translate-y-[250%] block rotate-[135deg] transition-all bg-black w-full h-[5px]"></span> */}
-                <span className="absolute block rotate-[45deg] transition-transform bg-gray-500 w-full h-[3px]"></span>
-                <span className="absolute block rotate-[134deg] transition-transform bg-gray-500 w-full h-[3px]"></span>
+                <span className="absolute block h-[3px] w-full rotate-[45deg] bg-gray-500 transition-transform"></span>
+                <span className="absolute block h-[3px] w-full rotate-[134deg] bg-gray-500 transition-transform"></span>
               </div>
             ) : (
               // Display three horizontail lines if the menu is not open
               <>
-                <span className="block w-full bg-gray-500 h-[3px]"></span>
-                <span className="block w-full bg-gray-500 h-[3px]"></span>
-                <span className="block w-full bg-gray-500 h-[3px]"></span>
+                <span className="block h-[3px] w-full bg-gray-500"></span>
+                <span className="block h-[3px] w-full bg-gray-500"></span>
+                <span className="block h-[3px] w-full bg-gray-500"></span>
               </>
             )}
           </button>
         </div>
       </div>
-      <div className="h-full px-[10%] mt-0 lg:px-1 flex-1 lg:text-[13px] w-full lg:w-auto lg:items-center">
-        <div className="flex-1 flex flex-col lg:flex-row items-center justify-between py-8 lg:py-0 h-full w-full lg:w-auto">
-          <ul className="flex items-center flex-col lg:flex-row w-full lg:w-auto gap-8 lg:gap-1 lg:text-[16px]">
+      <div className="mt-0 h-full w-full flex-1 px-[10%] lg:w-auto lg:items-center lg:px-1 lg:text-[13px]">
+        <div className="flex h-full w-full flex-1 flex-col items-center justify-between py-8 lg:w-auto lg:flex-row lg:py-0">
+          <ul className="flex w-full flex-col items-center gap-8 lg:w-auto lg:flex-row lg:gap-1 lg:text-[16px]">
             {leftNavLinks.map((link, index) => (
               <li
                 key={index}
-                className="lg:mr-8 block w-full
-                           lg:inline text-start px-3"
+                className="block w-full px-3 text-start lg:mr-8 lg:inline"
               >
                 <Link
                   href={link.href}
                   onClick={closeMenu}
-                  className="transition-all duration-300 block w-full"
+                  className="block w-full transition-all duration-300"
                 >
                   {link.text}
                 </Link>
@@ -118,13 +115,13 @@ export default function HomeHeader() {
             ))}
           </ul>
 
-          <div className="flex lg:justify-center lg:items-center flex-col lg:flex-row lg:text-[16px] w-full lg:w-auto gap-8">
+          <div className="flex w-full flex-col gap-8 lg:w-auto lg:flex-row lg:items-center lg:justify-center lg:text-[16px]">
             {rightLinks.map((link, index) => (
               <Link
                 key={index}
                 href={link.href}
                 onClick={closeMenu}
-                className="transition-all duration-300 block w-full lg:text-center text-start px-3 lg:inline"
+                className="block w-full px-3 text-start transition-all duration-300 lg:inline lg:text-center"
               >
                 {link.text}
               </Link>
@@ -133,8 +130,7 @@ export default function HomeHeader() {
             <div className="mt-3 lg:mt-0">
               <button
                 onClick={closeMenu}
-                className="w-full lg:w-auto ml-4 lg:block text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600
-                 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]"
+                className="ml-4 w-full text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-[20px] text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
               >
                 Book a Demo
               </button>

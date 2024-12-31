@@ -12,24 +12,24 @@ export default function Footer() {
   const socialHandles = [facebookLogo, instagramLogo, tiktokLogo, twitterLogo];
 
   return (
-    <div className="flex flex-col mt-36">
+    <div className="mt-36 flex flex-col">
       {/* <hr className="mt-12 mb-5 border-[1px] border-black" /> */}
-      <div className="flex flex-col lg:flex-row gap-2 justify-center md:justify-between ">
-        <div className="p-2 flex items-center md:items-start mb-10">
+      <div className="flex flex-col justify-center gap-2 md:justify-between lg:flex-row">
+        <div className="mb-10 flex items-center p-2 md:items-start">
           <div className="">
             <Image src={logo} alt="logo" className="w-full md:w-auto" />
           </div>
         </div>
-        <div className="flex-1 flex flex-col lg:flex-row gap-3 md:gap-8 justify-end">
+        <div className="flex flex-1 flex-col justify-end gap-3 md:gap-8 lg:flex-row">
           {footerLinks.map((footerlink, i1) => (
             <div key={i1} className="flex flex-col">
-              <h1 className="font-semibold mb-2 text-[15px]">
+              <h1 className="mb-2 text-[15px] font-semibold">
                 {footerlink.category}
               </h1>
               {footerlink.links.map((link, i2) => (
                 <Link
                   key={i2}
-                  className="my-1 font-normal leading-[19.2px] text-[13px]"
+                  className="my-1 text-[13px] font-normal leading-[19.2px]"
                   href={link.href}
                 >
                   {link.linkText}
@@ -39,7 +39,7 @@ export default function Footer() {
           ))}
         </div>
       </div>
-      <div className="py-7 hidden md:block font-serif">
+      <div className="hidden py-7 font-serif md:block">
         <p>
           Limm is committed to providing a seamless and secure experience for
           small businesses, and users are expected to comply with applicable
@@ -55,13 +55,13 @@ export default function Footer() {
           encouraged to review the terms regularly for any updates or changes
         </p>
       </div>
-      <div className="h-12 flex justify-center lg:justify-end items-center gap-16 lg:gap-8">
+      <div className="flex h-12 items-center justify-center gap-16 lg:justify-end lg:gap-8">
         {socialHandles.map((socialHandle, index) => (
           <Image
             key={index}
             src={socialHandle}
             alt={socialHandle}
-            className="w-7 h-7"
+            className="h-7 w-7"
           />
         ))}
       </div>

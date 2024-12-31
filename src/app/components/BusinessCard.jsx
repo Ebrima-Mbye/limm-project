@@ -49,11 +49,11 @@ export default function BusinessCard(props) {
           flexDirection: getFlexDirection(props.index),
         }}
         //   grid gap-8 grid-cols-1 lg:grid-cols-2
-        className="gap-3 md:gap-8 mt-16"
+        className="mt-16 gap-3 md:gap-8"
       >
-        <div className="flex-1 flex justify-center p-4">
+        <div className="flex flex-1 justify-center p-4">
           <div className="relative">
-            <Image src={props.mainImage} alt="man calculating" className=""/>
+            <Image src={props.mainImage} alt="man calculating" className="" />
             {props.withSecondImage ? (
               <div
                 style={{
@@ -65,7 +65,7 @@ export default function BusinessCard(props) {
                   width: isBottomRight ? "350px" : "auto",
                 }}
                 //   className="hidden md:block absolute top-[-35%] left-[-20%] md:top-[-100px] md:left-[-120px]"
-                className="hidden md:flex flex-col"
+                className="hidden flex-col md:flex"
               >
                 {props.subImages.map((image, index) => (
                   <Image
@@ -86,17 +86,17 @@ export default function BusinessCard(props) {
             )}
           </div>
         </div>
-        <div className="flex-1 flex flex-col px-1 md:pl-14 lg:px-2 justify-center items-start">
-          <h3 className="font-semibold text-3xl mb-2">{props.heading}</h3>
+        <div className="flex flex-1 flex-col items-start justify-center px-1 md:pl-14 lg:px-2">
+          <h3 className="mb-2 text-3xl font-semibold">{props.heading}</h3>
           <p className="leading-[38px]mt-4 mb-5">{props.text}</p>
-          <Link href={props.href} className="flex gap-2 items-center">
-            <span className="text-[#356BB7] text-[15px]">
+          <Link href={props.href} className="flex items-center gap-2">
+            <span className="text-[15px] text-[#356BB7]">
               Find the plan that best fits your restaurant
             </span>
             <Image
               src={arrow}
               alt="Arrow Image"
-              className="max-w-[33px] max-h-[11px]"
+              className="max-h-[11px] max-w-[33px]"
             />{" "}
           </Link>
         </div>

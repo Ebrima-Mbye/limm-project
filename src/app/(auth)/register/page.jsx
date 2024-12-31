@@ -22,16 +22,16 @@ export default function RegisterPage() {
   ];
 
   return (
-    <div className="w-[100vw] bg-background z-[101] fixed top-0 flex flex-col h-screen justify-center items-center realtive">
+    <div className="realtive fixed top-0 z-[101] flex h-screen w-[100vw] flex-col items-center justify-center bg-background">
       {/* Top Left Link */}
       <AuthTopBar />
 
       {/* Signup Card */}
-      <div className="z-[3] bg-background w-full max-w-sm p-8 rounded-lg shadow-md border-foreground border">
+      <div className="z-[3] w-full max-w-sm rounded-lg border border-foreground bg-background p-8 shadow-md">
         {/* Logo */}
-        <div className="w-full flex flex-col justify-center items-center mb-6">
+        <div className="mb-6 flex w-full flex-col items-center justify-center">
           <Image src={logo} alt="logo" className="mb-3" />
-          <p className="text-gray-500 mt-2 mb-2 text-[28px] font-medium leading-[38.4px]">
+          <p className="mb-2 mt-2 text-[28px] font-medium leading-[38.4px] text-gray-500">
             Sign up
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function RegisterPage() {
             <input
               type="email"
               placeholder="Email"
-              className="text-foreground bg-background w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400"
+              className="w-full rounded-md border border-[#AAB7C9] bg-background px-4 py-2 text-foreground focus:right-2 focus:outline-none focus:ring-blue-400"
             />
           </div>
 
@@ -50,14 +50,14 @@ export default function RegisterPage() {
           <MyPasswordField placeholder="Confirm Password" />
 
           <div className="relative">
-            <select className="text-forground bg-background border border-[#AAB7C9] w-full block appearance-none py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500">
+            <select className="text-forground focus:fing-2 block w-full appearance-none rounded-lg border border-[#AAB7C9] bg-background px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500">
               {supportedSectors.map((sector, index) => (
                 <option key={index} value={sector}>
                   {sector}
                 </option>
               ))}
             </select>
-            <div className="absolute inset-y-4 right-4 items-center pointer-events-none">
+            <div className="pointer-events-none absolute inset-y-4 right-4 items-center">
               <Image src={selectIcon} alt="select icon" className="" />
             </div>
           </div>
@@ -67,7 +67,7 @@ export default function RegisterPage() {
               <select
                 placeholder="hi"
                 defaultValue="Hi"
-                className="text-foreground border border-[#AAB7C9] w-full block appearance-none bg-background py-2 px-3 rounded-lg shadow-sm focus:outline-none focus:fing-2 focus:ring-blue-500 focus:border-blue-500"
+                className="focus:fing-2 block w-full appearance-none rounded-lg border border-[#AAB7C9] bg-background px-3 py-2 text-foreground shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500"
               >
                 {suppertedCountries.map((country, index) => (
                   <option key={index} value={country}>
@@ -75,11 +75,11 @@ export default function RegisterPage() {
                   </option>
                 ))}
               </select>
-              <div className="absolute inset-y-4 right-4 items-center pointer-events-none">
+              <div className="pointer-events-none absolute inset-y-4 right-4 items-center">
                 <Image src={selectIcon} alt="select icon" className="" />
               </div>
             </div>
-            <div className="text-[13px] mt-2">
+            <div className="mt-2 text-[13px]">
               By continuing you are acknowledging having read and accepted
               our&nbsp;
               <Link href="#" className="text-[#356BB7] underline">
@@ -94,17 +94,17 @@ export default function RegisterPage() {
 
           <button
             type="submit"
-            className="w-full bg-[#356BB7] text-white py-2 rounded-[12px] hover:bg-blue-600 transition-colors duration-300"
+            className="w-full rounded-[12px] bg-[#356BB7] py-2 text-white transition-colors duration-300 hover:bg-blue-600"
           >
             Sign up
           </button>
         </form>
 
         {/* Sign up Link */}
-        <div className="text-center mt-6">
+        <div className="mt-6 text-center">
           <Link
             href="/login"
-            className="text-[#356BB7] font-bold leading-[28.8px] hover:underline"
+            className="font-bold leading-[28.8px] text-[#356BB7] hover:underline"
           >
             Login
           </Link>

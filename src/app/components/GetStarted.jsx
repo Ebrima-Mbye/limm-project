@@ -6,18 +6,18 @@ import Link from "next/link";
 
 export default function HomeGetStarted() {
   return (
-    <section className="hidden md:block md:h-[100vh] p-12">
+    <section className="hidden p-12 md:block md:h-[100vh]">
       <Image
         src={mainImage}
         alt="man pointing at phone"
-        className="w-[800px] mx-auto"
+        className="mx-auto w-[800px]"
       />
-      <div className="my-12 font-bold text-blue-400 text-center">
-        <Link className="text-4xl text-[#356BB7] cursor-pointer" href="/">
+      <div className="my-12 text-center font-bold text-blue-400">
+        <Link className="cursor-pointer text-4xl text-[#356BB7]" href="/">
           GET STARTED WITH THE APP NOW
         </Link>
       </div>
-      <div className="flex gap-14 justify-center items-center">
+      <div className="flex items-center justify-center gap-14">
         <div className="cursor-pointer">
           <div className="flex justify-center">
             <p>Apple:</p>

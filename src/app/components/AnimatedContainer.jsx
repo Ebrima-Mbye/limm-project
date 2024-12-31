@@ -28,7 +28,7 @@ export default function AnimatedContainer({ children }) {
   return (
     <div
       ref={ref}
-      className="transform translate-y-52 opacity-0 transition-all duration-700 ease-out mb-12"
+      className="mb-12 translate-y-52 transform opacity-0 transition-all duration-700 ease-out"
     >
       {children}
     </div>

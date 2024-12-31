@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import AuthTopBar from "../components/AuthTopBar"
+import AuthTopBar from "../components/AuthTopBar";
 // import logo from "../../photos/limm.logo.logo 1.png";
 const logo = "/images/limm.logo.logo 1.png";
 import MyPasswordField from "../../components/MyPasswordField";
@@ -10,16 +10,22 @@ import MyPasswordField from "../../components/MyPasswordField";
 export default function LoginPage() {
   // This Page has more z-index that the main header Component. This way this page effectively hides the header
   return (
-    <div className="z-[101] w-[100vw] fixed top-0 flex flex-col h-screen justify-center items-center bg-inherit realtive">
+    <div className="realtive fixed top-0 z-[101] flex h-screen w-[100vw] flex-col items-center justify-center bg-inherit">
       {/* Top Left Link */}
       <AuthTopBar />
 
       {/* Login Card */}
-      <div className="z-[3] w-full max-w-sm px-8 py-12 bg-background border-foreground border rounded-lg shadow-md">
+      <div className="z-[3] w-full max-w-sm rounded-lg border border-foreground bg-background px-8 py-12 shadow-md">
         {/* Logo */}
-        <div className="w-full flex flex-col justify-center items-center mb-7">
-          <Image src={logo} alt="logo" width={70} height={40} className="mb-6" />
-          <p className="text-gray-500 mt-2 text-[28px] font-medium leading-[38.4px]">
+        <div className="mb-7 flex w-full flex-col items-center justify-center">
+          <Image
+            src={logo}
+            alt="logo"
+            width={70}
+            height={40}
+            className="mb-6"
+          />
+          <p className="mt-2 text-[28px] font-medium leading-[38.4px] text-gray-500">
             Login
           </p>
         </div>
@@ -30,16 +36,16 @@ export default function LoginPage() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full border-[#AAB7C9] px-4 py-2 border rounded-md focus:outline-none focus:right-2 focus:ring-blue-400 bg-background"
+              className="w-full rounded-md border border-[#AAB7C9] bg-background px-4 py-2 focus:right-2 focus:outline-none focus:ring-blue-400"
             />
           </div>
 
           <div>
             <MyPasswordField placeholder="Password" />
-            <div className="text-right mt-2 mb-9">
+            <div className="mb-9 mt-2 text-right">
               <Link
                 href="#"
-                className="underline text-[14px] leading-[19.2px] text-[#356BB7] hover:underline"
+                className="text-[14px] leading-[19.2px] text-[#356BB7] underline hover:underline"
               >
                 Forgot Password?
               </Link>
@@ -48,17 +54,17 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-[#356BB7] text-white py-2 rounded-[12px] hover:bg-blue-600 transition-colors duration-300"
+            className="w-full rounded-[12px] bg-[#356BB7] py-2 text-white transition-colors duration-300 hover:bg-blue-600"
           >
             Login
           </button>
         </form>
 
         {/* Sign up Link */}
-        <div className="text-center mt-6">
+        <div className="mt-6 text-center">
           <Link
             href="/register"
-            className="text-[#356BB7] font-bold leading-[28.8px] hover:underline"
+            className="font-bold leading-[28.8px] text-[#356BB7] hover:underline"
           >
             Sign up
           </Link>

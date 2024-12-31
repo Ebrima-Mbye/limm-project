@@ -14,15 +14,15 @@ export default function HomeFindSection() {
   const servicesText =
     "Drowning in paperwork and missed invoices? Limm is your service business superhero! Manage your business with ease, track time accurately, and bill like a boss. Gain valuable insights to improve client satisfaction and watch your service business soar.";
   return (
-    <section className="px-3 lg:px-20 pt-16">
-      <div className="mb-[100px] max-w-[1150px] mx-auto">
-        <div className="text-center mb-11">
+    <section className="px-3 pt-16 lg:px-20">
+      <div className="mx-auto mb-[100px] max-w-[1150px]">
+        <div className="mb-11 text-center">
           <p className="text-[18px] text-[#AAB7C9]">SEGMENTS</p>
           <p className="text-foreground">
             Find the Solution that best fits your Business
           </p>
         </div>
-        <div className="w-full grid gap-8 grid-cols-1 lg:grid-cols-3">
+        <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-3">
           <SolutionCard
             src={restaurantIcon}
             bg="#001738"

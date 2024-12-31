@@ -23,7 +23,7 @@ export default function HomeSolutionCard(props) {
         className="flex flex-col justify-between rounded-[20px] px-6 py-7 lg:mb-0"
       >
         {/* <div className="flex-1 flex flex-col justify-between lg:justify-start lg:flex-row lg:items-center"> */}
-        <div className="mt-0 lg:mt-3 mb-4 lg:mb-10 flex flex-col justify-between lg:justify-start lg:flex-row lg:items-center">
+        <div className="mb-4 mt-0 flex flex-col justify-between lg:mb-10 lg:mt-3 lg:flex-row lg:items-center lg:justify-start">
           <Image
             src={getArrow(title)}
             alt={title}
@@ -32,9 +32,9 @@ export default function HomeSolutionCard(props) {
             className=""
           />
         </div>
-        <div className="lg:h-8 lg:mb-0 text-[26px] font-medium">{title}</div>
-        <div className="text-[16px] mt-16 flex flex-col justify-between">
-          <p className="mb-12 text-sm font-mono">
+        <div className="text-[26px] font-medium lg:mb-0 lg:h-8">{title}</div>
+        <div className="mt-16 flex flex-col justify-between text-[16px]">
+          <p className="mb-12 font-mono text-sm">
             Forget tangled spreadsheets and messy inventory. Limm streamlines
             your restaurant operations from head to tail. Manage ingredients
             with real-time inventory, analyze customer data for winning menu
@@ -43,7 +43,7 @@ export default function HomeSolutionCard(props) {
           <div>
             <Link
               href="/"
-              className="px-4 py-3 leading-[28.5px] rounded-[20px]"
+              className="rounded-[20px] px-4 py-3 leading-[28.5px]"
               style={{
                 backgroundColor: btnColor,
                 color: btnTextColor,

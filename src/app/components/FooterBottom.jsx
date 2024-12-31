@@ -11,17 +11,17 @@ export default function FooterBottom(props) {
     <>
       <hr
         style={{ borderColor: isWhite ? "rgb(200, 200, 200)" : "white" }}
-        className="border my-2 lg:my-0"
+        className="my-2 border lg:my-0"
       />
 
       <div
         style={{
           color: isWhite ? "black" : "white",
         }}
-        className="text-white pb-10 lg:pb-0 gap-8 h-auto lg:h-14 text-[14px] items-center flex justify-between flex-col lg:flex-row"
+        className="flex h-auto flex-col items-center justify-between gap-8 pb-10 text-[14px] text-white lg:h-14 lg:flex-row lg:pb-0"
       >
-        <div className="flex-[3] items-center px-8 flex justify-between flex-col lg:flex-row">
-          <div className="flex items-center mb-5 lg:mb-0">
+        <div className="flex flex-[3] flex-col items-center justify-between px-8 lg:flex-row">
+          <div className="mb-5 flex items-center lg:mb-0">
             {isWhite ? (
               <span>Copyright &copy; 2024 Limm</span>
             ) : (
@@ -32,23 +32,22 @@ export default function FooterBottom(props) {
             style={{
               color: isWhite ? "#365BB7" : "white",
             }}
-            className="flex gap-5 lg:gap-10 ml-2 flex-col lg:flex-row text-xs "
+            className="ml-2 flex flex-col gap-5 text-xs lg:flex-row lg:gap-10"
           >
-            <Link className="text-center underline cursor-pointer" href="/">
+            <Link className="cursor-pointer text-center underline" href="/">
               COOKIES
             </Link>
-            <Link className="text-center underline cursor-pointer" href="/">
+            <Link className="cursor-pointer text-center underline" href="/">
               PRIVACY POLICY
             </Link>
-            <Link className="text-center underline cursor-pointer" href="/">
+            <Link className="cursor-pointer text-center underline" href="/">
               TERMS & CONDITIONS
             </Link>
           </div>
         </div>
-        <div className="flex-[2] flex items-center justify-end pr-8">
+        <div className="flex flex-[2] items-center justify-end pr-8">
           <p className="mr-5">Language:</p>
-          <div className="flex gap-3 border-gray-500 border px-3 py-1 rounded-md w-[120px]"
-          >
+          <div className="flex w-[120px] gap-3 rounded-md border border-gray-500 px-3 py-1">
             <Image
               src={isWhite ? globeBlack : globeIcon}
               alt="globe icon"
