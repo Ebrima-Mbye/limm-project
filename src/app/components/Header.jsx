@@ -50,23 +50,24 @@ export default function HomeHeader() {
   return (
     <div
       style={{
-        height: isMenuOpen ? menuTranslateY : "10vh",
+        height: isMenuOpen ? menuTranslateY : "9vh",
         overflowY: "hidden",
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
+        // backgroundColor: "rgba(255, 255, 255, 0.7)",
+        backgroundColor: "rgba(255, 255, 255, 0.6)",
       }}
       id=" header"
-      className="z-[10] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
+      className="fixed z-[10] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
        lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 lg:fixed rounded-lg
        lg:top-2 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
     >
-      <div className="px-[12%] w-full mt-3 max-h-[9vh] lg:w-auto lg:p-2 flex justify-between lg:justify-center items-center lg:pt-0 mb-3 lg:mb-0 lg:h-full">
+      <div className="px-[12%] flex items-center  w-full mt-0 md:mt-3 max-h-[9vh] lg:w-auto lg:p-2 justify-between lg:justify-center lg:pt-0 mb-3 lg:mb-0 lg:h-full">
         <div className="h-full lg:h-auto">
           {/* Company logo */}
           <Link href="/">
             <Image
               src={logo}
               alt="Logo"
-              width={"70"}
+              width={70}
               height={50}
               onClick={closeMenu}
               className="w-full lg:mt-[-20px] lg:w-full"
@@ -98,7 +99,7 @@ export default function HomeHeader() {
           </button>
         </div>
       </div>
-      <div className="border-cyan-600 border h-full px-[10%] mt-0 lg:px-1 flex-1 lg:text-[13px] w-full lg:w-auto lg:items-center">
+      <div className="h-full px-[10%] mt-0 lg:px-1 flex-1 lg:text-[13px] w-full lg:w-auto lg:items-center">
         <div className="flex-1 flex flex-col lg:flex-row items-center justify-between py-8 lg:py-0 h-full w-full lg:w-auto">
           <ul className="flex items-center flex-col lg:flex-row w-full lg:w-auto gap-8 lg:gap-1 lg:text-[16px]">
             {leftNavLinks.map((link, index) => (

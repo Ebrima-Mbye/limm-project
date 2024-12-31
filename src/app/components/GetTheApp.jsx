@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function GetTheApp() {
   // This component is only visible in small and middle screens.
   return (
-    <div className="pl-4 lg:hidden md:text-2xl md:h-40 rounded-xl mx-3 flex md:justify-between h-32 border-red-400 bg-black text-white">
+    <div className="pl-4 lg:hidden md:text-2xl md:h-40 rounded-xl mx-3 flex md:justify-between h-32 bg-black text-white">
       <div className="flex-[2] md:flex-1 md:items-start flex flex-col justify-center items-center">
         <p className="font-bold mb-5">DOWNLOAD THE APP NOW</p>
         <div className="flex justify-around w-full">

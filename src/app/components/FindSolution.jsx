@@ -14,7 +14,7 @@ export default function HomeFindSection() {
   const servicesText =
     "Drowning in paperwork and missed invoices? Limm is your service business superhero! Manage your business with ease, track time accurately, and bill like a boss. Gain valuable insights to improve client satisfaction and watch your service business soar.";
   return (
-    <section className="border-red-600 border px-3 lg:px-20 pt-16">
+    <section className="px-3 lg:px-20 pt-16">
       <div className="mb-[100px] max-w-[1150px] mx-auto">
         <div className="text-center mb-11">
           <p className="text-[18px] text-[#AAB7C9]">SEGMENTS</p>
