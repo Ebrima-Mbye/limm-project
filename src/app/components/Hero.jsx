@@ -32,7 +32,7 @@ export default function HomeHero() {
               className="mx-auto hidden h-full lg:block"
             />
           </div>
-          <div className="flex max-w-[300px] flex-col justify-between overflow-y-clip rounded-[20px] bg-orange-300 p-6 text-orange-700 md:h-[350px]">
+          <div className="flex h-auto max-w-[300px] flex-col justify-between overflow-y-clip rounded-[20px] bg-orange-300 p-6 text-orange-700 md:h-[350px] lg:h-auto">
             <p className="mb text-xl font-medium">Inventory Management</p>
             <div className="flex h-12 flex-1 items-center">
               <Image src={inventoryIcon} alt="inventory icon" className="" />
