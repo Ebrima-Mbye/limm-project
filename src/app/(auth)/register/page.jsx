@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import arrowLeft from "../../photos/login/arrow-left.png";
 import logo from "../../photos/limm.logo.logo 1.png";
 import selectIcon from "../../photos/login/select-icon.png";
 import MyPasswordField from "../../components/MyPasswordField";

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function HomeSolutionCard(props) {
-  const { bg, color, btnColor, btnTextColor, src, title, text } =
+  const { bg, color, btnColor, btnTextColor, title} =
     props;
   function getArrow() {
     if (title.toLowerCase() === "for restaurants") {
@@ -32,7 +32,6 @@ export default function HomeSolutionCard(props) {
             height={30}
             className=""
           />
-          {/* <Image src={src} alt={text} className="w-[70px] hidden lg:block" /> */}
         </div>
         <div className="lg:h-8 lg:mb-0 text-[26px] font-medium">{title}</div>
         {/* <div className="lg:hidden text-[16px]"> */}

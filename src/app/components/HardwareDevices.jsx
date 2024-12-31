@@ -25,14 +25,6 @@ export default function HardwareDevices() {
     }
   }, []);
 
-  function getImageURL(device) {
-    if (device.name.toLowerCase() === "limm bluetooth printer") {
-      return "/images/limm_bluetooth.png";
-    } else if (device.name.toLowerCase() === "limm register") {
-      return "/images/limm_register.png";
-    }
-  }
-
   function getFlexDirection(id) {
     if (id === "1" && isWideScreen) {
       return "row-reverse";

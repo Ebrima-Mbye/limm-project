@@ -9,7 +9,6 @@ import { useState } from "react";
 export default function HomeHeader() {
   const menuTranslateY = "75vh";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [shouldShowLinks, setShouldShowLinks] = useState(true);
   const leftNavLinks = [
     {
       text: "Retail",

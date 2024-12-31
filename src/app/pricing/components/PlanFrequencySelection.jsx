@@ -6,7 +6,6 @@ export default function PlanFrequencySelection() {
   const [isAnnual, setIsAnnual] = useState(false);
   // Colors for the selected plan - monthly or yearly:
   const selectedColor = "#4BC0C8";
-  const unselectedColor = "rgb(100, 100, 100)";
   const selectedStyles = {
     color: selectedColor,
     fontWeight: "bold",

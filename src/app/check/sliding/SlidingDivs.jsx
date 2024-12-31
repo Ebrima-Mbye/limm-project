@@ -23,7 +23,7 @@ const SlidingDivs = () => {
     }, 1500); // Pause for 1.5 seconds between movements
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [divs.length]);
 
   return (
     <div className="overflow-hidden w-full flex justify-center items-center">

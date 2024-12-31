@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Slider from "react-slick";
 
 const CardCarousel = () => {
@@ -30,7 +31,7 @@ const CardCarousel = () => {
     <div className="w-full py-8">
       <Slider {...settings}>
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
+          <Image
             src="/path/to/your-image.jpg"
             alt="Card 1"
             className="w-full h-48 object-cover"
@@ -41,7 +42,7 @@ const CardCarousel = () => {
           </div>
         </div>
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
+          <Image
             src="/path/to/your-image.jpg"
             alt="Card 2"
             className="w-full h-48 object-cover"
@@ -52,7 +53,7 @@ const CardCarousel = () => {
           </div>
         </div>
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-          <img
+          <Image
             src="/path/to/your-image.jpg"
             alt="Card 3"
             className="w-full h-48 object-cover"
