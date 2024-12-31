@@ -11,7 +11,7 @@ export default function HomeFAQ() {
       </div>
 
       <div className="g:pl-12 gap-20 grid grid-cols-1 lg:grid-cols-3">
-        <div className="w-full mx-auto p-3 lg:max-w-[751px] col-span-2">
+        <div className="w-full mx-auto p-1 md:p-3 lg:max-w-[751px] col-span-2">
           <FAQCard question="Can I use Limm on multiple devices ?" />
           <FAQCard question="Can I access it on both my phone and register ?" />
           <FAQCard question="Is Limm suitable for businesses with multiple staff members ?" />

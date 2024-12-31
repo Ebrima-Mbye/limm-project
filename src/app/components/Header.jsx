@@ -50,7 +50,7 @@ export default function HomeHeader() {
   return (
     <div
       style={{
-        height: isMenuOpen ? menuTranslateY : "9vh",
+        height: isMenuOpen ? menuTranslateY : "10vh",
         overflowY: "hidden",
         backgroundColor: "rgba(255, 255, 255, 0.7)",
       }}
@@ -68,6 +68,7 @@ export default function HomeHeader() {
               alt="Logo"
               width={"70"}
               height={50}
+              onClick={closeMenu}
               className="w-full lg:mt-[-20px] lg:w-full"
             />
           </Link>
@@ -97,7 +98,7 @@ export default function HomeHeader() {
           </button>
         </div>
       </div>
-      <div className="h-full px-[10%] mt-0 lg:px-1 flex-1 lg:text-[13px] w-full lg:w-auto lg:items-center">
+      <div className="border-cyan-600 border h-full px-[10%] mt-0 lg:px-1 flex-1 lg:text-[13px] w-full lg:w-auto lg:items-center">
         <div className="flex-1 flex flex-col lg:flex-row items-center justify-between py-8 lg:py-0 h-full w-full lg:w-auto">
           <ul className="flex items-center flex-col lg:flex-row w-full lg:w-auto gap-8 lg:gap-1 lg:text-[16px]">
             {leftNavLinks.map((link, index) => (

@@ -8,7 +8,7 @@ import AnimatedContainer from "./components/AnimatedContainer";
 
 export default function Home() {
   return (
-    <div className="pt-4">
+    <div className="mt-0 lg:pt-4">
       <Hero />
       <AnimatedContainer>
         <GetStarted />
