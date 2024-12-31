@@ -66,7 +66,7 @@ export default function HomeHeader() {
             <Image
               src={logo}
               alt="Logo"
-              width={70}
+              width={90}
               height={50}
               onClick={closeMenu}
               className="w-full mt-0 lg:mt-[-20px] lg:w-full"
