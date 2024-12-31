@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../photos/limm.logo.logo 1.png";
+const logo = "/images/limm.logo.logo 1.png";
+// import logo from "../../public/images/limm.logo.logo 1.png";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -55,7 +56,7 @@ export default function HomeHeader() {
         backgroundColor: "rgba(255, 255, 255, 0.7)",
       }}
       id=" header"
-      className="z-[10] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-4xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
+      className="z-[10] h-[75vh] lg:h-12 lg:w-[92%] w-[100vw] left-0 right-0 text-xl lg:text-xl flex flex-col lg:flex-row lg:justify-between
        lg:items-center leading-[28.8px] text-gray-500 font-medium lg:px-6 lg:fixed rounded-lg
        lg:top-2 lg:left-[4%] lg:right-[4%] border-gray-400 shadow-sm lg:shadow-none transition-[height] duration-300"
     >
@@ -66,6 +67,8 @@ export default function HomeHeader() {
             <Image
               src={logo}
               alt="Logo"
+              width={"70"}
+              height={50}
               className="w-full lg:mt-[-20px] lg:w-full"
             />
           </Link>
@@ -108,9 +111,6 @@ export default function HomeHeader() {
                   href={link.href}
                   onClick={closeMenu}
                   className="transition-all duration-300 block w-full"
-                  // style={{
-                  //   display: isMenuOpen ? "block" : "none",
-                  // }}
                 >
                   {link.text}
                 </Link>
@@ -125,9 +125,6 @@ export default function HomeHeader() {
                 href={link.href}
                 onClick={closeMenu}
                 className="transition-all duration-300 block w-full lg:text-center text-start px-3 lg:inline"
-                // style={{
-                //   display: isMenuOpen ? "block" : "none",
-                // }}
               >
                 {link.text}
               </Link>
@@ -136,10 +133,8 @@ export default function HomeHeader() {
             <div className="mt-3 lg:mt-0">
               <button
                 onClick={closeMenu}
-                // style={{
-                //   display: isMenuOpen? "block" : "none",
-                // }}
-                className="ml-4 lg:block text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]"
+                className="w-full lg:w-auto ml-4 lg:block text-[20px] lg:text-[12px] bg-slate-500 hover:bg-gray-600
+                 transition-colors duration-150 text-white px-6 py-3 lg:px-3 lg:py-1 text-nowrap rounded-[50px]"
               >
                 Book a Demo
               </button>

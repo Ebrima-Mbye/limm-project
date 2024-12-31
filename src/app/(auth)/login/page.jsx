@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import AuthTopBar from "../components/AuthTopBar"
-import logo from "../../photos/limm.logo.logo 1.png";
+// import logo from "../../photos/limm.logo.logo 1.png";
+const logo = "/images/limm.logo.logo 1.png";
 import MyPasswordField from "../../components/MyPasswordField";
 
 export default function LoginPage() {
   // This Page has more z-index that the main header Component. This way this page effectively hides the header
   return (
-    <div className="z-[101] w-[100vw] fixed flex flex-col h-screen justify-center items-center bg-inherit realtive">
+    <div className="z-[101] w-[100vw] fixed top-0 flex flex-col h-screen justify-center items-center bg-inherit realtive">
       {/* Top Left Link */}
       <AuthTopBar />
 
@@ -17,7 +18,7 @@ export default function LoginPage() {
       <div className="z-[3] w-full max-w-sm px-8 py-12 bg-background border-foreground border rounded-lg shadow-md">
         {/* Logo */}
         <div className="w-full flex flex-col justify-center items-center mb-7">
-          <Image src={logo} alt="logo" className="mb-6" />
+          <Image src={logo} alt="logo" width={70} height={40} className="mb-6" />
           <p className="text-gray-500 mt-2 text-[28px] font-medium leading-[38.4px]">
             Login
           </p>

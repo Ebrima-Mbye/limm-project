@@ -23,7 +23,7 @@ export default function RegisterPage() {
   ];
 
   return (
-    <div className="w-[100vw] bg-background z-[101] fixed flex flex-col h-screen justify-center items-center realtive">
+    <div className="w-[100vw] bg-background z-[101] fixed top-0 flex flex-col h-screen justify-center items-center realtive">
       {/* Top Left Link */}
       <AuthTopBar />
 

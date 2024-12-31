@@ -33,7 +33,7 @@ export default function HomeHero() {
             <Image
               src={image1}
               alt="man calculating"
-              className="h-full mx-auto"
+              className="h-full lg:block hidden mx-auto"
             />
           </div>
           <div
@@ -54,7 +54,7 @@ export default function HomeHero() {
             <Image
               src={image2}
               alt="woman in clothing shop"
-              className="h-full mx-auto rounded-r-[20px]"
+              className="h-full lg:block hidden rounded-r-[20px]"
             />
           </div>
         </div>
