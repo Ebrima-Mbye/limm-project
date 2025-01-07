@@ -8,7 +8,7 @@ export default function Cards({ pageDetails }) {
         <h1 className="leading-2xl mb-2 text-center text-3xl font-bold md:text-start md:text-5xl md:text-[54px] md:font-semibold md:leading-[54px]">
           {pageDetails.pageHeading}
         </h1>
-        <p className="text-[16px]">{pageDetails.pageDescription}</p>
+        <p className="">{pageDetails.pageDescription}</p>
 
         <div>
           {pageDetails.cards.map((card, index) => (

@@ -34,7 +34,7 @@ export default function HomeSolutionCard(props) {
         </div>
         <div className="text-[26px] font-medium lg:mb-0 lg:h-8">{title}</div>
         <div className="mt-16 flex flex-col justify-between text-[16px]">
-          <p className="mb-12 font-mono text-sm">
+          <p className="mb-12 text-sm leading-relaxed">
             Forget tangled spreadsheets and messy inventory. Limm streamlines
             your restaurant operations from head to tail. Manage ingredients
             with real-time inventory, analyze customer data for winning menu
