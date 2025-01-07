@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 const logo = "/images/limm.logo.logo 1.png";
-// import logo from "../../public/images/limm.logo.logo 1.png";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -54,7 +53,7 @@ export default function HomeHeader() {
         overflowY: "hidden",
         backgroundColor: isMenuOpen ? "white" : "rgba(255, 255, 255, 0.6)",
       }}
-      id=" header"
+      id="header"
       className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col rounded-lg border-gray-400 text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-[height] duration-300 lg:left-[4%] lg:right-[4%] lg:top-2 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:px-6 lg:text-xl lg:shadow-none"
     >
       <div className="lg:min-h-auto mb-3 mt-0 flex max-h-[9vh] min-h-[9vh] w-full items-center justify-between px-[12%] md:mt-3 md:min-h-[6vh] lg:mb-0 lg:h-full lg:w-auto lg:justify-center lg:p-2">
