@@ -1,26 +1,38 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function AnimatedContainer({ children }) {
   const ref = useRef(null); // To track the element
-  const throttleTimeout = useRef(null); // For throttling
+  const lastScrollY = useRef(0); // To track the last scroll position
+  const [scrollDirection, setScrollDirection] = useState("down"); // State to store scroll direction
 
   useEffect(() => {
     const handleScroll = () => {
-      if (throttleTimeout.current) return; // Skip if already throttled
+      const currentScrollY = window.scrollY;
 
-      throttleTimeout.current = setTimeout(() => {
-        const rect = ref?.current.getBoundingClientRect();
-        // Check if the element is in the viewport
-        if (rect.top < window.innerHeight + 150 && rect.bottom > 0) {
-          ref.current.classList.add("visible");
-        } else {
-          ref.current.classList.remove("visible");
-        }
+      // Update scroll direction
+      if (currentScrollY > lastScrollY.current) {
+        setScrollDirection("down");
+      } else {
+        setScrollDirection("up");
+      }
+      lastScrollY.current = currentScrollY;
 
-        throttleTimeout.current = null; // Reset throttle
-      }, 100); // Adjust throttle duration as needed
+      const rect = ref?.current.getBoundingClientRect();
+
+      if (rect.top > window.innerHeight) {
+        // If the element is completely above the viewport, reset animation
+        ref.current.classList.remove("visible");
+      }
+
+      if (
+        scrollDirection === "down" && // Trigger animation only on downward scroll
+        rect.top < window.innerHeight + 150 &&
+        rect.bottom > 0
+      ) {
+        ref.current.classList.add("visible");
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -29,7 +41,7 @@ export default function AnimatedContainer({ children }) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrollDirection]); // Add scrollDirection as a dependency
 
   return (
     <div
