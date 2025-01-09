@@ -7,9 +7,7 @@ export default function FAQCard({ question, answer }) {
     <div className="items center mb-4 flex justify-between rounded-lg border border-gray-300 p-4">
       <div className="mr-1 flex flex-col gap-2">
         <p className="text-[15px] sm:text-lg lg:text-lg">{question}</p>
-        <p className="text-[12px] text-gray-500 lg:text-[17px]">
-          {answer}
-        </p>
+        <p className="text-[12px] text-gray-500 lg:text-[17px]">{answer}</p>
       </div>
       {answer ? (
         <Image
