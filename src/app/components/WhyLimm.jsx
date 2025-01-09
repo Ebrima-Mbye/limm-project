@@ -13,7 +13,7 @@ export default function WhyLimm() {
       </div>
       <div className="px-5 text-xl md:px-14">
         <div>
-          <p className="mb-5 font-semibold leading-[23.5px] text-[#767676]">
+          <p className="mb-5 font-semibold leading-[23.5px]">
             No more juggling between different systems
           </p>
         </div>
