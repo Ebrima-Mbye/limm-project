@@ -6,8 +6,8 @@ export default function FAQCard({ question, answer }) {
   return (
     <div className="items center mb-4 flex justify-between rounded-lg border border-gray-300 p-4">
       <div className="mr-1 flex flex-col gap-2">
-        <p className="text-[15px] sm:text-lg lg:text-[24px]">{question}</p>
-        <p className="text-[12px] text-gray-500 sm:text-[16px] lg:text-xl">
+        <p className="text-[15px] sm:text-lg lg:text-lg">{question}</p>
+        <p className="text-[12px] text-gray-500 lg:text-[17px]">
           {answer}
         </p>
       </div>

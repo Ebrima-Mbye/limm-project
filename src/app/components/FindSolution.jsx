@@ -17,7 +17,7 @@ export default function HomeFindSection() {
     <section className="px-3 pt-16 lg:px-20">
       <div className="mx-auto mb-[100px] max-w-[1150px]">
         <div className="mb-11 text-center">
-          <p className="text-[18px] text-[#AAB7C9]">SEGMENTS</p>
+          <p className="text-[18px] font-semibold">SEGMENTS</p>
           <p className="text-foreground">
             Find the Solution that best fits your Business
           </p>

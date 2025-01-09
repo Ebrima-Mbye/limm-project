@@ -5,7 +5,7 @@ export default function WhyLimm() {
   // This element is only visible on small and middle screens
   return (
     <div className="mt-12 flex flex-col items-center">
-      <p className="text-center text-xl font-medium text-[#A7A7A7]">WHY LIMM</p>
+      <p className="text-center text-xl font-semibold">WHY LIMM</p>
       <div>
         <p className="mb-10 text-center text-2xl font-medium">
           Unlocking your business potential

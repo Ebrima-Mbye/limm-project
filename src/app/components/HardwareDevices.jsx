@@ -43,7 +43,7 @@ export default function HardwareDevices() {
     <AnimatedContainer>
       <div className="mt-16">
         <div className="mb-12 text-center">
-          <p className="text-[18px] text-[#AAB7C9]">HARDWARE DEVICES</p>
+          <p className="text-[18px] font-semibold">HARDWARE DEVICES</p>
           <p className="text-foreground">
             Manage all aspects of your Business in one place
           </p>
