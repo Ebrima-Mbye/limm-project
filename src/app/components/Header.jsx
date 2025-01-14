@@ -3,7 +3,7 @@
 import Image from "next/image";
 const logo = "/images/limm.logo.logo 1.png";
 import Link from "next/link";
-import { useRef, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { leftLinks, rightLinks } from "../data/headerLinks";
 
 export default function HomeHeader() {
