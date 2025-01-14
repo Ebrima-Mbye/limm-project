@@ -3,18 +3,47 @@
 import Image from "next/image";
 const logo = "/images/limm.logo.logo 1.png";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { leftLinks, rightLinks } from "../data/headerLinks";
 
 export default function HomeHeader() {
   const menuTranslateY = "75vh";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState("60px");
+  const headerRef = useRef();
 
   const handleMenuHeight = () => {
     setMaxHeight(isMenuOpen ? "100vh" : "60px");
   };
 
+  function headerToTop() {
+    if (headerRef.current) {
+      headerRef.current.style.top = "0px";
+    }
+  }
+
+  function headerToDown() {
+    if (headerRef.current) {
+      headerRef.current.style.top = "32px";
+    }
+  }
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      const scrollPosition = window.scrollY;
+      if (window.innerWidth > 800) {
+        if (scrollPosition > 60) {
+          headerToTop();
+        } else {
+          headerToDown();
+        }
+      }
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth < 800) {
+        headerToTop();
+      }
+    });
+  }
   useEffect(() => {
     handleMenuHeight();
   }, [isMenuOpen]); // Runs whenever isMenuOpen changes
@@ -40,8 +69,9 @@ export default function HomeHeader() {
         maxHeight: maxHeight,
         backgroundColor: isMenuOpen ? "white" : "rgba(255, 255, 255, 0.6)",
       }}
+      ref={headerRef}
       id="header"
-      className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col rounded-lg border-gray-400 text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-[height] duration-300 lg:left-[4%] lg:right-[4%] lg:top-2 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:px-6 lg:text-xl lg:shadow-none"
+      className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col rounded-bl-lg rounded-br-lg border-gray-400 text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-all duration-300 lg:left-[4%] lg:right-[4%] lg:top-8 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:rounded-lg lg:px-6 lg:text-xl lg:shadow-none"
     >
       <div className="lg:min-h-auto mb-3 mt-0 flex max-h-[9vh] min-h-[9vh] w-full items-center justify-between px-[12%] md:mt-3 md:min-h-[6vh] lg:mb-0 lg:h-full lg:w-auto lg:justify-center lg:p-2">
         <div className="flex h-full items-center lg:h-auto">
