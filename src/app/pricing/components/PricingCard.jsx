@@ -1,17 +1,32 @@
 "use client";
 
-import { useCurrency } from "@/components/CurrencyProvider";
+import { useBillingCycle, useCurrency } from "@/components/CurrencyProvider";
 import Image from "next/image";
 const checkMark = "/images/pricing/check-mark.png";
 
 export default function PricingCard({ plan }) {
   const { selectedCurrency } = useCurrency();
+  const { billingCycle } = useBillingCycle();
   const premiumStyles =
     "relative rounded-lg overflow-hidden bg-white before:absolute before:inset-[-50%] before:bg-custom-conic before:animate-spin-slow";
 
   const { planName, prices, perks, bottonText } = plan;
 
   const currencyData = prices[selectedCurrency];
+  function getValue() {
+    if (
+      parseInt(currencyData.value) === 0 ||
+      billingCycle.toLowerCase() === "monthly"
+    ) {
+      return currencyData.value;
+    }
+
+    let discount = 0.18 * parseInt(currencyData.value);
+    return parseInt(currencyData.value) - discount;
+  }
+  function getSymbol() {
+    return currencyData.symbol;
+  }
 
   function isPremium() {
     return (
@@ -38,7 +53,7 @@ export default function PricingCard({ plan }) {
       >
         <h3 className="mb-4 text-lg font-semibold text-gray-700">{planName}</h3>
         <p className="text-4xl font-bold text-[#356BB7]">
-          {currencyData.value} {currencyData.symbol}&nbsp;
+          {getValue()} {getSymbol()}&nbsp;
           <span className="text-sm font-normal text-foreground">/month</span>
         </p>
         <button
