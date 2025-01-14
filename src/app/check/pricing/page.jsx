@@ -2,40 +2,67 @@
 
 import FullPage from "../components/FullPage";
 import { useState } from "react";
-import prices from "./Prices.js"; // Import the Prices class
 
 export default function Location() {
   const [location, setLocation] = useState("");
   const [currency, setCurrency] = useState("USD");
-  const [price, setPrice] = useState(null);
+  const [priceInLocalCurrency, setPriceInLocalCurrency] = useState(null);
 
-  const success = (position) => {
-    const latitude = position.coords.latitude;
-    const longitude = position.coords.longitude;
-
-    const APIURL = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
-    fetch(APIURL)
-      .then((response) => response.json())
-      .then((data) => {
-        setLocation(data.locality);
-        setCurrency(data.currency.code); // Set the user's currency
-        updatePrice(data.currency.code); // Update the price
-      });
-  };
-
-  const error = (err) => {
-    setLocation("Could not find location");
-  };
+  // Variable to hold the price of the item in USD
+  const itemPriceInUSD = 10; // Example: $10
 
   const findMyState = () => {
+    // Geolocation success callback
+    const success = (position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      const APIURL = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+
+      fetch(APIURL)
+        .then((response) => response.json())
+        .then((data) => {
+          setLocation(data.locality || "Unknown Location");
+          const detectedCurrency = data.currency?.code || "USD"; // Default to USD
+          setCurrency(detectedCurrency);
+          updatePrice(detectedCurrency); // Fetch exchange rate and update price
+        })
+        .catch(() => {
+          setLocation("Could not find location");
+          setCurrency("USD");
+          setPriceInLocalCurrency(itemPriceInUSD.toFixed(2)); // Fallback to USD price
+        });
+    };
+
+    // Geolocation error callback
+    const error = () => {
+      setLocation("Could not find location");
+      setCurrency("USD");
+      setPriceInLocalCurrency(itemPriceInUSD.toFixed(2)); // Fallback to USD price
+    };
+
+    // Request geolocation
     navigator.geolocation.getCurrentPosition(success, error);
   };
 
   const updatePrice = (userCurrency) => {
-    const prices = new Prices(); // Create an instance of the Prices class
-    const item = "item1"; // Example item (you can make this dynamic)
-    const localPrice = prices.getPriceInLocalCurrency(userCurrency, item);
-    setPrice(localPrice); // Update the displayed price
+    const EXCHANGE_API = `https://api.exchangerate.host/latest?base=USD&symbols=${userCurrency}`;
+
+    fetch(EXCHANGE_API)
+      .then((response) => response.json())
+      .then((data) => {
+        const exchangeRate = data.rates[userCurrency];
+        if (exchangeRate) {
+          const localPrice = (itemPriceInUSD * exchangeRate).toFixed(2); // Convert and format
+          setPriceInLocalCurrency(localPrice);
+        } else {
+          setPriceInLocalCurrency("Conversion error");
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching exchange rate:", error);
+        setPriceInLocalCurrency("Error fetching price");
+      });
   };
 
   return (
@@ -46,7 +73,12 @@ export default function Location() {
             {location ? `${location} - ${currency}` : "Find your location"}
           </div>
           <div className="mb-5 text-center text-2xl">
-            {price ? `Price: ${price} ${currency}` : "Price: $10 (Default)"}
+            {priceInLocalCurrency
+              ? `Price: ${priceInLocalCurrency} ${currency}`
+              : `Price: ${itemPriceInUSD} USD (Default)`}
+          </div>
+          <div className="mb-5 text-center text-lg text-gray-700">
+            {`Base price of the item: $${itemPriceInUSD}`}
           </div>
           <button
             onClick={findMyState}

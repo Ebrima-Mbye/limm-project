@@ -3,35 +3,21 @@
 import Image from "next/image";
 const logo = "/images/limm.logo.logo 1.png";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { leftLinks, rightLinks } from "../data/headerLinks";
 
 export default function HomeHeader() {
   const menuTranslateY = "75vh";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const leftNavLinks = [
-    {
-      text: "Retail",
-      href: "/retail",
-    },
-    {
-      text: "Restaurants",
-      href: "/restaurants",
-    },
-    {
-      text: "Services",
-      href: "/services",
-    },
-  ];
-  const rightLinks = [
-    {
-      text: "Pricing",
-      href: "/pricing",
-    },
-    {
-      text: "Login",
-      href: "/login",
-    },
-  ];
+  const [maxHeight, setMaxHeight] = useState("60px");
+
+  const handleMenuHeight = () => {
+    setMaxHeight(isMenuOpen ? "100vh" : "60px");
+  };
+
+  useEffect(() => {
+    handleMenuHeight();
+  }, [isMenuOpen]); // Runs whenever isMenuOpen changes
 
   // HANDLER FUNCTIONS
   const closeMenu = () => {
@@ -51,6 +37,7 @@ export default function HomeHeader() {
       style={{
         height: isMenuOpen ? menuTranslateY : "9vh",
         overflowY: "hidden",
+        maxHeight: maxHeight,
         backgroundColor: isMenuOpen ? "white" : "rgba(255, 255, 255, 0.6)",
       }}
       id="header"
@@ -95,10 +82,15 @@ export default function HomeHeader() {
           </button>
         </div>
       </div>
-      <div className="mt-0 h-full w-full flex-1 px-[10%] lg:w-auto lg:items-center lg:px-1 lg:text-[13px]">
+      <div
+        style={{
+          maxHeight: maxHeight,
+        }}
+        className="mt-0 h-full w-full flex-1 px-[10%] lg:w-auto lg:items-center lg:px-1 lg:text-[13px]"
+      >
         <div className="flex h-full w-full flex-1 flex-col items-center justify-between py-8 lg:w-auto lg:flex-row lg:py-0">
           <ul className="flex w-full flex-col items-center gap-8 lg:w-auto lg:flex-row lg:gap-1 lg:text-[16px]">
-            {leftNavLinks.map((link, index) => (
+            {leftLinks.map((link, index) => (
               <li
                 key={index}
                 className="block w-full px-3 text-start lg:mr-8 lg:inline"

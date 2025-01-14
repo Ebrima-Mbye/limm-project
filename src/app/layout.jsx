@@ -2,7 +2,6 @@ import Header from "./components/Header";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./globals.css";
-// import "../globals.css";
 import { Inter } from "next/font/google";
 
 // Set up the font
