@@ -15,7 +15,7 @@ export default function Page() {
         <div className="w-full px-4 md:px-12 lg:px-24">
           <div className="mb-10 flex flex-col items-center gap-1 lg:flex-row">
             <div className="mb-4 flex-1">
-              <p className="text-center text-4xl font-semibold md:text-start md:text-[60px] md:font-medium md:leading-[65px] lg:text-[65px] lg:leading-[70px]">
+              <p className="text-center text-4xl font-bold md:text-start md:text-[60px] md:leading-[65px] lg:text-[65px] lg:font-medium lg:leading-[70px]">
                 Pricing that Fits your Business needs
               </p>
             </div>

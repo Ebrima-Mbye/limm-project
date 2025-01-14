@@ -14,12 +14,29 @@ export default function PlanFrequencySelection() {
   };
 
   useEffect(() => {
-    setBillingCycle(isAnnual? "Yearly" : "Monthly");
+    setBillingCycle(isAnnual ? "Yearly" : "Monthly");
+
+    // try {
+    //   fetch("https://libretranslate.com/translate", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({
+    //       q: "Hello, world!",
+    //       source: "en",
+    //       target: "es",
+    //     }),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => console.log(data));
+    // } catch (err) {
+    //   console.error("Error fetching translation:", err);
+    // }
+
     // Clean up on unmount
     return () => {
       setBillingCycle(null);
-    }
-  }, [isAnnual])
+    };
+  }, [isAnnual]);
 
   return (
     <div className="flex flex-col items-center space-x-3 md:flex-row">
