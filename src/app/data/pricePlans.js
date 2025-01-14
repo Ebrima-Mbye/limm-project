@@ -1,7 +1,12 @@
 export const plansForMobileApp = [
   {
     planName: "FREEMIUM",
-    price: 0,
+    prices: {
+      XOF: { symbol: "CFA", value: 0 },
+      GMD: { symbol: "D", value: 0 },
+      USD: { symbol: "$", value: 0 },
+      EUR: { symbol: "€", value: 0 },
+    },
     bottonText: "Download",
     perks: [
       "Unlimited Invoicing",
@@ -11,7 +16,12 @@ export const plansForMobileApp = [
   },
   {
     planName: "PRO",
-    price: 5000,
+    prices: {
+      XOF: { symbol: "CFA", value: 3000 },
+      GMD: { symbol: "D", value: 5000 },
+      USD: { symbol: "$", value: 50 },
+      EUR: { symbol: "€", value: 45 },
+    },
     bottonText: "Choose",
     perks: [
       "All free features",
@@ -21,13 +31,19 @@ export const plansForMobileApp = [
     ],
   },
 ];
+
 export const plansForTabletApp = [
   {
     planName: "STANDARD",
-    price: 7000,
+    prices: {
+      XOF: { symbol: "CFA", value: 4500 },
+      GMD: { symbol: "D", value: 7000 },
+      USD: { symbol: "$", value: 70 },
+      EUR: { symbol: "€", value: 65 },
+    },
     bottonText: "Download",
     perks: [
-      "Up to 2 user",
+      "Up to 2 users",
       "50 products",
       "POS app",
       "Staff management",
@@ -37,7 +53,12 @@ export const plansForTabletApp = [
   },
   {
     planName: "PREMIUM",
-    price: 15000,
+    prices: {
+      XOF: { symbol: "CFA", value: 9000 },
+      GMD: { symbol: "D", value: 15000 },
+      USD: { symbol: "$", value: 150 },
+      EUR: { symbol: "€", value: 140 },
+    },
     bottonText: "Choose",
     perks: [
       "All standard features",

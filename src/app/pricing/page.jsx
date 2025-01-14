@@ -1,9 +1,9 @@
 import Image from "next/image";
-import mainImage from "../photos/pricing/stylish-black-girl.png";
+const mainImage = "/images/pricing/stylish-black-girl.png";
 import PlanFrequencySelection from "./components/PlanFrequencySelection";
 import PriceTree from "./components/PriceTree";
 import LimmPerks from "./components/LimmPerks";
-import { plansForMobileApp, plansForTabletApp } from "./components/plans";
+import { plansForMobileApp, plansForTabletApp } from "../data/pricePlans.js";
 import BlackFooter from "../components/BlackFooter";
 
 export default function Page() {
@@ -27,7 +27,7 @@ export default function Page() {
         </div>
 
         <div className="w-full mb-10">
-          <Image src={mainImage} alt="stylish black woman" className="" />
+          <Image src={mainImage} alt="stylish black woman" className="" width={2000} height={100} />
         </div>
 
         <div className="mb-12 flex gap-3 justify-center items-center">
