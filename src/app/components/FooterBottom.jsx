@@ -1,11 +1,31 @@
-import Image from "next/image";
-import globeIcon from "../photos/globeIcon.png";
-import globeBlack from "../photos/globe-black.png";
 import Link from "next/link";
+import LanguageSelector from "./LanguageSelector";
+import { cookies } from "next/headers";
 
-export default function FooterBottom(props) {
+export default async function FooterBottom(props) {
+  // Wait for cookies before accessing them
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+
+  const links = {
+    en: [
+      { text: "COOKIES", href: "/" },
+      { text: "PRIVACY POLICY", href: "/" },
+      { text: "TERMS & CONDITIONS", href: "/" },
+    ],
+    fr: [
+      { text: "COOKIES", href: "/" },
+      { text: "POLITIQUE DE CONFIDENTIALITÉ", href: "/" },
+      { text: "CONDITIONS GÉNÉRALES", href: "/" },
+    ],
+    es: [
+      { text: "COOKIES", href: "/" },
+      { text: "POLÍTICA DE PRIVACIDAD", href: "/" },
+      { text: "TÉRMINOS Y CONDICIONES", href: "/" },
+    ],
+  };
+
   const isWhite = props.isWhite;
-  const supportedLanguages = ["English", "French", "Arabic"];
 
   return (
     <>
@@ -34,46 +54,18 @@ export default function FooterBottom(props) {
             }}
             className="ml-2 flex flex-col gap-5 text-xs lg:flex-row lg:gap-10"
           >
-            <Link className="cursor-pointer text-center underline" href="/">
-              COOKIES
-            </Link>
-            <Link className="cursor-pointer text-center underline" href="/">
-              PRIVACY POLICY
-            </Link>
-            <Link className="cursor-pointer text-center underline" href="/">
-              TERMS & CONDITIONS
-            </Link>
+            {links[language].map((link, index) => (
+              <Link
+              key={index}
+                className="cursor-pointer text-center underline"
+                href={link.href}
+              >
+                {link.text}
+              </Link>
+            ))}
           </div>
         </div>
-        <div className="flex flex-[2] items-center justify-end pr-8">
-          <p className="mr-5">Language:</p>
-          <div className="flex w-[120px] gap-3 rounded-md border border-gray-500 px-3 py-1">
-            <Image
-              src={isWhite ? globeBlack : globeIcon}
-              alt="globe icon"
-              className=""
-            />
-            <select
-              style={{
-                backgroundColor: isWhite ? "white" : "#001738",
-              }}
-              className="bg-inherit text-[13px]"
-            >
-              {supportedLanguages.map((language, index) => (
-                <option
-                  key={index}
-                  style={{
-                    color: isWhite ? "black" : "white",
-                  }}
-                  className=""
-                  value={language}
-                >
-                  {language}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
+        <LanguageSelector isWhite={isWhite} />
       </div>
     </>
   );

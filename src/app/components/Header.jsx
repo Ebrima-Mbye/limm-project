@@ -15,6 +15,9 @@ export default function HomeHeader() {
   const handleMenuHeight = () => {
     setMaxHeight(isMenuOpen ? "100vh" : "60px");
   };
+  useEffect(() => {
+    handleMenuHeight();
+  }, [isMenuOpen]); // Runs whenever isMenuOpen changes
 
   function headerToTop() {
     if (headerRef.current) {
@@ -44,9 +47,6 @@ export default function HomeHeader() {
       }
     });
   }
-  useEffect(() => {
-    handleMenuHeight();
-  }, [isMenuOpen]); // Runs whenever isMenuOpen changes
 
   // HANDLER FUNCTIONS
   const closeMenu = () => {

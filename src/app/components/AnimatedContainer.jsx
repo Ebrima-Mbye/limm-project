@@ -8,39 +8,43 @@ export default function AnimatedContainer({ children }) {
   const [scrollDirection, setScrollDirection] = useState("down"); // State to store scroll direction
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+    if (ref.current) {
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
 
-      // Update scroll direction
-      if (currentScrollY > lastScrollY.current) {
-        setScrollDirection("down");
-      } else {
-        setScrollDirection("up");
-      }
-      lastScrollY.current = currentScrollY;
+        // Update scroll direction
+        if (currentScrollY > lastScrollY.current) {
+          setScrollDirection("down");
+        } else {
+          setScrollDirection("up");
+        }
+        lastScrollY.current = currentScrollY;
 
-      const rect = ref?.current.getBoundingClientRect();
+        if (ref.current) {
+          const rect = ref?.current.getBoundingClientRect();
 
-      if (rect.top > window.innerHeight) {
-        // If the element is completely above the viewport, reset animation
-        ref.current.classList.remove("visible");
-      }
+          if (rect.top > window.innerHeight) {
+            // If the element is completely above the viewport, reset animation
+            ref.current.classList.remove("visible");
+          }
 
-      if (
-        scrollDirection === "down" && // Trigger animation only on downward scroll
-        rect.top < window.innerHeight + 150 &&
-        rect.bottom > 0
-      ) {
-        ref.current.classList.add("visible");
-      }
-    };
+          if (
+            scrollDirection === "down" && // Trigger animation only on downward scroll
+            rect.top < window.innerHeight + 150 &&
+            rect.bottom > 0
+          ) {
+            ref.current.classList.add("visible");
+          }
+        }
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Run on load to handle elements already in the viewport
+      window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Run on load to handle elements already in the viewport
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, [scrollDirection]); // Add scrollDirection as a dependency
 
   return (

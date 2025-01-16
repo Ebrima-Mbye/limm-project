@@ -5,11 +5,19 @@ import facebookLogo from "../photos/restaurants/facebook-blue.png";
 import twitterLogo from "../photos/restaurants/twitter-blue.png";
 import instagramLogo from "../photos/restaurants/instagram-blue.png";
 import tiktokLogo from "../photos/restaurants/tiktok-blule.png";
-import footerLinks from "../data/links";
+import footerLinks from "../data/footerlinks";
+import footerText from "../data/footerText";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
-export default function Footer() {
+export default async function Footer() {
   const socialHandles = [facebookLogo, instagramLogo, tiktokLogo, twitterLogo];
+  // Wait for cookies before accessing them
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+
+  const footerLinksData = footerLinks[language];
+  const footerTextData = footerText[language];
 
   return (
     <div className="mt-36 flex flex-col">
@@ -21,7 +29,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-1 flex-col justify-end gap-3 md:gap-8 lg:flex-row">
-          {footerLinks.map((footerlink, i1) => (
+          {footerLinksData.map((footerlink, i1) => (
             <div key={i1} className="flex flex-col">
               <h1 className="mb-2 text-[15px] font-semibold">
                 {footerlink.category}
@@ -40,20 +48,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="hidden py-7 font-serif md:block">
-        <p>
-          Limm is committed to providing a seamless and secure experience for
-          small businesses, and users are expected to comply with applicable
-          laws and regulations. Users are responsible for maintaining the
-          confidentiality of their account information and are prohibited from
-          engaging in any unlawful activities on the platform. Limm reserves the
-          right to update, modify, or discontinue any part of the service at its
-          discretion
-        </p>
-        <p>
-          User data privacy is a top priority, and Limm will handle personal and
-          business information in accordance with our Privacy Policy. Users are
-          encouraged to review the terms regularly for any updates or changes
-        </p>
+        <p>{footerTextData.text1}</p>
+        <p>{footerTextData.text2} </p>
       </div>
       <div className="flex h-12 items-center justify-center gap-16 lg:justify-end lg:gap-8">
         {socialHandles.map((socialHandle, index) => (
