@@ -10,16 +10,13 @@ import { getCookie } from "@/utils/myCookies.js";
 
 export default function HardwareDevices() {
   const isWideScreen = useDeviceSize();
-
-  let hardwareDevicesData = [];
-
-  const language = getCookie("language") || "en"; // Default to 'en'
-  hardwareDevicesData = hardwareDevices[language];
+  const [hardwareDevicesData, setHardwareDevicesData] = useState([]);
+  const defaultLanguage = "en";
 
   useEffect(() => {
-    // Why is it printed only once?
-    console.log("Is widescreen: ", isWideScreen ? "Yes" : "No");
-  }, [isWideScreen]);
+    const language = getCookie("language") || defaultLanguage; // Default to 'en'
+    setHardwareDevicesData(hardwareDevices[language]);
+  }, [])
 
   function getFlexDirection(id) {
     if (id === "1" && isWideScreen) {

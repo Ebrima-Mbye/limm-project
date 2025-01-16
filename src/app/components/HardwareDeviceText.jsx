@@ -1,6 +1,6 @@
 export default function HardwareDeviceText({ device }) {
   return (
-    <div className="min-h-full flex-1 rounded-md p-4">
+    <div className="min-h-full border-gray-100 border flex-1 rounded-md p-4">
       <p className="hidden text-2xl font-bold text-[#325bb7]">{device.name}</p>
       <p className="my-2 text-[19px]">{device.description}</p>
       <hr className="mb-3 mt-2" />
