@@ -57,7 +57,7 @@ export default function HardwareDevices() {
                   style={{
                     backgroundColor: getBackgroundColor(device.id),
                   }}
-                  className="flex flex-1 flex-col items-center justify-center rounded-[20px] border border-cyan-400 px-4 py-6 md:min-h-[400px] lg:p-4 lg:px-8"
+                  className="flex flex-1 flex-col items-center justify-center rounded-[20px] px-4 py-6 md:min-h-[400px] lg:p-4 lg:px-8"
                 >
                   <div className="flex-1 lg:flex-[0]">
                     <p
