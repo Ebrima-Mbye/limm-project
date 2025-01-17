@@ -83,8 +83,9 @@ export const cards = {
 
 export const bottomText = {
   en: {
-    heading:
-      <>One Platform for Payments, Inventory, and Staff Management for SMWs</>,
+    heading: (
+      <>One Platform for Payments, Inventory, and Staff Management for SMWs</>
+    ),
     subText: (
       <>
         Built for Africa, powered by technology. Limm is your one-stop shop for
@@ -95,20 +96,27 @@ export const bottomText = {
     ),
   },
   fr: {
-    heading:
-      <>Une plateforme pour les paiements, la gestion des stocks et du personnel pour les PME</>,
+    heading: (
+      <>
+        Une plateforme pour les paiements, la gestion des stocks et du personnel
+        pour les PME
+      </>
+    ),
     subText: (
       <>
-        Conçu pour l'Afrique, alimenté par la technologie. Limm est votre
+        Conçu pour l&apos;Afrique, alimenté par la technologie. Limm est votre
         solution unique pour <br />
         rationaliser les opérations, développer votre entreprise et prospérer à
-        l'ère numérique.
+        l&apos;ère numérique.
       </>
     ),
   },
   es: {
-    heading:
-      <>Una plataforma para pagos, inventario y gestión de personal para PYMEs</>,
+    heading: (
+      <>
+        Una plataforma para pagos, inventario y gestión de personal para PYMEs
+      </>
+    ),
     subText: (
       <>
         Diseñado para África, impulsado por la tecnología. Limm es tu solución
