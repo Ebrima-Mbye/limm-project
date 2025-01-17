@@ -31,7 +31,7 @@ export const cards = {
       text: (
         <>
           Limm&apos;s smart inventory management keeps you in control,
-          minimizing stockouts and optimizing ordering."
+          minimizing stockouts and optimizing ordering.
         </>
       ),
     },
@@ -43,12 +43,12 @@ export const cards = {
         <>
           Abandonnez les feuilles de calcul et les registres désordonnés. Limm
           automatise la comptabilité, vous faisant gagner du temps et
-          garantissant la précision."
+          garantissant la précision.
         </>
       ),
     },
     {
-      title: <>Gestion des stocks"</>,
+      title: <>Gestion des stocks</>,
       text: (
         <>
           La gestion intelligente des stocks de Limm vous garde maître de la
@@ -60,7 +60,7 @@ export const cards = {
   ],
   es: [
     {
-      title: <>Contabilidad"</>,
+      title: <>Contabilidad</>,
       text: (
         <>
           Deja atrás las hojas de cálculo y los registros desordenados. Limm
@@ -84,10 +84,10 @@ export const cards = {
 export const bottomText = {
   en: {
     heading:
-      "One Platform for Payments, Inventory, and Staff Management for SMWs",
+      <>One Platform for Payments, Inventory, and Staff Management for SMWs</>,
     subText: (
       <>
-        Built for Africa, powered by technology. Limm is your one-stop shop for{" "}
+        Built for Africa, powered by technology. Limm is your one-stop shop for
         <br />
         streamlining operations, growing your business, and thriving in the
         digital age.
@@ -96,7 +96,7 @@ export const bottomText = {
   },
   fr: {
     heading:
-      "Une plateforme pour les paiements, la gestion des stocks et du personnel pour les PME",
+      <>Une plateforme pour les paiements, la gestion des stocks et du personnel pour les PME</>,
     subText: (
       <>
         Conçu pour l'Afrique, alimenté par la technologie. Limm est votre
@@ -108,7 +108,7 @@ export const bottomText = {
   },
   es: {
     heading:
-      "Una plataforma para pagos, inventario y gestión de personal para PYMEs",
+      <>Una plataforma para pagos, inventario y gestión de personal para PYMEs</>,
     subText: (
       <>
         Diseñado para África, impulsado por la tecnología. Limm es tu solución
