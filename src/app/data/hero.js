@@ -18,11 +18,16 @@ export function pageHeading(language) {
 export const cards = {
   en: [
     {
-      title: "Bookkeeping",
-      text: "Ditch the spreadsheet and messy records. Limm automates bookkeeping, saving you time and ensuring accuracy.",
+      title: <>Bookkeeping</>,
+      text: (
+        <>
+          Ditch the spreadsheet and messy records. Limm automates bookkeeping,
+          saving you time and ensuring accuracy.
+        </>
+      ),
     },
     {
-      title: "Inventory Management",
+      title: <>Inventory Management</>,
       text: (
         <>
           Limm&apos;s smart inventory management keeps you in control,
@@ -33,22 +38,45 @@ export const cards = {
   ],
   fr: [
     {
-      title: "Comptabilité",
-      text: "Abandonnez les feuilles de calcul et les registres désordonnés. Limm automatise la comptabilité, vous faisant gagner du temps et garantissant la précision.",
+      title: <>Comptabilité</>,
+      text: (
+        <>
+          Abandonnez les feuilles de calcul et les registres désordonnés. Limm
+          automatise la comptabilité, vous faisant gagner du temps et
+          garantissant la précision."
+        </>
+      ),
     },
     {
-      title: "Gestion des stocks",
-      text: "La gestion intelligente des stocks de Limm vous garde maître de la situation, minimisant les ruptures de stock et optimisant les commandes.",
+      title: <>Gestion des stocks"</>,
+      text: (
+        <>
+          La gestion intelligente des stocks de Limm vous garde maître de la
+          situation, minimisant les ruptures de stock et optimisant les
+          commandes.
+        </>
+      ),
     },
   ],
   es: [
     {
-      title: "Contabilidad",
-      text: "Deja atrás las hojas de cálculo y los registros desordenados. Limm automatiza la contabilidad, ahorrándote tiempo y garantizando precisión.",
+      title: <>Contabilidad"</>,
+      text: (
+        <>
+          Deja atrás las hojas de cálculo y los registros desordenados. Limm
+          automatiza la contabilidad, ahorrándote tiempo y garantizando
+          precisión.
+        </>
+      ),
     },
     {
-      title: "Gestión de inventarios",
-      text: "La gestión inteligente de inventarios de Limm te mantiene en control, minimizando las faltas de stock y optimizando los pedidos.",
+      title: <>Gestión de inventarios</>,
+      text: (
+        <>
+          La gestión inteligente de inventarios de Limm te mantiene en control,
+          minimizando las faltas de stock y optimizando los pedidos.
+        </>
+      ),
     },
   ],
 };
