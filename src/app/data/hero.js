@@ -4,7 +4,7 @@ export function pageHeading(language) {
       Empowering Businesses with Innovative <br /> Solutions.
     </>
   ) : language === "fr" ? (
-    <>Donner aux entreprises les moyens d'agir avec des solutions Innovantes.</>
+    <>Donner aux entreprises les moyens d&apos;agir avec des solutions Innovantes.</>
   ) : language === "es" ? (
     <>Empoderando a las empresas con soluciones Innovadoras.</>
   ) : (

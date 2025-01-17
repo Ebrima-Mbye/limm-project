@@ -1,7 +1,7 @@
 import Image from "next/image";
 import mainImage from "../photos/Smiling-senegalese-business-owner.png";
 import FAQCard from "./FAQCard";
-import { questions } from "../data/faq.js"
+import { questions } from "../data/faq.js";
 import { cookies } from "next/headers";
 
 export default async function HomeFAQ() {
@@ -20,10 +20,12 @@ export default async function HomeFAQ() {
       <div className="g:pl-12 grid grid-cols-1 gap-20 lg:grid-cols-3">
         <div className="col-span-2 mx-auto w-full p-1 md:p-3 lg:max-w-[751px]">
           {questionsData.map((questionEntry, index) => (
-            <FAQCard
-              question={questionEntry.question}
-              answer={questionEntry.answer}
-            />
+            <div key={index}>
+              <FAQCard
+                question={questionEntry.question}
+                answer={questionEntry.answer}
+              />
+            </div>
           ))}
         </div>
         <div className="col-span-1 flex items-center justify-end">
