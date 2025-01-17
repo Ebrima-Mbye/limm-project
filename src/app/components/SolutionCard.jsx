@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function HomeSolutionCard(props) {
-  const { bg, color, btnColor, btnTextColor, title } = props;
+  const { bg, color, btnColor, btnTextColor, title, identifier, text } = props;
   function getArrow() {
-    if (title.toLowerCase() === "for restaurants") {
+    if (identifier.toLowerCase() === "restaurant") {
       return "/images/restaurant_arrow.svg";
-    } else if (title.toLowerCase() === "for retail") {
+    } else if (identifier.toLowerCase() === "retail") {
       return "/images/retail_arrow.svg";
-    } else if (title.toLowerCase() === "for services") {
+    } else if (identifier.toLowerCase() === "services") {
       return "/images/service_arrow.svg";
     }
   }
@@ -34,12 +34,7 @@ export default function HomeSolutionCard(props) {
         </div>
         <div className="text-[26px] font-medium lg:mb-0 lg:h-8">{title}</div>
         <div className="mt-16 flex flex-col justify-between text-[16px]">
-          <p className="mb-12 text-sm leading-relaxed">
-            Forget tangled spreadsheets and messy inventory. Limm streamlines
-            your restaurant operations from head to tail. Manage ingredients
-            with real-time inventory, analyze customer data for winning menu
-            tweaks.
-          </p>
+          <p className="mb-12 text-sm leading-relaxed">{text}</p>
           <div>
             <Link
               href="/"
