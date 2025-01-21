@@ -24,9 +24,9 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <Header />
         <DeviceSizeProvider>
           <LanguageProvider defaultLanguage={language}>
+            <Header />
             {children}
           </LanguageProvider>
         </DeviceSizeProvider>

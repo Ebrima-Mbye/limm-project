@@ -1,7 +1,14 @@
+import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
+import { getText } from "@/data/bookADemo.js";
 
-export default function HomeSolutionCard(props) {
+export default async function HomeSolutionCard(props) {
+  // Wait for cookies before accessing them
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+  const buttonText = getText[language];
+
   const { bg, color, btnColor, btnTextColor, title, identifier, text } = props;
   function getArrow() {
     if (identifier.toLowerCase() === "restaurant") {
@@ -44,7 +51,7 @@ export default function HomeSolutionCard(props) {
                 color: btnTextColor,
               }}
             >
-              Book Demo
+              {buttonText}
             </Link>
           </div>
         </div>

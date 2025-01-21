@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-import Cookies from "js-cookie"; // Ensure this is installed and imported correctly
+import Cookies from "js-cookie";
 
 // Create the context
 const LanguageContext = createContext();

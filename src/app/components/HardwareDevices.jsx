@@ -4,19 +4,21 @@ import Image from "next/image";
 import AnimatedContainer from "../components/AnimatedContainer";
 import HardwareDeviceText from "../components/HardwareDeviceText";
 import { useDeviceSize } from "../components/DeviceSizeContext";
-import hardwareDevices from "../data/hardwareDevices.js";
+import { hardwareDevices, header } from "../data/hardwareDevices.js";
 import { useEffect, useState } from "react";
 import { getCookie } from "@/utils/myCookies.js";
 
 export default function HardwareDevices() {
   const isWideScreen = useDeviceSize();
   const [hardwareDevicesData, setHardwareDevicesData] = useState([]);
+  const [headerData, setHeaderData] = useState({});
   const defaultLanguage = "en";
 
   useEffect(() => {
     const language = getCookie("language") || defaultLanguage; // Default to 'en'
+    setHeaderData(header[language]);
     setHardwareDevicesData(hardwareDevices[language]);
-  }, [])
+  }, []);
 
   function getFlexDirection(id) {
     if (id === "1" && isWideScreen) {
@@ -36,23 +38,20 @@ export default function HardwareDevices() {
     <AnimatedContainer>
       <div className="mt-16">
         <div className="mb-12 text-center">
-          <p className="text-[18px] font-semibold">HARDWARE DEVICES</p>
-          <p className="text-foreground">
-            Manage all aspects of your Business in one place
-          </p>
+          <p className="text-[18px] font-semibold">{headerData.heading}</p>
+          <p className="text-foreground">{headerData.subHeading}</p>
         </div>
         <div className="w-full">
+          {/* A HARDWARE DEVICE */}
           {hardwareDevicesData &&
             hardwareDevicesData.map((device) => (
               <div
                 key={device.id}
                 style={{
                   flexDirection: getFlexDirection(device.id),
-                  // flexDirection: flexDirection,
                 }}
                 className="mb-12 flex flex-col gap-4 rounded-[20px] border border-gray-100 p-1 md:p-14 lg:flex-row lg:p-12"
               >
-                {/* A HARDWARE DEVICE */}
                 <div
                   style={{
                     backgroundColor: getBackgroundColor(device.id),

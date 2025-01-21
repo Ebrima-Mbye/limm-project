@@ -8,8 +8,32 @@ import twitterLogo from "../photos/twitter-logo.svg";
 import messageIcon from "../photos/message-icon.png";
 import callIcon from "../photos/call-icon.png";
 import Link from "next/link";
+import { cookies } from "next/headers";
 
-export default function BlackFooter() {
+export default async function BlackFooter() {
+  // Wait for cookies before accessing them
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+
+  const footerText = {
+    en: (
+      <>
+        Improving business management <br /> in Africa.
+      </>
+    ),
+    fr: (
+      <>
+        Améliorer la gestion des entreprises <br /> en Afrique.
+      </>
+    ),
+    es: (
+      <>
+        Mejorando el manejo de las empresas <br /> en África.
+      </>
+    ),
+  };
+  const text = footerText[language];
+
   const email = "limm.africa@gmail.com";
   const phoneNumber = "(+221) 77 400 77 15";
   return (
@@ -18,7 +42,7 @@ export default function BlackFooter() {
         <div className="flex flex-col items-center justify-center px-2 text-center md:px-12 lg:items-start">
           <Image src={logo} alt="logo" className="mb-4 w-[120px]" />
           <p className="w-full text-center font-medium text-white lg:text-start">
-            Improving business management <br /> in Africa.
+            {text}
           </p>
         </div>
         <div className="flex justify-end">

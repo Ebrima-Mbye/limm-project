@@ -14,6 +14,7 @@ export default function Cards({ pageDetails }) {
           {pageDetails.cards.map((card, index) => (
             <BusinessCard
               key={card.id}
+              identifier={pageDetails.identifier}
               withSecondImage={card.hasSubImages}
               mainImage={card.mainImage}
               heading={card.feature}

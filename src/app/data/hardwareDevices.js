@@ -1,7 +1,23 @@
 const limmRegister = "/images/limm_register.png";
 const limmBluetoothPrinter = "/images/limm_bluetooth.png";
 
-const hardwareDevices = {
+export const header = {
+  en: {
+    heading: "SEGMENTS",
+    subHeading: "Find the Solution that best fits your Business",
+  },
+  fr: {
+    heading: "SEGMENTS",
+    subHeading:
+      "Trouvez la solution qui correspond le mieux à votre entreprise",
+  },
+  es: {
+    heading: "SEGMENTOS",
+    subHeading: "Encuentra la solución que mejor se adapte a tu negocio",
+  },
+};
+
+export const hardwareDevices = {
   en: [
     {
       id: "1",

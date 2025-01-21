@@ -56,7 +56,7 @@ export default async function FooterBottom(props) {
           >
             {links[language].map((link, index) => (
               <Link
-              key={index}
+                key={index}
                 className="cursor-pointer text-center underline"
                 href={link.href}
               >

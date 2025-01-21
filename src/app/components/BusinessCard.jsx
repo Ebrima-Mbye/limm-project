@@ -5,31 +5,17 @@ import Link from "next/link";
 import arrow from "../photos/restaurants/arrow.png";
 import { useEffect, useState } from "react";
 import AnimatedContainer from "./AnimatedContainer";
+import { useDeviceSize } from "./DeviceSizeContext";
 
 export default function BusinessCard(props) {
-  const [isWideScreen, setIsWideScreen] = useState(false);
+  // const [isWideScreen, setIsWideScreen] = useState(false);
+  const isWideScreen = useDeviceSize();
   const [isTopLeft, setIsTopLeft] = useState(false);
   const [isBottomRight, setIsBottomRight] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Check if the screen width is greater than 800px
-      const handleResize = () => {
-        setIsWideScreen(window.innerWidth > 800);
-      };
-
-      // Run the check on component mount
-      handleResize();
-
-      // Add an event listener to handle window resize
-      window.addEventListener("resize", handleResize);
-
-      setIsTopLeft(props.subImagePosition === "top-left");
-      setIsBottomRight(props.subImagePosition === "bottom-right");
-
-      // Cleanup event listener on unmount
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    setIsTopLeft(props.subImagePosition === "top-left");
+    setIsBottomRight(props.subImagePosition === "bottom-right");
   }, [props.subImagePosition]);
 
   function getFlexDirection(index) {
@@ -91,7 +77,7 @@ export default function BusinessCard(props) {
           <p className="leading-[38px]mt-4 mb-5">{props.text}</p>
           <Link href={props.href} className="flex items-center gap-2">
             <span className="text-[15px] text-[#356BB7]">
-              Find the plan that best fits your restaurant
+              Find the plan that best fits your {props.identifier}
             </span>
             <Image
               src={arrow}

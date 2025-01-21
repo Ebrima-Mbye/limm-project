@@ -7,6 +7,7 @@ import layer3 from "../photos/retail/checkout.png";
 import BusinessCards from "../components/BusinessCards";
 import { cookies } from "next/headers";
 
+// "Identifier" used to distinguish between the different pages of the website
 export default async function Retail() {
   // Wait for cookies before accessing them
   const cookieStore = await cookies();
@@ -50,6 +51,7 @@ export default async function Retail() {
           href: "#",
         },
       ],
+      identifier: "Retail",
     },
     fr: {
       pageHeading: "Intelligence d'Inventaire, Chaque Article Compte.",
@@ -88,6 +90,7 @@ export default async function Retail() {
           href: "#",
         },
       ],
+      identifier: "Retail",
     },
     es: {
       pageHeading: "Inteligencia de Inventario, Cada Artículo Cuenta.",
@@ -126,6 +129,7 @@ export default async function Retail() {
           href: "#",
         },
       ],
+      identifier: "Retail",
     },
   };
 

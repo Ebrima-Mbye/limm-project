@@ -5,6 +5,7 @@ import smileyWoman from "../photos/restaurants/smiley-woman.png";
 import womanWithTablet from "../photos/restaurants/woman-reading-tablet.png";
 const phoneImage = "/images/restaurants/phone.png";
 
+// "Identifier" used to distinguish between the different pages of the website
 export default async function Restaurant() {
   // Wait for cookies before accessing them
   const cookieStore = await cookies();
@@ -48,6 +49,7 @@ export default async function Restaurant() {
           href: "#",
         },
       ],
+      identifier: "Restaurant",
     },
     fr: {
       pageHeading: "Gestion Simplifiée de Restaurant.",
@@ -86,6 +88,7 @@ export default async function Restaurant() {
           href: "#",
         },
       ],
+      identifier: "Restaurant",
     },
     es: {
       pageHeading: "Gestión Simplificada de Restaurantes.",
@@ -124,6 +127,7 @@ export default async function Restaurant() {
           href: "#",
         },
       ],
+      identifier: "Restaurant",
     },
   };
 

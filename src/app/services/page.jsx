@@ -6,7 +6,8 @@ import layer2 from "../photos/services/layer-2.png";
 import BusinessCards from "../components/BusinessCards";
 import { cookies } from "next/headers";
 
-export default async function Retail() {
+// "Identifier" used to distinguish between the different pages of the website
+export default async function Services() {
   // Wait for cookies before accessing them
   const cookieStore = await cookies();
   const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
@@ -49,6 +50,7 @@ export default async function Retail() {
           href: "#",
         },
       ],
+      identifier: "Services",
     },
     fr: {
       pageHeading: "Facturation Fluide, Paiements Rapides.",
@@ -87,6 +89,7 @@ export default async function Retail() {
           href: "#",
         },
       ],
+      identifier: "Services",
     },
     es: {
       pageHeading: "Facturación Rápida, Pagos Rápidos.",
@@ -125,6 +128,7 @@ export default async function Retail() {
           href: "#",
         },
       ],
+      identifier: "Services",
     },
   };
 

@@ -5,7 +5,7 @@ import retailIcon from "../photos/retail.png";
 import servicesIcon from "../photos/services.png";
 import HardwareDevices from "./HardwareDevices";
 import SolutionCard from "./SolutionCard";
-import { texts } from "../data/findSolution.js";
+import { texts, header } from "@/data/findSolution.js";
 import WhyLimm from "./WhyLimm";
 
 export default async function HomeFindSection() {
@@ -14,6 +14,8 @@ export default async function HomeFindSection() {
   const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
 
   const textData = texts[language];
+  const headerData = header[language];
+
   const restaurantText = textData.restaurant;
   const retailText = textData.retail;
   const servicesText = textData.services;
@@ -22,10 +24,8 @@ export default async function HomeFindSection() {
     <section className="px-3 pt-16 lg:px-20">
       <div className="mx-auto mb-[100px] max-w-[1150px]">
         <div className="mb-11 text-center">
-          <p className="text-[18px] font-semibold">SEGMENTS</p>
-          <p className="text-foreground">
-            Find the Solution that best fits your Business
-          </p>
+          <p className="text-[18px] font-semibold">{headerData.heading}</p>
+          <p className="text-foreground">{headerData.subHeading}</p>
         </div>
         <div className="grid w-full grid-cols-1 gap-8 lg:grid-cols-3">
           <SolutionCard

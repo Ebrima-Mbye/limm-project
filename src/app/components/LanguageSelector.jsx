@@ -7,7 +7,7 @@ import globeBlack from "../photos/globe-black.png";
 
 export default function LanguageSelector({ isWhite }) {
   const { language, updateLanguage } = useLanguage();
-  // const supportedLanguages = ["English", "French", "Arabic"];
+
   const supportedLanguages = [
     { name: "English", value: "en" },
     { name: "French", value: "fr" },
@@ -22,7 +22,7 @@ export default function LanguageSelector({ isWhite }) {
       });
     }
     setTimeout(() => {
-      location.reload();
+      location.reload(); // Reload the page after some delay, to refetch from the server
     }, 500);
   };
 

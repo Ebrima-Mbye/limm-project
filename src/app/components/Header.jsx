@@ -4,12 +4,16 @@ import Image from "next/image";
 const logo = "/images/limm.logo.logo 1.png";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { leftLinks, rightLinks } from "../data/headerLinks";
+import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
+import { useLanguage } from "./LanguageContext";
 
 export default function HomeHeader() {
+  const { language } = useLanguage();
   const menuTranslateY = "75vh";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState("60px");
+  const [rightLinks, setRightLinks] = useState([]);
+  const [leftLinks, setLeftLinks] = useState([]);
   const headerRef = useRef();
 
   const handleMenuHeight = () => {
@@ -17,6 +21,8 @@ export default function HomeHeader() {
   };
   useEffect(() => {
     handleMenuHeight();
+    setRightLinks(getRightLinks[language]);
+    setLeftLinks(getLeftLinks[language]);
   }, [isMenuOpen]); // Runs whenever isMenuOpen changes
 
   function headerToTop() {
