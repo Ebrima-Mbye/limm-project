@@ -1,23 +1,30 @@
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+"use client";
 
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/LanguageContext";
+const logo = "/images/limm.logo.logo 1.png";
 const arrowLeft = "/images/login/arrow-left.png";
 
 export default function AuthTopBar() {
-  const router = useRouter();
-  const supportedLanguages = ["En", "Fr", "Ar"];
-  const navigateToHomePage = () => {
-    router.push("/");
+  const { language } = useLanguage();
+  const [linkText, setLinkText] = useState();
 
-    setTimeout(() => {
-      router.refresh();
-    }, 500);
+  const getLinkText = {
+    en: "Back to Home",
+    fr: "Retour à l'accueil",
+    es: "Volver al inicio",
   };
+
+  useEffect(() => {
+    setLinkText(getLinkText[language]);
+  }, []);
   return (
-    <div>
-      <div className="absolute left-6 top-6 flex items-center md:left-8 md:top-8">
-        <button
-          onClick={navigateToHomePage}
+    <div className="fixed left-0 right-0 top-0 flex w-full items-center justify-between p-5">
+      <div className="">
+        <Link
+          href="/"
           className="flex gap-3 text-gray-500 transition-colors hover:text-gray-800"
         >
           <Image
@@ -28,27 +35,22 @@ export default function AuthTopBar() {
             height={25}
           />
           <p className="[text-[24px] font-bold leading-[28.8px] text-[#64758D]">
-            Back to main page
+            {linkText}
           </p>
-        </button>
+        </Link>
       </div>
 
-      {/* Top right Language Toggle */}
-      <div className="absolute right-6 top-6 md:right-8 md:top-8">
-        <select
-          id="currency-selector"
-          className="rounded-full border-2 border-gray-500 bg-inherit px-2 py-2 text-center font-bold"
-        >
-          {supportedLanguages.map((language, index) => (
-            <option
-              key={index}
-              value={language}
-              className="bg-background text-foreground"
-            >
-              {language}
-            </option>
-          ))}
-        </select>
+      <div className="">
+        <div className="flex items-center lg:h-auto">
+          {/* Company logo */}
+          <Image
+            src={logo}
+            alt="Logo"
+            width={50}
+            height={40}
+            className="mt-0 w-full lg:w-full"
+          />
+        </div>
       </div>
     </div>
   );

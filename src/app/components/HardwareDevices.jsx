@@ -42,9 +42,9 @@ export default function HardwareDevices() {
           <p className="text-foreground">{headerData.subHeading}</p>
         </div>
         <div className="w-full">
-          {/* A HARDWARE DEVICE */}
           {hardwareDevicesData &&
             hardwareDevicesData.map((device) => (
+              // A HARDWARE DEVICE
               <div
                 key={device.id}
                 style={{

@@ -6,16 +6,25 @@ import arrow from "../photos/restaurants/arrow.png";
 import { useEffect, useState } from "react";
 import AnimatedContainer from "./AnimatedContainer";
 import { useDeviceSize } from "./DeviceSizeContext";
+import { useLanguage } from "./LanguageContext";
 
 export default function BusinessCard(props) {
   // const [isWideScreen, setIsWideScreen] = useState(false);
+  const { language } = useLanguage();
   const isWideScreen = useDeviceSize();
   const [isTopLeft, setIsTopLeft] = useState(false);
   const [isBottomRight, setIsBottomRight] = useState(false);
+  const [hyperLinkText, setHyperLinkText] = useState("");
+  const getText = {
+    en: "Find the plan that best fits your",
+    fr: "Trouvez le plan qui vous convient",
+    es: "Encuentra el plan que mejor se adapta a tu",
+  };
 
   useEffect(() => {
     setIsTopLeft(props.subImagePosition === "top-left");
     setIsBottomRight(props.subImagePosition === "bottom-right");
+    setHyperLinkText(getText[language]);
   }, [props.subImagePosition]);
 
   function getFlexDirection(index) {
@@ -77,7 +86,7 @@ export default function BusinessCard(props) {
           <p className="leading-[38px]mt-4 mb-5">{props.text}</p>
           <Link href={props.href} className="flex items-center gap-2">
             <span className="text-[15px] text-[#356BB7]">
-              Find the plan that best fits your {props.identifier}
+              {hyperLinkText} {props.identifier}
             </span>
             <Image
               src={arrow}

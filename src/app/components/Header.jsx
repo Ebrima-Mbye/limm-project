@@ -14,6 +14,7 @@ export default function HomeHeader() {
   const [maxHeight, setMaxHeight] = useState("60px");
   const [rightLinks, setRightLinks] = useState([]);
   const [leftLinks, setLeftLinks] = useState([]);
+  const [buttonText, setButtonText] = useState("");
   const headerRef = useRef();
 
   const handleMenuHeight = () => {
@@ -24,6 +25,16 @@ export default function HomeHeader() {
     setRightLinks(getRightLinks[language]);
     setLeftLinks(getLeftLinks[language]);
   }, [isMenuOpen]); // Runs whenever isMenuOpen changes
+
+  const getButtonText = {
+    en: "Book a Demo",
+    fr: "Réserver démo",
+    es: "Solicitar demo",
+  };
+
+  useEffect(() => {
+    setButtonText(getButtonText[language]);
+  }, []);
 
   function headerToTop() {
     if (headerRef.current) {
@@ -77,7 +88,7 @@ export default function HomeHeader() {
       }}
       ref={headerRef}
       id="header"
-      className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col rounded-bl-lg rounded-br-lg border-gray-400 text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-all duration-300 lg:left-[4%] lg:right-[4%] lg:top-8 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:rounded-lg lg:px-6 lg:text-xl lg:shadow-none"
+      className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col rounded-bl-lg rounded-br-lg text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-all duration-300 lg:left-[4%] lg:right-[4%] lg:top-8 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:rounded-lg lg:px-6 lg:text-xl lg:shadow-none"
     >
       <div className="lg:min-h-auto mb-3 mt-0 flex max-h-[9vh] min-h-[9vh] w-full items-center justify-between px-[12%] md:mt-3 md:min-h-[6vh] lg:mb-0 lg:h-full lg:w-auto lg:justify-center lg:p-2">
         <div className="flex h-full items-center lg:h-auto">
@@ -157,9 +168,9 @@ export default function HomeHeader() {
             <div className="mt-3 lg:mt-0">
               <button
                 onClick={closeMenu}
-                className="ml-4 w-full text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-[20px] text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
+                className="ml-4 w-full text-lg text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
               >
-                Book a Demo
+                {buttonText}
               </button>
             </div>
           </div>

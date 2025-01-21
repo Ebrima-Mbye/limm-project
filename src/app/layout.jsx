@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { LanguageProvider } from "./components/LanguageContext";
 import { DeviceSizeProvider } from "./components/DeviceSizeContext";
 import { cookies } from "next/headers";
+import { CurrencyProvider } from "./components/CurrencyProvider";
 
 // Set up the font
 const inter = Inter({
@@ -26,8 +27,10 @@ export default async function RootLayout({ children }) {
       <body>
         <DeviceSizeProvider>
           <LanguageProvider defaultLanguage={language}>
-            <Header />
-            {children}
+            <CurrencyProvider>
+              <Header />
+              {children}
+            </CurrencyProvider>
           </LanguageProvider>
         </DeviceSizeProvider>
       </body>

@@ -16,7 +16,7 @@ export default function PricingCard({ plan }) {
   function getValue() {
     if (
       parseInt(currencyData.value) === 0 ||
-      billingCycle.toLowerCase() === "monthly"
+      billingCycle?.toLowerCase() === "monthly"
     ) {
       return currencyData.value;
     }

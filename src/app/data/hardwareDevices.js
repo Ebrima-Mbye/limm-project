@@ -17,12 +17,25 @@ export const header = {
   },
 };
 
+export const prices = {
+  1: {
+    XOF: "250,000 F",
+    GMD: "28,619 GMD",
+    USD: "392 USD",
+  },
+  2: {
+    XOF: "30,000 F",
+    GMD: "3,433 GMD",
+    USD: "47 USD",
+  },
+};
+
 export const hardwareDevices = {
   en: [
     {
       id: "1",
       name: "LIMM REGISTER",
-      price: "250.000 F",
+      price: prices[1],
       image: limmRegister,
       description:
         "Our complete user-friendly point-of-sale Register machine with a touch screen, easy-to-use software options and built-in payments.",
@@ -44,7 +57,7 @@ export const hardwareDevices = {
     {
       id: "2",
       name: "LIMM BLUETOOTH PRINTER",
-      price: "30.000 F",
+      price: prices[2],
       image: limmBluetoothPrinter,
       description:
         "Mini Portable bluetooth receipt printer. Generate instant receipts and labels for your business by connecting to the mobile app.",
@@ -68,7 +81,7 @@ export const hardwareDevices = {
     {
       id: "1",
       name: "ENREGISTREUR LIMM",
-      price: "250.000 F",
+      price: prices[1],
       image: limmRegister,
       description:
         "Notre machine d'enregistrement conviviale et complète avec écran tactile, options logicielles simples et paiements intégrés.",
@@ -90,7 +103,7 @@ export const hardwareDevices = {
     {
       id: "2",
       name: "IMPRIMANTE BLUETOOTH LIMM",
-      price: "30.000 F",
+      price: prices[2],
       image: limmBluetoothPrinter,
       description:
         "Mini imprimante portable de reçus Bluetooth. Générez instantanément des reçus et des étiquettes pour votre entreprise en vous connectant à l'application mobile.",
@@ -114,7 +127,7 @@ export const hardwareDevices = {
     {
       id: "1",
       name: "REGISTRADOR LIMM",
-      price: "250.000 F",
+      price: prices[1],
       image: limmRegister,
       description:
         "Nuestra máquina registradora amigable y completa con pantalla táctil, opciones de software fáciles de usar y pagos integrados.",
@@ -136,7 +149,7 @@ export const hardwareDevices = {
     {
       id: "2",
       name: "IMPRESORA BLUETOOTH LIMM",
-      price: "30.000 F",
+      price: prices[2],
       image: limmBluetoothPrinter,
       description:
         "Mini impresora portátil de recibos Bluetooth. Genera recibos y etiquetas al instante para tu negocio conectándote a la aplicación móvil.",
@@ -157,5 +170,3 @@ export const hardwareDevices = {
     },
   ],
 };
-
-export default hardwareDevices;

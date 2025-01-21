@@ -1,10 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import AuthTopBar from "../components/AuthTopBar";
 const logo = "/images/limm.logo.logo 1.png";
-import MyPasswordField from "../../components/MyPasswordField";
+import MyPasswordField from "@/components/MyPasswordField";
 
 export default function LoginPage() {
   // This Page has more z-index that the main header Component. This way this page effectively hides the header
