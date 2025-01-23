@@ -44,11 +44,11 @@ export default function HardwareDeviceText({ device }) {
         </div>
       ))}
       <div className="mt-10 flex items-center gap-3">
-        <button className="rounded-full bg-[#006df0] px-4 py-2 text-white">
+        <button className="rounded-full border-4 border-white bg-[#006df0] px-4 py-2 text-white transition-colors duration-300 hover:border-cyan-300 hover:bg-blue-800">
           {buttonText}
         </button>
         <p>
-        {forText} <span className="text-xl font-medium">{price}</span>
+          {forText} <span className="text-xl font-medium">{price}</span>
         </p>
       </div>
     </div>
