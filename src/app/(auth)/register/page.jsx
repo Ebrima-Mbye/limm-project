@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../photos/limm.logo.logo 1.png";
-import selectIcon from "../../photos/login/select-icon.png";
-import MyPasswordField from "../../components/MyPasswordField";
+import logo from "@/photos/limm.logo.logo 1.png";
+import selectIcon from "@/photos/login/select-icon.png";
+import MyPasswordField from "@/components/MyPasswordField";
 import AuthTopBar from "../components/AuthTopBar";
 
 export default function RegisterPage() {
@@ -84,8 +84,8 @@ export default function RegisterPage() {
               our&nbsp;
               <Link href="#" className="text-[#356BB7] underline">
                 Terms and Conditions
-              </Link>{" "}
-              and{" "}
+              </Link>
+              &nbsp;and&nbsp;
               <Link href="#" className="text-[#356BB7] underline">
                 Privacy Policy
               </Link>

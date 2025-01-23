@@ -3,8 +3,20 @@ import Link from "next/link";
 import AuthTopBar from "../components/AuthTopBar";
 const logo = "/images/limm.logo.logo 1.png";
 import MyPasswordField from "@/components/MyPasswordField";
+import { cookies } from "next/headers";
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+
+  const getForgotPasswordText = {
+    en: "Forgot Password?",
+    fr: "Mot de passe oublié ?",
+    es: "¿Olvidaste tu contraseña?",
+  };
+
+  const forgotPasswordText = getForgotPasswordText[language];
+
   // This Page has more z-index that the main header Component. This way this page effectively hides the header
   return (
     <div className="realtive fixed top-0 z-[101] flex h-screen w-[100vw] flex-col items-center justify-center bg-inherit">
@@ -44,7 +56,7 @@ export default function LoginPage() {
                 href="#"
                 className="text-[14px] leading-[19.2px] text-[#356BB7] underline hover:underline"
               >
-                Forgot Password?
+                {forgotPasswordText}
               </Link>
             </div>
           </div>

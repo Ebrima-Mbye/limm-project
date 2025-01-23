@@ -1,83 +1,32 @@
-// Icon
-import bookkeepingIcon from "../../photos/pricing/bookkeeping.svg";
-import inventoryIcon from "../../photos/pricing/inventory.svg";
-import transactionsIcon from "../../photos/pricing/transactions.svg";
-import POSIcon from "../../photos/pricing/POS.svg";
-import salesIcon from "../../photos/pricing/sales-report.svg";
-import payrollIcon from "../../photos/pricing/payroll.svg";
-import invoicesIcon from "../../photos/pricing/invoices.svg";
-import quotesIcon from "../../photos/pricing/quotes.svg";
-import businessesIcon from "../../photos/pricing/business.svg";
+import { limmPerks } from "@/data/limmPerks.js";
 import Image from "next/image";
+import { cookies } from "next/headers";
 
-export default function LimmPerks() {
-  const perksMainList = [
-    [
-      {
-        perkText: "Bookkeeping",
-        perkIcon: bookkeepingIcon,
-      },
-      {
-        perkText: "Inventory Management",
-        perkIcon: inventoryIcon,
-      },
-      {
-        perkText: "Transactions Tracking",
-        perkIcon: transactionsIcon,
-      },
-    ],
-    [
-      {
-        perkText: "POS App",
-        perkIcon: POSIcon,
-      },
-      {
-        perkText: "Sales Reports",
-        perkIcon: salesIcon,
-      },
-      {
-        perkText: "Payroll",
-        perkIcon: payrollIcon,
-      },
-    ],
-    [
-      {
-        perkText: "Invoices",
-        perkIcon: invoicesIcon,
-      },
-      {
-        perkText: "Quotes",
-        perkIcon: quotesIcon,
-      },
-      {
-        perkText: "Business Insights",
-        perkIcon: businessesIcon,
-      },
-    ],
-  ];
+export default async function LimmPerks() {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+  const perksData = limmPerks[language];
 
   return (
-    <section className="max-w-[850px] grid grid-cols-1 lg:grid-cols-3 gap-3 md:gap-8 mt-10">
-      {perksMainList.map((perkList, i1) => (
+    <section className="mt-10 grid max-w-[850px] grid-cols-1 gap-3 md:gap-8 lg:grid-cols-3">
+      {perksData.map((perkList, i1) => (
         <div key={i1} className="flex">
           <div className="">
             {perkList.map((perk, i2) => (
-              <div key={i2} className="flex gap-3 justify-start items-center">
+              <div key={i2} className="flex items-center justify-start gap-3">
                 <Image
                   src={perk.perkIcon}
                   alt={perk.perkText}
+                  width={25}
+                  height={25}
                   className="h-14"
                 />
-                <p className="lg:text-nowrap">
-                  {perk.perkText}
-                </p>
+                <p className="lg:text-nowrap">{perk.perkText}</p>
               </div>
             ))}
           </div>
-          {i1 !== perkList.length - 1 ? (
-            <div className="w-[-1px] hidden lg:block border-black border h-full md:mx-2 lg:mx-14"></div>
-          ) : (
-            ""
+          {i1 !== perkList.length - 1 && (
+            <div className="hidden h-full w-[-1px] border border-black md:mx-2 lg:mx-14 lg:block"></div>
           )}
         </div>
       ))}

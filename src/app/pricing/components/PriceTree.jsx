@@ -1,5 +1,5 @@
 import Image from "next/image";
-import branchImage from "../../photos/pricing/branch-image.svg";
+import branchImage from "@/photos/pricing/branch-image.svg";
 import PricingCard from "./PricingCard";
 import AnimatedContainer from "@/components/AnimatedContainer";
 

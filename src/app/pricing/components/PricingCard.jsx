@@ -10,7 +10,7 @@ export default function PricingCard({ plan }) {
   const premiumStyles =
     "relative rounded-lg overflow-hidden bg-white before:absolute before:inset-[-50%] before:bg-custom-conic before:animate-spin-slow";
 
-  const { planName, prices, perks, bottonText } = plan;
+  const { planName, prices, perks, buttonText } = plan;
 
   const currencyData = prices[selectedCurrency];
   function getValue() {
@@ -66,7 +66,7 @@ export default function PricingCard({ plan }) {
           className="my-5 w-full rounded-md bg-[#356BB7] px-6 py-2 text-white transition-colors duration-150 hover:bg-blue-500"
         >
           {/* className="my-5 bg-[#356BB7] hover:bg-blue-500 transition-colors duration-150 text-white px-6 py-2 w-full rounded-md"> */}
-          {bottonText}
+          {buttonText}
         </button>
         <ul className="space-y-3 text-start text-sm text-gray-600">
           {perks.map((perk, index) => (

@@ -25,7 +25,7 @@ export default function FAQCard({ question, answer, initialShowAnswer }) {
       </div>
       <div
         onClick={toggleShowAnswer}
-        className="cursor-pointer flex items-center justify-center"
+        className="border-red-500 border cursor-pointer flex items-center justify-center"
       >
         {showAnswer ? (
           <Image

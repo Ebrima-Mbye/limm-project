@@ -4,25 +4,33 @@ import PlanFrequencySelection from "./components/PlanFrequencySelection";
 import PriceTree from "./components/PriceTree";
 import LimmPerks from "./components/LimmPerks";
 import CurrencySelector from "./components/CurrencySelector";
-import { plansForMobileApp, plansForTabletApp } from "../data/pricePlans.js";
+import {
+  getPlansForMobileApp,
+  getPlansForTabletApp,
+} from "../data/pricePlans.js";
 import BlackFooter from "../components/BlackFooter";
-import { CurrencyProvider } from "@/components/CurrencyProvider";
+import { header } from "@/data/pricing.js";
+import { cookies } from "next/headers";
 
-export default function Page() {
+export default async function Page() {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+
+  const plansForMobileApp = getPlansForMobileApp[language];
+  const plansForTabletApp = getPlansForTabletApp[language];
+
+  const headerData = header[language];
   return (
     <section className="pt-32">
       <div className="w-full px-4 md:px-12 lg:px-24">
         <div className="mb-10 flex flex-col items-center gap-1 lg:flex-row">
           <div className="mb-4 flex-1">
             <p className="text-center text-4xl font-bold md:text-start md:text-[60px] md:leading-[65px] lg:text-[65px] lg:font-medium lg:leading-[70px]">
-              Pricing that Fits your Business needs
+              {headerData.heading}
             </p>
           </div>
           <div className="flex-1">
-            <p className="">
-              Tailored monthly subscriptions for maximum value. Need help for
-              better decision making? Book a Demo.
-            </p>
+            <p className="">{headerData.subHeading}</p>
           </div>
         </div>
 
