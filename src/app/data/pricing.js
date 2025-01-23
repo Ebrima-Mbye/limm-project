@@ -10,8 +10,8 @@ export const header = {
       "Abonnements mensuels personnalisés pour une valeur maximale. Besoin d'aide pour une meilleure prise de décision ? Réservez une démo.",
   },
   es: {
-    heading: "Precios que se adaptan a las necesidades de su negocio",
+    heading: "Precios adaptados a su negocio",
     subHeading:
-      "Suscripciones mensuales personalizadas para un máximo valor. ¿Necesita ayuda para tomar mejores decisiones? Solicite una demostración.",
+      "Suscripciones mensuales personalizadas para máximo valor. ¿Necesita ayuda? Solicite una demostración.",
   },
 };

@@ -1,18 +1,29 @@
 "use client";
 
 import { useBillingCycle, useCurrency } from "@/components/CurrencyProvider";
+import { useLanguage } from "@/components/LanguageContext";
 import Image from "next/image";
 const checkMark = "/images/pricing/check-mark.png";
 
 export default function PricingCard({ plan }) {
   const { selectedCurrency } = useCurrency();
   const { billingCycle } = useBillingCycle();
+  const { language } = useLanguage();
+  const getPaymentDuration = {
+    en: "/month",
+    fr: "/mois",
+    es: "/mes",
+  };
+  const paymentDuration = getPaymentDuration[language];
   const premiumStyles =
     "relative rounded-lg overflow-hidden bg-white before:absolute before:inset-[-50%] before:bg-custom-conic before:animate-spin-slow";
 
   const { planName, prices, perks, buttonText } = plan;
 
+  // Get the price based on the selected currency
   const currencyData = prices[selectedCurrency];
+
+  // Get the currency price for the given plan
   function getValue() {
     if (
       parseInt(currencyData.value) === 0 ||
@@ -24,10 +35,13 @@ export default function PricingCard({ plan }) {
     let discount = 0.18 * parseInt(currencyData.value);
     return parseInt(currencyData.value) - discount;
   }
+
+  // Get the symbol of the current currency
   function getSymbol() {
     return currencyData.symbol;
   }
 
+  // Check for whether to style differently or not
   function isPremium() {
     return (
       planName.toLowerCase() === "premium" || planName.toLowerCase() === "pro"
@@ -54,7 +68,9 @@ export default function PricingCard({ plan }) {
         <h3 className="mb-4 text-lg font-semibold text-gray-700">{planName}</h3>
         <p className="text-4xl font-bold text-[#356BB7]">
           {getValue()} {getSymbol()}&nbsp;
-          <span className="text-sm font-normal text-foreground">/month</span>
+          <span className="text-sm font-normal text-foreground">
+            {paymentDuration}
+          </span>
         </p>
         <button
           style={{

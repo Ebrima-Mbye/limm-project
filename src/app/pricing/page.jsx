@@ -7,6 +7,8 @@ import CurrencySelector from "./components/CurrencySelector";
 import {
   getPlansForMobileApp,
   getPlansForTabletApp,
+  getMobileAppHeader,
+  getTabletAppHeader,
 } from "../data/pricePlans.js";
 import BlackFooter from "../components/BlackFooter";
 import { header } from "@/data/pricing.js";
@@ -18,6 +20,8 @@ export default async function Page() {
 
   const plansForMobileApp = getPlansForMobileApp[language];
   const plansForTabletApp = getPlansForTabletApp[language];
+  const mobileHeader = getMobileAppHeader[language];
+  const tabletHeader = getTabletAppHeader[language];
 
   const headerData = header[language];
   return (
@@ -47,20 +51,15 @@ export default async function Page() {
         <div className="mb-12 flex items-center justify-center gap-3">
           <PlanFrequencySelection />
           <div className="mx-2 h-12 w-[-1px] border-[1px] border-gray-500 md:mx-6"></div>
-          <p className="mr-[-6px]">Currency: </p>
           <CurrencySelector />
         </div>
 
         {/* <CurrencyProvider value={selectedCurrency}> */}
-        <PriceTree appType="MOBILE APP" plans={plansForMobileApp} />
-        <PriceTree appType="POS TABLET APP" plans={plansForTabletApp} />
+        <PriceTree appType={mobileHeader} plans={plansForMobileApp} />
+        <PriceTree appType={tabletHeader} plans={plansForTabletApp} />
         {/* </CurrencyProvider> */}
 
         <div>
-          <h3 className="mt-24 text-xl font-medium leading-[55.2px] md:text-4xl lg:text-3xl">
-            All Limm plans come with...
-          </h3>
-
           <LimmPerks />
         </div>
       </div>

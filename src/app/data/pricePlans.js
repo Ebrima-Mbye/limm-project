@@ -1,3 +1,14 @@
+export const getMobileAppHeader = {
+  en: "MOBILE APP",
+  fr: "APPLICATION MOBILE",
+  es: "APLICACIÓN MÓVIL",
+};
+export const getTabletAppHeader = {
+  en: "POS TABLET",
+  fr: "TABLETTE POS",
+  es: "TABLETA POS",
+};
+
 export const getPlansForMobileApp = {
   en: [
     {

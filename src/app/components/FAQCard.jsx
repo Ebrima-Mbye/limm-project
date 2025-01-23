@@ -11,11 +11,8 @@ export default function FAQCard({ question, answer, initialShowAnswer }) {
     setShowAnswer(!showAnswer);
   };
 
-  useEffect(() => {
-    if (showAnswer) {
-    }
-  }, [showAnswer]);
   return (
+    // A single question and answer
     <div className="items center mb-4 flex justify-between rounded-lg border border-gray-300 p-4">
       <div className="mr-1 flex flex-col gap-2">
         <p className="text-[15px] sm:text-lg lg:text-lg">{question}</p>
@@ -25,21 +22,21 @@ export default function FAQCard({ question, answer, initialShowAnswer }) {
       </div>
       <div
         onClick={toggleShowAnswer}
-        className="border-red-500 border cursor-pointer flex items-center justify-center"
+        className="flex cursor-pointer items-start justify-center"
       >
         {showAnswer ? (
           <Image
             onClick={toggleShowAnswer}
             src={minusSign}
             alt="minus symbol"
-            className="cursor-pointer max-h-[4px] max-w-[20px]"
+            className="mt-2 max-h-[4px] max-w-[20px] cursor-pointer"
           />
         ) : (
           <Image
             onClick={toggleShowAnswer}
             src={plusSign}
             alt="plus symbol"
-            className="cursor-pointer max-h-[20px] max-w-[20px]"
+            className="max-h-[20px] max-w-[20px] cursor-pointer"
           />
         )}
       </div>
