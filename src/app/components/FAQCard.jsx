@@ -3,7 +3,7 @@
 import Image from "next/image";
 import plusSign from "../photos/plus-sign.png";
 import minusSign from "../photos/minus-sign.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function FAQCard({ question, answer, initialShowAnswer }) {
   const [showAnswer, setShowAnswer] = useState(initialShowAnswer || false);
