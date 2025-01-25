@@ -1,6 +1,6 @@
 "use client";
 
-import FullPage from "../components/FullPage";
+import FullPage from "@/components/FullPage";
 import { useState } from "react";
 
 export default function Location() {
@@ -23,7 +23,9 @@ export default function Location() {
         // Use the ISO country code
         const countryCode = data.countryCode; // e.g., "US", "GB", "IN"
         if (countryCode) {
-          fetch(`https://restcountries.com/v3.1/alpha/${countryCode}?fields=currencies`)
+          fetch(
+            `https://restcountries.com/v3.1/alpha/${countryCode}?fields=currencies`,
+          )
             .then((response) => response.json())
             .then((countryData) => {
               // Extract currency details

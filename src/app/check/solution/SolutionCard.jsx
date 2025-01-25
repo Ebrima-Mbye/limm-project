@@ -5,10 +5,7 @@ import Link from "next/link";
 import { getText } from "@/data/bookADemo.js";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/components/LanguageContext";
-import {
-  useDeviceSize,
-  useSmallDeviceSize,
-} from "@/components/DeviceSizeContext";
+import { useDeviceSize } from "@/components/DeviceSizeContext";
 
 export default function HomeSolutionCard({
   bg,
@@ -34,8 +31,8 @@ export default function HomeSolutionCard({
     container: {
       backgroundColor: bg,
       color: color,
-      minHeight: isWideScreen ? "450px" : "400px",
-      maxHeight: isWideScreen ? "450px" : "400px",
+      minHeight: isWideScreen ? "450px" : isMiddleScreen ? "350px" : "400px",
+      maxHeight: isWideScreen ? "450px" : isMiddleScreen ? "350px" : "400px",
     },
     hoverOverlay: {
       zIndex: "10",
@@ -53,8 +50,7 @@ export default function HomeSolutionCard({
     },
     arrow: {
       transition: "all 0.5s linear",
-      width: showText ? "30px" : "100px",
-      height: showText ? "30px" : "100px",
+      width: showText ? "35px" : "100px",
     },
     title: {
       fontSize: showText ? "1.5rem" : "2.5rem",
@@ -99,7 +95,7 @@ export default function HomeSolutionCard({
       className="relative flex flex-col justify-between rounded-[20px]"
     >
       <div className="absolute z-10" style={styles.hoverOverlay}>
-        <div className="mb-4 flex flex-col items-start lg:flex-row lg:items-center">
+        <div className="mb-4 flex flex-col items-start md:mb-8 lg:flex-row lg:items-center">
           <Image
             src={arrowMap[identifier.toLowerCase()]}
             alt={title}

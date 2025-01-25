@@ -1,61 +1,81 @@
-import { cookies } from "next/headers";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { getText } from "@/data/bookADemo.js";
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/LanguageContext";
+import { useDeviceSize } from "@/components/DeviceSizeContext";
+import getStyles from "@/styles/SolutionCardStyles.js";
 
-export default async function HomeSolutionCard(props) {
-  // Wait for cookies before accessing them
-  const cookieStore = await cookies();
-  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+export default function HomeSolutionCard(props) {
+  const deviceSizeContext = useDeviceSize();
+  const { isSmallScreen, isMiddleScreen, isWideScreen } = deviceSizeContext;
+  const [showText, setShowText] = useState(false);
+  const { language } = useLanguage();
   const buttonText = getText[language];
 
-  const { bg, color, btnColor, btnTextColor, title, identifier, text } = props;
-  function getArrow() {
-    if (identifier.toLowerCase() === "restaurant") {
-      return "/images/restaurant_arrow.svg";
-    } else if (identifier.toLowerCase() === "retail") {
-      return "/images/retail_arrow.svg";
-    } else if (identifier.toLowerCase() === "services") {
-      return "/images/service_arrow.svg";
+  // Get the styles for this component from a styles folder
+  const styles = getStyles(props, showText, deviceSizeContext);
+
+  const { title, identifier, text } = props;
+
+  const arrowMap = {
+    restaurant: "/images/restaurant_arrow.svg",
+    retail: "/images/retail_arrow.svg",
+    services: "/images/service_arrow.svg",
+  };
+
+  useEffect(() => {
+    if (isWideScreen) {
+      setShowText(false);
+    } else {
+      setShowText(true);
     }
-  }
+  }, [isSmallScreen, isMiddleScreen, isWideScreen]);
+
+  const handleMouseEnter = () => {
+    if (isWideScreen) setShowText(true);
+  };
+
+  const handleMouseLeave = () => {
+    if (isWideScreen) setShowText(false);
+  };
 
   return (
-    <>
-      <div
-        style={{
-          backgroundColor: bg,
-          color: color,
-        }}
-        className="flex flex-col justify-between rounded-[20px] px-6 py-7 lg:mb-0"
-      >
-        {/* <div className="flex-1 flex flex-col justify-between lg:justify-start lg:flex-row lg:items-center"> */}
-        <div className="mb-4 mt-0 flex flex-col justify-between lg:mb-10 lg:mt-3 lg:flex-row lg:items-center lg:justify-start">
+    <div
+      style={styles.container}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative flex flex-col justify-between rounded-[20px]"
+    >
+      <div className="absolute z-10" style={styles.hoverOverlay}>
+        <div className="mb-4 flex flex-col items-start md:mb-8 lg:flex-row lg:items-center">
           <Image
-            src={getArrow(title)}
+            src={arrowMap[identifier.toLowerCase()]}
             alt={title}
             width={35}
             height={30}
-            className=""
+            style={styles.arrow}
           />
         </div>
-        <div className="text-[26px] font-medium lg:mb-0 lg:h-8">{title}</div>
-        <div className="mt-16 flex flex-col justify-between text-[16px]">
-          <p className="mb-12 text-sm leading-relaxed">{text}</p>
-          <div>
-            <Link
-              href="/"
-              className="rounded-[20px] px-4 py-3 leading-[28.5px]"
-              style={{
-                backgroundColor: btnColor,
-                color: btnTextColor,
-              }}
-            >
-              {buttonText}
-            </Link>
-          </div>
+        <div className="text-[26px] font-medium" style={styles.title}>
+          {title}
         </div>
       </div>
-    </>
+      <div
+        className="mt-16 flex flex-col text-[16px]"
+        style={styles.textSection}
+      >
+        <p className="mb-12 text-sm leading-relaxed">{text}</p>
+        <Link
+          href="/"
+          className="self-start rounded-[20px] px-4 py-2 leading-[28.5px]"
+          style={styles.button}
+        >
+          {buttonText}
+        </Link>
+      </div>
+    </div>
   );
 }
