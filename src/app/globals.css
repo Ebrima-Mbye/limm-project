@@ -43,3 +43,18 @@ body {
   transform: translateY(0);
   opacity: 1;
 }
+
+@layer utilities {
+  @keyframes slide {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-slide {
+    animation: slide 10s linear infinite;
+  }
+}

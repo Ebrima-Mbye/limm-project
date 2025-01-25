@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import FullPage from "../components/FullPage";
+import FullPage from "@/components/FullPage";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Page() {

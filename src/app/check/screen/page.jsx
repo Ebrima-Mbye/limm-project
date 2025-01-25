@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import FullPage from "../components/FullPage";
+import FullPage from "@/components/FullPage";
 
 export default function Page() {
   const [isWideScreen, setIsWideScreen] = useState(false);

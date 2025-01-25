@@ -1,6 +1,6 @@
 "use client";
 
-import FullPage from "../components/FullPage";
+import FullPage from "@/components/FullPage";
 import { useState } from "react";
 
 export default function Location() {

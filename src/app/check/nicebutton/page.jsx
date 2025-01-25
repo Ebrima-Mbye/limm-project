@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import FullPage from "../components/FullPage";
+import FullPage from "@/components/FullPage";
 
 export default function Page() {
   const buttonRef = useRef(null);

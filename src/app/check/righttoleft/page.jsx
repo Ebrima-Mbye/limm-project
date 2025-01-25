@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import FullPage from "@/check/components/FullPage";
+import FullPage from "@/components/FullPage";
 
 export default function Home() {
   const divWidths = [200, 100, 200, 100, 200]; // Alternating widths
