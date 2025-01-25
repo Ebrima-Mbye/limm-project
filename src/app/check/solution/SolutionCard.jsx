@@ -8,6 +8,8 @@ import { useLanguage } from "@/components/LanguageContext";
 import { useDeviceSize } from "@/components/DeviceSizeContext";
 
 export default function HomeSolutionCard(props) {
+  const paddingY = "2rem";
+  const paddingX = "1.5rem";
   const [showText, setShowText] = useState(false);
   const { isWideScreen } = useDeviceSize();
   const { language } = useLanguage();
@@ -35,17 +37,25 @@ export default function HomeSolutionCard(props) {
         }}
         onMouseEnter={() => setShowText(true)}
         onMouseLeave={() => setShowText(false)}
-        className="relative flex flex-col justify-between rounded-[20px] px-6 py-7 lg:mb-0"
+        className="relative flex flex-col justify-between rounded-[20px] lg:mb-0"
       >
         <div
-          className="border border-green-400"
+          className="absolute z-10"
           style={{
-            minHeight: showText ? "20%" : "100%",
-            transition: "min-height 0.4s linear, padding 0.4s linear",
-            paddingTop: showText ? "0px" : "5rem",
+            height: showText ? "15%" : "90%",
+            transition: "height 0.4s linear, padding 0.4s linear",
+            padding: `${showText ? "0" : "5rem"} 0`,
+            top: paddingY,
+            left: paddingX,
+            right: paddingX,
+            bottom: paddingY,
+            backgroundColor: bg,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: showText ? "space-between" : "center",
           }}
         >
-          <div className="mb-4 mt-0 flex flex-col justify-between lg:mb-10 lg:mt-3 lg:flex-row lg:items-center lg:justify-start">
+          <div className="mb-4 flex flex-col items-start justify-between self-start lg:mb-10 lg:flex-row lg:items-center lg:justify-start">
             <Image
               src={getArrow(title)}
               alt={title}
@@ -54,7 +64,7 @@ export default function HomeSolutionCard(props) {
               className=""
               style={{
                 transition: "width 0.5s linear",
-                width: showText ? "30px" : "100px",
+                width: showText ? "30px" : "100px", // Shink the image when the card is hovered
               }}
             />
           </div>
@@ -62,9 +72,7 @@ export default function HomeSolutionCard(props) {
             className="text-[26px] font-medium lg:mb-0 lg:h-8"
             style={{
               fontSize: (() => {
-                if (showText && !isWideScreen) return "26px";
-                if (isWideScreen) return "1.5rem";
-                return "3rem"; // fallback case
+                return showText ? "1.5rem" : "2.5rem";
               })(),
               transition: "font-size 0.5s linear",
             }}
@@ -75,9 +83,10 @@ export default function HomeSolutionCard(props) {
         <div
           className="mt-16 flex flex-col justify-between text-[16px]"
           style={{
-            opacity: showText ? "1" : "0",
-            position: showText ? "static" : "absolute",
-            transform: showText ? "translateY(0)" : "translateY(-100px)",
+            position: "absolute",
+            bottom: paddingY,
+            right: paddingX,
+            left: paddingX,
           }}
         >
           <p className="mb-12 text-sm leading-relaxed">{text}</p>

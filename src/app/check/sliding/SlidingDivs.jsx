@@ -1,57 +1,62 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function SlidingDivs() {
+export default function SlidingDivs({ parentWidth, parentLeft }) {
   const boxWidth = 300;
-  const boxSpacing = 16; // The gap between boxes
-  const stepDistance = boxWidth + boxSpacing; // Total distance to move before pausing
+  let animationInterval;
+  const boxSpacing = 20; // Gap between boxes (4rem)
   const divs = [1, 2, 3, 4, 5]; // Array to generate divs
-  const [position, setPosition] = useState(0); // Track the sliding position
-  const [isSliding, setIsSliding] = useState(true); // Toggle sliding animation
+  const [pauseAnimation, setPauseAnimation] = useState(false);
+
+  const [positions, setPositions] = useState([]); // Empty until the client sets it
 
   useEffect(() => {
-    let animationFrame;
+    setPositions(
+      // divs.map((_, index) => parentWidth + index * (boxWidth + boxSpacing)),
+      divs.map((_, index) => index * (boxWidth + boxSpacing)),
+    );
+  }, [parentWidth]);
 
-    const slide = () => {
-      if (isSliding) {
-        // Increment position for smooth sliding
-        setPosition((prev) => prev - 2); // Move 2px per frame
+  useEffect(() => {
+    if (positions.length === 0) return; // Skip if positions are not initialized
+
+    const pausedBoxes = new Set(); // Track paused boxes
+    animationInterval = setInterval(() => {
+      if (!pauseAnimation) {
+        setPositions((prevPositions) =>
+          prevPositions.map((pos, index) => {
+            if (pausedBoxes.has(index)) return pos; // Skip movement for paused boxes
+
+            // If the box's right side is less than the container's left side, move it to the far right
+            if (pos + boxWidth * 3 <= 0) {
+              const maxPosition = Math.max(...prevPositions);
+              return maxPosition + boxWidth + boxSpacing; // Add the box to the right
+            }
+            return pos - 2; // Continue sliding left
+          }),
+        );
       }
-      animationFrame = requestAnimationFrame(slide);
-    };
+    }, 16); // ~60fps
 
-    animationFrame = requestAnimationFrame(slide);
-
-    return () => cancelAnimationFrame(animationFrame);
-  }, [isSliding]);
-
-  useEffect(() => {
-    // Pause sliding every full step (boxWidth + boxSpacing)
-    if (Math.abs(position) % stepDistance === 0 && position !== 0) {
-      setIsSliding(false); // Stop sliding
-      setTimeout(() => setIsSliding(true), 1000); // Wait for 1 second and resume
-    }
-  }, [position]);
+    return () => clearInterval(animationInterval);
+  }, [positions]);
 
   return (
-    <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden border border-red-500 bg-gray-100">
-      <div
-        className="absolute flex gap-4 border border-red-500"
-        style={{
-          transform: `translateX(${position}px)`, // Inline translate for smooth animation
-          transition: isSliding ? "transform 0.1s linear" : "none", // Smooth movement only when sliding
-        }}
-      >
-        {divs.map((item, index) => (
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden border border-red-500 bg-gray-100">
+      {positions.length > 0 && // Ensure positions are initialized before rendering divs
+        divs.map((item, index) => (
           <div
             key={index}
-            className={`flex flex-1 items-center justify-center rounded-none border border-red-500 bg-green-500 text-6xl text-white shadow-lg`}
-            style={{ width: `${boxWidth}px`, height: "300px" }}
+            className="absolute flex items-center justify-center border border-red-500 bg-green-500 text-6xl text-white shadow-lg"
+            style={{
+              width: `${boxWidth}px`,
+              height: `${boxWidth}px`,
+              transform: `translateX(${positions[index]}px)`,
+            }}
           >
             {item}
           </div>
         ))}
-      </div>
     </div>
   );
 }
