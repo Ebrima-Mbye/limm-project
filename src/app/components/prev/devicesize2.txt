@@ -9,26 +9,22 @@ const DeviceSizeContext = createContext();
 export const DeviceSizeProvider = ({ children }) => {
   const [deviceSize, setDeviceSize] = useState({
     isWideScreen: false,
-    isMiddleScreen: false,
     isSmallScreen: false,
   });
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const handleResize = () => {
-        const width = window.innerWidth;
-
         setDeviceSize({
-          isWideScreen: width > 800,
-          isMiddleScreen: width > 600 && width <= 800,
-          isSmallScreen: width <= 600,
+          isWideScreen: window.innerWidth > 800,
+          isSmallScreen: window.innerWidth <= 600,
         });
       };
 
       // Initial check
       handleResize();
 
-      // Debounce resize listener
+      // Throttle the resize listener to improve performance
       const resizeListener = () => {
         clearTimeout(window.deviceResizeTimeout);
         window.deviceResizeTimeout = setTimeout(handleResize, 100);

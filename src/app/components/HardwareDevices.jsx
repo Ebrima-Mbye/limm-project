@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { getCookie } from "@/utils/myCookies.js";
 
 export default function HardwareDevices() {
-  const isWideScreen = useDeviceSize();
+  const { isWideScreen } = useDeviceSize();
   const [hardwareDevicesData, setHardwareDevicesData] = useState([]);
   const [headerData, setHeaderData] = useState({});
   const defaultLanguage = "en";

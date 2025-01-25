@@ -11,7 +11,7 @@ import { useLanguage } from "./LanguageContext";
 export default function BusinessCard(props) {
   // const [isWideScreen, setIsWideScreen] = useState(false);
   const { language } = useLanguage();
-  const isWideScreen = useDeviceSize();
+  const { isWideScreen } = useDeviceSize();
   const [isTopLeft, setIsTopLeft] = useState(false);
   const [isBottomRight, setIsBottomRight] = useState(false);
   const [hyperLinkText, setHyperLinkText] = useState("");
