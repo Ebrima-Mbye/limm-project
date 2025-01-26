@@ -1,8 +1,8 @@
 import Image from "next/image";
-import image1 from "../photos/man-calculating.png";
-import image2 from "../photos/woman-in-clothing-shop.png";
-import bookIcon from "../photos/bookkeeping-icon.svg";
-import inventoryIcon from "../photos/inventory-icon.svg";
+import image1 from "@/photos/man-calculating.png";
+import image2 from "@/photos/woman-in-clothing-shop.png";
+import bookIcon from "@/photos/bookkeeping-icon.svg";
+import inventoryIcon from "@/photos/inventory-icon.svg";
 import { cookies } from "next/headers";
 import { pageHeading, bottomText, cards } from "@/data/hero.js";
 import { getText2 } from "@/data/bookADemo.js";
