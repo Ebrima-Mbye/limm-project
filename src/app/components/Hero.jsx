@@ -4,19 +4,20 @@ import image2 from "../photos/woman-in-clothing-shop.png";
 import bookIcon from "../photos/bookkeeping-icon.svg";
 import inventoryIcon from "../photos/inventory-icon.svg";
 import { cookies } from "next/headers";
-import { pageHeading, bottomText, cards } from "../data/hero.js";
+import { pageHeading, bottomText, cards } from "@/data/hero.js";
+import { getText2 } from "@/data/bookADemo.js";
 
 export default async function HomeHero() {
   // Wait for cookies before accessing them
   const cookieStore = await cookies();
   const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
-  
+
   const heading = pageHeading(language);
   const cardsData = cards[language];
   const bottomTextData = bottomText[language];
+  const buttonText = getText2[language];
 
   return (
-    // <section className="lg:h-[97vh] px-6 md:px-12 pt-20 pb-28 md:pb-4 mx-4 overflow-y-clip bg-gray-100 rounded-lg">
     <section className="mt-0 min-h-screen overflow-y-clip rounded-lg bg-gray-100 px-3 pb-28 pt-20 md:px-12 md:pb-8 lg:mx-4 lg:mt-4">
       <div className="">
         <div className="mb-12 mt-16 md:mb-6">
@@ -24,7 +25,7 @@ export default async function HomeHero() {
             {heading}
           </p>
         </div>
-        <div className="my-10 hidden gap-6 rounded-[20px] md:flex">
+        <div className="border-red-400 border my-10 hidden gap-6 rounded-[20px] md:flex">
           <div className="flex h-auto max-w-[300px] flex-col justify-between overflow-y-clip rounded-[20px] bg-cyan-200 p-6 text-cyan-700 md:h-[350px] lg:h-auto">
             <p className="mb text-xl font-medium">{cardsData[0].title}</p>
             <div className="flex h-12 flex-1 items-center">
@@ -62,7 +63,7 @@ export default async function HomeHero() {
         </div>
         <div className="mt-16 md:hidden lg:mt-0">
           <button className="ml-4 text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-[20px] text-white lg:px-3 lg:py-1 lg:text-[12px]">
-            Book a Demo
+            {buttonText}
           </button>
         </div>
       </div>

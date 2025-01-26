@@ -1,10 +1,10 @@
-import CardCarousel from './CardCarousel';
+import SwiperComponent from "./SwiperComponent";
+import FullPage from "@/components/FullPage";
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="container mx-auto px-4">
-      <h1 className="text-3xl font-semibold mb-6">Welcome to the Carousel</h1>
-      <CardCarousel />
-    </div>
+    <FullPage className="flex items-center justify-center">
+      <SwiperComponent />
+    </FullPage>
   );
 }

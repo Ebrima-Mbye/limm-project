@@ -5,6 +5,7 @@ const logo = "/images/limm.logo.logo 1.png";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
+import { getText2 } from "@/data/bookADemo.js";
 import { useLanguage } from "./LanguageContext";
 
 export default function HomeHeader() {
@@ -26,14 +27,8 @@ export default function HomeHeader() {
     setLeftLinks(getLeftLinks[language]);
   }, [isMenuOpen]); // Runs whenever isMenuOpen changes
 
-  const getButtonText = {
-    en: "Book a Demo",
-    fr: "Réserver démo",
-    es: "Solicitar demo",
-  };
-
   useEffect(() => {
-    setButtonText(getButtonText[language]);
+    setButtonText(getText2[language]);
   }, []);
 
   function headerToTop() {
@@ -168,7 +163,7 @@ export default function HomeHeader() {
             <div className="mt-3 lg:mt-0">
               <button
                 onClick={closeMenu}
-                className="ml-4 w-full text-lg text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
+                className="ml-4 w-full text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-lg text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
               >
                 {buttonText}
               </button>
