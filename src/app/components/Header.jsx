@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
 import { getText2 } from "@/data/bookADemo.js";
-import { useLanguage } from "./LanguageContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 export default function HomeHeader() {
   const { language } = useLanguage();

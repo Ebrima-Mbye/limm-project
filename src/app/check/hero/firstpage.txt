@@ -16,7 +16,7 @@ import { cards } from "@/data/hero.js";
 import FullPage from "@/components/FullPage";
 import image1 from "@/photos/man-calculating.png";
 import image2 from "@/photos/woman-in-clothing-shop.png";
-import { useLanguage } from "@/components/LanguageContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 const App = () => {
   const { language } = useLanguage();

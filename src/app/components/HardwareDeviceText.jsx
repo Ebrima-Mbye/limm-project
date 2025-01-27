@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useCurrency } from "./CurrencyProvider";
-import { useLanguage } from "./LanguageContext";
+import { useCurrency } from "@/hooks/CurrencyContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 export default function HardwareDeviceText({ device }) {
   const { selectedCurrency } = useCurrency();

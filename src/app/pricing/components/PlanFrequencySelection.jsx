@@ -1,7 +1,7 @@
 "use client";
 
-import { useBillingCycle } from "@/components/CurrencyProvider";
-import { useLanguage } from "@/components/LanguageContext";
+import { useBillingCycle } from "@/hooks/CurrencyContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 import { useEffect, useState } from "react";
 
 export default function PlanFrequencySelection() {

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import mainImage from "../photos/Smiling-senegalese-business-owner.png";
-import FAQCard from "./FAQCard";
-import { questions } from "../data/faq.js";
+import mainImage from "@/photos/Smiling-senegalese-business-owner.png";
+import FAQCard from "@/components/FAQCard";
+import { questions } from "@/data/faq.js";
 import { cookies } from "next/headers";
 
 export default async function HomeFAQ() {

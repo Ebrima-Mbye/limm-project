@@ -1,5 +1,5 @@
-import BusinessCard from "./BusinessCard";
-import WhiteFooter from "./WhiteFooter";
+import BusinessCard from "@/components/BusinessCard";
+import WhiteFooter from "@/components/WhiteFooter";
 
 export default function Cards({ pageDetails }) {
   return (

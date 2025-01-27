@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "./LanguageContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 import Image from "next/image";
 import globeIcon from "../photos/globeIcon.png";
 import globeBlack from "../photos/globe-black.png";

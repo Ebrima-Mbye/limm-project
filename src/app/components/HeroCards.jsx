@@ -1,22 +1,25 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules"; // Import Autoplay module
 import "swiper/css"; // Swiper styles
 import "swiper/css/autoplay"; // Autoplay styles
 
-import { Autoplay } from "swiper/modules"; // Import Autoplay module
 import Image from "next/image";
-import HeroCard from "@/components/HeroCard";
-import bookIcon from "@/photos/bookkeeping-icon.svg";
-import inventoryIcon from "@/photos/inventory-icon.svg";
-import invoiceIcon from "@/photos/invoice-icon.svg";
-import { cards } from "@/data/hero.js";
 
 import image1 from "@/photos/man-calculating.png";
 import image2 from "@/photos/woman-in-clothing-shop.png";
 import image3 from "@/photos/femalesewing.webp";
-import { useLanguage } from "@/components/LanguageContext";
-import { useDeviceSize } from "@/components/DeviceSizeContext";
+import bookIcon from "@/photos/bookkeeping-icon.svg";
+import inventoryIcon from "@/photos/inventory-icon.svg";
+import invoiceIcon from "@/photos/invoice-icon.svg";
+
+import { cards } from "@/data/hero.js";
+
+import HeroCard from "@/components/HeroCard";
+
+import { useLanguage } from "@/hooks/LanguageContext";
+import { useDeviceSize } from "@/hooks/DeviceSizeContext";
 
 const HeroCards = ({ className }) => {
   const { isSmallScreen, isMiddleScreen } = useDeviceSize();

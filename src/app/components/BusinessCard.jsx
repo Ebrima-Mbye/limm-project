@@ -4,9 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import arrow from "../photos/restaurants/arrow.png";
 import { useEffect, useState } from "react";
-import AnimatedContainer from "./AnimatedContainer";
-import { useDeviceSize } from "./DeviceSizeContext";
-import { useLanguage } from "./LanguageContext";
+import AnimatedContainer from "@/components/AnimatedContainer";
+import { useDeviceSize } from "@/hooks/DeviceSizeContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 export default function BusinessCard(props) {
   // const [isWideScreen, setIsWideScreen] = useState(false);

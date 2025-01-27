@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LanguageSelector from "./LanguageSelector";
+import LanguageSelector from "@/components/LanguageSelector";
 import { cookies } from "next/headers";
 
 export default async function FooterBottom(props) {

@@ -1,6 +1,6 @@
 "use client";
-import { useCurrency } from "@/components/CurrencyProvider";
-import { useLanguage } from "@/components/LanguageContext";
+import { useCurrency } from "@/hooks/CurrencyContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 
 export default function CurrencySelector() {
   const supportedCurrencies = ["XOF", "GMD", "USD", "EUR"];

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/components/LanguageContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 const logo = "/images/limm.logo.logo 1.png";
 const arrowLeft = "/images/login/arrow-left.png";
 

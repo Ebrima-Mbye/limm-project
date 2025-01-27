@@ -1,7 +1,7 @@
 "use client";
 
-import { useBillingCycle, useCurrency } from "@/components/CurrencyProvider";
-import { useLanguage } from "@/components/LanguageContext";
+import { useBillingCycle, useCurrency } from "@/hooks/CurrencyContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 import Image from "next/image";
 const checkMark = "/images/pricing/check-mark.png";
 

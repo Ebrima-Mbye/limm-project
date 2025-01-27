@@ -6,7 +6,7 @@ const HeroCard = ({ title, text, icon, bgColor, textColor }) => {
       className={`flex h-full w-full min-w-[300px] flex-col justify-between rounded-[20px] p-6`}
       style={{ backgroundColor: bgColor, color: textColor }}
     >
-      <p className="mb text-xl font-medium">{title}</p>
+      <p className="mb text-2xl font-semibold">{title}</p>
       <div className="flex h-12 flex-1 items-center">
         <Image src={icon} alt={`${title} icon`} />
       </div>

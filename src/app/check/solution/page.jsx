@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import restaurantIcon from "@/photos/restaurant.png";
 import retailIcon from "@/photos/retail.png";
 import servicesIcon from "@/photos/services.png";
-import SolutionCard from "./SolutionCard";
+import SolutionCard from "@/components/SolutionCard";
 import { texts, header } from "@/data/findSolution.js";
 
 export default async function HomeFindSection() {

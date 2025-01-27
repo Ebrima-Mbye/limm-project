@@ -3,7 +3,7 @@
 import Image from "next/image";
 import AnimatedContainer from "../components/AnimatedContainer";
 import HardwareDeviceText from "../components/HardwareDeviceText";
-import { useDeviceSize } from "../components/DeviceSizeContext";
+import { useDeviceSize } from "../hooks/DeviceSizeContext";
 import { hardwareDevices, header } from "../data/hardwareDevices.js";
 import { useEffect, useState } from "react";
 import { getCookie } from "@/utils/myCookies.js";

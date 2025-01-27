@@ -1,12 +1,12 @@
-import Header from "./components/Header";
+import Header from "@/components/Header";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./globals.css";
+import "@/globals.css";
 import { Inter } from "next/font/google";
-import { LanguageProvider } from "./components/LanguageContext";
-import { DeviceSizeProvider } from "./components/DeviceSizeContext";
+import { LanguageProvider } from "@/hooks/LanguageContext";
+import { DeviceSizeProvider } from "@/hooks/DeviceSizeContext";
 import { cookies } from "next/headers";
-import { CurrencyProvider } from "./components/CurrencyProvider";
+import { CurrencyProvider } from "@/hooks/CurrencyContext";
 
 // Set up the font
 const inter = Inter({

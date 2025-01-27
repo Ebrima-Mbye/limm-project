@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getText } from "@/data/bookADemo.js";
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/components/LanguageContext";
-import { useDeviceSize } from "@/components/DeviceSizeContext";
+import { useLanguage } from "@/hooks/LanguageContext";
+import { useDeviceSize } from "@/hooks/DeviceSizeContext";
 
 export default function HomeSolutionCard({
   bg,

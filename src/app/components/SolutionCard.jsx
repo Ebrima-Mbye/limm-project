@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getText } from "@/data/bookADemo.js";
 import { useEffect, useState } from "react";
-import { useLanguage } from "@/components/LanguageContext";
-import { useDeviceSize } from "@/components/DeviceSizeContext";
+import { useLanguage } from "@/hooks/LanguageContext";
+import { useDeviceSize } from "@/hooks/DeviceSizeContext";
 import getStyles from "@/styles/SolutionCardStyles.js";
 
 export default function HomeSolutionCard(props) {
@@ -21,7 +21,8 @@ export default function HomeSolutionCard(props) {
   const { title, identifier, text } = props;
 
   const arrowMap = {
-   restaurant: "/images/find-solutions/restaurant.png",
+  //  restaurant: "/images/find-solutions/restaurant.png",
+   restaurant: "/images/find-solutions/restaurant-plate.png",
     retail: "/images/find-solutions/retail.png",
     services: "/images/find-solutions/services.png",
   };
