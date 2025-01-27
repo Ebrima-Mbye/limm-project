@@ -26,7 +26,7 @@ const HeroCards = ({ className }) => {
   return (
     <Swiper
       spaceBetween={20} // Gap between slides
-      slidesPerView={isSmallScreen ? 1 : isMiddleScreen ? 2 : 4} // Adjust number of slides per view based on screen size
+      slidesPerView={isSmallScreen ? 1 : isMiddleScreen ? 2 : 3} // Adjust number of slides per view based on screen size
       loop={true} // Infinite loop
       autoplay={{
         delay: 2000, // Delay between slides (ms)

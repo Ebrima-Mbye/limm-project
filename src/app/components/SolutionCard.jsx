@@ -21,9 +21,9 @@ export default function HomeSolutionCard(props) {
   const { title, identifier, text } = props;
 
   const arrowMap = {
-    restaurant: "/images/restaurant_arrow.svg",
-    retail: "/images/retail_arrow.svg",
-    services: "/images/service_arrow.svg",
+   restaurant: "/images/find-solutions/restaurant.png",
+    retail: "/images/find-solutions/retail.png",
+    services: "/images/find-solutions/services.png",
   };
 
   useEffect(() => {
