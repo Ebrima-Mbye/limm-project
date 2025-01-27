@@ -35,6 +35,15 @@ export const cards = {
         </>
       ),
     },
+    {
+      title: <>Invoice</>,
+      text: (
+        <>
+          Limm specifies invoicing, letting you create and send professional
+          invoices in seconds.
+        </>
+      ),
+    },
   ],
   fr: [
     {
@@ -57,6 +66,15 @@ export const cards = {
         </>
       ),
     },
+    {
+      title: <>Facturation</>,
+      text: (
+        <>
+          Limm spécifie la facturation, vous permettant de créer et d'envoyer
+          des factures professionnelles en quelques secondes.
+        </>
+      ),
+    },
   ],
   es: [
     {
@@ -75,6 +93,15 @@ export const cards = {
         <>
           La gestión inteligente de inventarios de Limm te mantiene en control,
           minimizando las faltas de stock y optimizando los pedidos.
+        </>
+      ),
+    },
+    {
+      title: <>Facturación</>,
+      text: (
+        <>
+          Limm especifica la facturación, permitiéndote crear y enviar facturas
+          profesionales en segundos.
         </>
       ),
     },
