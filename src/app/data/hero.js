@@ -70,8 +70,8 @@ export const cards = {
       title: <>Facturation</>,
       text: (
         <>
-          Limm spécifie la facturation, vous permettant de créer et d'envoyer
-          des factures professionnelles en quelques secondes.
+          Limm spécifie la facturation, vous permettant de créer et
+          d&apos;envoyer des factures professionnelles en quelques secondes.
         </>
       ),
     },

@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import { pageHeading, bottomText, cards } from "@/data/hero.js";
+import { pageHeading, bottomText } from "@/data/hero.js";
 import { getText2 } from "@/data/bookADemo.js";
 import HeroCards from "@/components/HeroCards";
 
@@ -9,7 +9,6 @@ export default async function HomeHero() {
   const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
 
   const heading = pageHeading(language);
-  const cardsData = cards[language];
   const bottomTextData = bottomText[language];
   const buttonText = getText2[language];
 

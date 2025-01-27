@@ -12,7 +12,6 @@ import inventoryIcon from "@/photos/inventory-icon.svg";
 import invoiceIcon from "@/photos/invoice-icon.svg";
 import { cards } from "@/data/hero.js";
 
-import FullPage from "@/components/FullPage";
 import image1 from "@/photos/man-calculating.png";
 import image2 from "@/photos/woman-in-clothing-shop.png";
 import image3 from "@/photos/femalesewing.webp";
