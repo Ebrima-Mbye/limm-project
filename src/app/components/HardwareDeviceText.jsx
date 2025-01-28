@@ -44,7 +44,7 @@ export default function HardwareDeviceText({ device }) {
         </div>
       ))}
       <div className="mt-10 flex items-center gap-3">
-        <button className="rounded-full border-4 border-white bg-[#006df0] px-4 py-2 text-white transition-colors duration-300 hover:border-cyan-300 hover:bg-blue-800">
+        <button className="rounded-full border-4 border-white bg-blue-600 from-black via-blue-900 to-blue-600 bg-[size:150%] bg-[position:0%] px-4 py-2 text-white transition-all duration-300 hover:bg-gradient-to-r hover:bg-[position:100%]">
           {buttonText}
         </button>
         <p>

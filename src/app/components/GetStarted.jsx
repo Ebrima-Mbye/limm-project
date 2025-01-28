@@ -37,7 +37,7 @@ export default async function HomeGetStarted() {
           <Image
             src={appStoreImage}
             alt="app store image"
-            className="w-[200px]"
+            className="w-[200px] transition-all hover:scale-[1.1] hover:shadow-sm"
           />
         </div>
         <div className="cursor-pointer">
@@ -47,7 +47,7 @@ export default async function HomeGetStarted() {
           <Image
             src={googlePlayStoreImage}
             alt="google play store image"
-            className="w-[200px]"
+            className="w-[200px] transition-all hover:scale-[1.1] hover:shadow-sm"
           />
         </div>
       </div>

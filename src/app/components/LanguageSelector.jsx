@@ -29,7 +29,8 @@ export default function LanguageSelector({ isWhite }) {
   return (
     <div className="flex flex-[2] items-center justify-end pr-8">
       <p className="mr-5">Language:</p>
-      <div className="flex w-[120px] gap-3 rounded-md border border-gray-500 px-3 py-1">
+      {/* <div className="flex w-[120px] gap-3 rounded-md border border-gray-500 px-3 py-1"> */}
+      <div className="flex w-[120px] gap-3 rounded-md border border-gray-500 px-3 py-[0.3rem]">
         <Image
           src={isWhite ? globeBlack : globeIcon}
           alt="globe icon"

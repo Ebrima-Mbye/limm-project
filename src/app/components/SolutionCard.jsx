@@ -21,8 +21,7 @@ export default function HomeSolutionCard(props) {
   const { title, identifier, text } = props;
 
   const arrowMap = {
-  //  restaurant: "/images/find-solutions/restaurant.png",
-   restaurant: "/images/find-solutions/restaurant-plate.png",
+    restaurant: "/images/find-solutions/restaurant-plate.png",
     retail: "/images/find-solutions/retail.png",
     services: "/images/find-solutions/services.png",
   };
@@ -55,8 +54,8 @@ export default function HomeSolutionCard(props) {
           <Image
             src={arrowMap[identifier.toLowerCase()]}
             alt={title}
-            width={35}
-            height={30}
+            width={350}
+            height={300}
             style={styles.arrow}
           />
         </div>
@@ -70,8 +69,8 @@ export default function HomeSolutionCard(props) {
       >
         <p className="mb-12 text-sm leading-relaxed">{text}</p>
         <Link
-          href="/"
-          className="self-start rounded-[20px] px-4 py-2 leading-[28.5px]"
+          href="#"
+          className="self-start hover:shadow-xl hover:scale-110 transition-all duration-150 rounded-[20px] px-4 py-2 leading-[28.5px]"
           style={styles.button}
         >
           {buttonText}
