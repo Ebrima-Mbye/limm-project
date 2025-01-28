@@ -1,6 +1,9 @@
 const limmRegister = "/images/limm_register.png";
 const limmBluetoothPrinter = "/images/limm_bluetooth.png";
 
+// The hardware devices section
+
+// The text that marks the start of the section
 export const header = {
   en: {
     heading: "SEGMENTS",
@@ -17,6 +20,7 @@ export const header = {
   },
 };
 
+// A mapping of the prices and the selected currency
 export const prices = {
   1: {
     XOF: "250,000 F",
@@ -30,6 +34,7 @@ export const prices = {
   },
 };
 
+// Data about the hardware deivices
 export const hardwareDevices = {
   en: [
     {
@@ -54,6 +59,7 @@ export const hardwareDevices = {
         },
       ],
     },
+
     {
       id: "2",
       name: "LIMM BLUETOOTH PRINTER",

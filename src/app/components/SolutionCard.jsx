@@ -70,7 +70,7 @@ export default function HomeSolutionCard(props) {
         <p className="mb-12 text-sm leading-relaxed">{text}</p>
         <Link
           href="#"
-          className="self-start hover:shadow-xl hover:scale-110 transition-all duration-150 rounded-[20px] px-4 py-2 leading-[28.5px]"
+          className="self-start hover:shadow-xl hover:scale-110 transition-all duration-300 rounded-[20px] px-4 py-2 leading-[28.5px]"
           style={styles.button}
         >
           {buttonText}

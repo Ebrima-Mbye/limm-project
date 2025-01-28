@@ -21,14 +21,14 @@ export default function HardwareDevices() {
   }, []);
 
   function getFlexDirection(id) {
-    if (id === "1" && isWideScreen) {
+    if (parseInt(id) % 2 === 1 && isWideScreen) {
       return "row-reverse";
     } else if (!isWideScreen) {
       return "column";
     }
   }
   function getBackgroundColor(id) {
-    if (id === "1") {
+    if (parseInt(id) % 2 === 1) {
       return "#356BB7";
     } else {
       return "#DFECFF";

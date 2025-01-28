@@ -31,7 +31,7 @@ export default async function WhyLimm() {
               </p>
               {/* The last text does not need a hr under it */}
               {index < pageData.texts.length - 1 && (
-                <hr className="border-3 mb-10 mt-1 w-full border-[#A7A7A7]" />
+                <hr className="border-3 mb-10 mt-1 w-full border-gray-300" />
               )}
             </div>
           ))}
