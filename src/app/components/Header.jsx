@@ -43,16 +43,16 @@ export default function HomeHeader() {
     }
   }
   if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      const scrollPosition = window.scrollY;
-      if (window.innerWidth > 800) {
-        if (scrollPosition > 60) {
-          headerToTop();
-        } else {
-          headerToDown();
-        }
-      }
-    });
+    // window.addEventListener("scroll", () => {
+    //   const scrollPosition = window.scrollY;
+    //   if (window.innerWidth > 800) {
+    //     if (scrollPosition > 60) {
+    //       headerToTop();
+    //     } else {
+    //       headerToDown();
+    //     }
+    //   }
+    // });
     window.addEventListener("resize", () => {
       if (window.innerWidth < 800) {
         headerToTop();

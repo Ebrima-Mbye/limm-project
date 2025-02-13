@@ -6,6 +6,7 @@ const logo = "/images/limm.logo.logo 1.png";
 
 import AuthTopBar from "../components/AuthTopBar";
 import MyPasswordField from "@/components/MyPasswordField";
+import SubmitButton from "./components/SubmitButton";
 
 export default async function LoginPage() {
   const cookieStore = await cookies();
@@ -62,13 +63,7 @@ export default async function LoginPage() {
               </Link>
             </div>
           </div>
-
-          <button
-            type="submit"
-            className="w-full rounded-[12px] bg-[#356BB7] py-2 text-white transition-colors duration-300 hover:bg-blue-600"
-          >
-            Login
-          </button>
+          <SubmitButton/>
         </form>
 
         {/* Sign up Link */}

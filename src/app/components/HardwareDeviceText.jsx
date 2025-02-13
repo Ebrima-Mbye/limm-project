@@ -10,6 +10,8 @@ export default function HardwareDeviceText({ device }) {
   const [price, setPrice] = useState("");
   const [buttonText, setButtonText] = useState("");
   const [forText, setForText] = useState("");
+  const buttonStyles =
+    "relative rounded-lg overflow-hidden bg-white before:absolute before:inset-[-50%] before:bg-custom-conic before:animate-spin-slow";
 
   const getButtonText = {
     en: "Order now",
@@ -44,7 +46,9 @@ export default function HardwareDeviceText({ device }) {
         </div>
       ))}
       <div className="mt-10 flex items-center gap-3">
-        <button className="rounded-full border-4 border-white bg-blue-600 from-black via-blue-900 to-blue-600 bg-[size:150%] bg-[position:0%] px-4 py-2 text-white transition-all duration-300 hover:bg-gradient-to-r hover:bg-[position:100%]">
+        <button
+          className={`rounded-full border-4 border-white bg-blue-600 from-black via-blue-900 to-blue-600 bg-[size:150%] bg-[position:0%] px-4 py-2 text-white transition-all duration-300 hover:bg-gradient-to-r hover:bg-[position:100%]`}
+        >
           {buttonText}
         </button>
         <p>
