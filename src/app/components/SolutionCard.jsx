@@ -1,6 +1,6 @@
 "use client";
 
-import { getText } from "@/data/bookADemo.js";
+// import { getText } from "@/data/bookADemo.js";
 import { useDeviceSize } from "@/hooks/DeviceSizeContext";
 import { useLanguage } from "@/hooks/LanguageContext";
 import getStyles from "@/styles/SolutionCardStyles.js";
@@ -12,7 +12,7 @@ export default function HomeSolutionCard(props) {
   const { isSmallScreen, isMiddleScreen, isWideScreen } = deviceSizeContext;
   const [showText, setShowText] = useState(false);
   const { language } = useLanguage();
-  const buttonText = getText[language];
+  // const buttonText = getText[language];
 
   // Get the styles for this component from a styles folder
   const styles = getStyles(props, showText, deviceSizeContext);
