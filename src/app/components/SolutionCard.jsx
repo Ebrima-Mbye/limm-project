@@ -2,7 +2,6 @@
 
 // import { getText } from "@/data/bookADemo.js";
 import { useDeviceSize } from "@/hooks/DeviceSizeContext";
-import { useLanguage } from "@/hooks/LanguageContext";
 import getStyles from "@/styles/SolutionCardStyles.js";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -11,7 +10,7 @@ export default function HomeSolutionCard(props) {
   const deviceSizeContext = useDeviceSize();
   const { isSmallScreen, isMiddleScreen, isWideScreen } = deviceSizeContext;
   const [showText, setShowText] = useState(false);
-  const { language } = useLanguage();
+  // const { language } = useLanguage();
   // const buttonText = getText[language];
 
   // Get the styles for this component from a styles folder

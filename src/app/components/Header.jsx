@@ -19,15 +19,12 @@ export default function HomeHeader() {
   const [leftLinks, setLeftLinks] = useState([]);
   const [buttonText, setButtonText] = useState("");
   const headerRef = useRef();
-
-  const handleMenuHeight = () => {
-    setMaxHeight(isMenuOpen ? "100vh" : "60px");
-  };
+  
   useEffect(() => {
-    handleMenuHeight();
+    setMaxHeight(isMenuOpen ? "100vh" : "60px");
     setRightLinks(getRightLinks[language]);
     setLeftLinks(getLeftLinks[language]);
-  }, [isMenuOpen]); // Runs whenever isMenuOpen changes
+  }, [isMenuOpen, language]); // Runs whenever isMenuOpen changes
 
   useEffect(() => {
     setButtonText(getText2[language]);

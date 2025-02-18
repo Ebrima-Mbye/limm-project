@@ -19,7 +19,7 @@ export default function AuthTopBar() {
 
   useEffect(() => {
     setLinkText(getLinkText[language]);
-  }, []);
+  }, [getLinkText, language]);
   return (
     <div className="fixed left-0 right-0 top-0 flex w-full items-center justify-between p-5">
       <div className="">

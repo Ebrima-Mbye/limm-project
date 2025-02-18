@@ -40,7 +40,7 @@ export default function PlanFrequencySelection() {
     return () => {
       setBillingCycle(null);
     };
-  }, [isAnnual]);
+  }, [isAnnual, setBillingCycle]);
 
   return (
     <div className="flex flex-col items-center space-x-3 p-2 md:flex-row md:p-4">

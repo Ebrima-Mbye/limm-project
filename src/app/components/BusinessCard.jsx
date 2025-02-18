@@ -25,7 +25,7 @@ export default function BusinessCard(props) {
     setIsTopLeft(props.subImagePosition === "top-left");
     setIsBottomRight(props.subImagePosition === "bottom-right");
     setHyperLinkText(getText[language]);
-  }, [props.subImagePosition]);
+  }, [props.subImagePosition, getText, language]);
 
   function getFlexDirection(index) {
     if (index % 2 !== 0 && isWideScreen) {

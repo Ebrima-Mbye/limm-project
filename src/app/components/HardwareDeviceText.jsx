@@ -25,11 +25,11 @@ export default function HardwareDeviceText({ device }) {
   useEffect(() => {
     setButtonText(getButtonText[language]);
     setForText(getForText[language]);
-  }, [language]);
+  }, [language, getButtonText, getForText]);
 
   useEffect(() => {
     setPrice(device.price[selectedCurrency]);
-  }, [selectedCurrency]);
+  }, [selectedCurrency, device.price]);
 
   return (
     <div className="min-h-full flex-1 rounded-md p-4">
