@@ -1,12 +1,12 @@
 "use client";
 
 // Login page UI
-import { useState } from "react";
+// import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebaseConfig"; // Firebase config file
+// import { useRouter } from "next/navigation";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "@/lib/firebaseConfig"; // Firebase config file
 
 import logo from "@/photos/limm.logo.logo 1.png";
 import AuthTopBar from "../components/AuthTopBar";
@@ -15,7 +15,7 @@ import SubmitButton from "./components/SubmitButton";
 import { useLanguage } from "@/hooks/LanguageContext";
 
 export default function LoginPage() {
-  const router = useRouter();
+  // const router = useRouter();
   const { language } = useLanguage();
 
   const getForgotPasswordText = {
@@ -26,25 +26,25 @@ export default function LoginPage() {
 
   const forgotPasswordText = getForgotPasswordText[language];
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [error, setError] = useState("");
+  // const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
+    // setLoading(true);
+    // setError("");
 
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful!");
-      router.push("/");
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
+    // try {
+    //   await signInWithEmailAndPassword(auth, email, password);
+    //   alert("Login successful!");
+    //   router.push("/");
+    // } catch (err) {
+    //   setError(err.message);
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
@@ -59,22 +59,23 @@ export default function LoginPage() {
         </div>
 
         <form className="" onSubmit={handleSubmit}>
-          {error && <p className="text-red-500">{error}</p>}
+          {/* {error && <p className="text-red-500">{error}</p>} */}
 
           <div className="space-y-6">
             <input
               type="email"
               name="email"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="border-[#AAB7C9] w-full rounded-md border px-4 py-2"
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded-md border border-[#AAB7C9] px-4 py-2"
               required
             />
             <MyPasswordField
               name="password"
               placeholder="Password"
-              onChange={(e) => setPassword(e.target.value)}
+              // value={email}
+              // onChange={(e) => setPassword(e.target.value)}
             />
           </div>
 
@@ -82,7 +83,7 @@ export default function LoginPage() {
             {forgotPasswordText}
           </p>
 
-          <SubmitButton loading={loading} text="Login" />
+          <SubmitButton text="Login" />
         </form>
 
         <div className="mt-6 text-center">

@@ -28,7 +28,7 @@ export default async function HomeHero() {
           <p className="text-slate-500">{bottomTextData.subText}</p>
         </div>
         <div className="mt-16 md:hidden lg:mt-0">
-          <button className="ml-4 text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-[20px] text-white lg:px-3 lg:py-1 lg:text-[12px]">
+          <button className="ml-4 text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-[1rem] text-white lg:px-3 lg:py-1 lg:text-[12px]">
             {buttonText}
           </button>
         </div>

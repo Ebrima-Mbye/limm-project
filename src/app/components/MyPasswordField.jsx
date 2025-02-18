@@ -15,6 +15,7 @@ export default function MyPasswordField({ placeholder, name, onChange }) {
         type={showPassword ? "text" : "password"}
         placeholder={placeholder}
         onChange={onChange}
+        // value={value}
         className="w-full rounded-md border border-[#AAB7C9] bg-background px-4 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
       <div
