@@ -1,12 +1,11 @@
 import { cookies } from "next/headers";
-import AnimatedContainer from "../components/AnimatedContainer";
-import restaurantIcon from "../photos/restaurant.png";
-import retailIcon from "../photos/retail.png";
-import servicesIcon from "../photos/services.png";
+import AnimatedContainer from "@/components/AnimatedContainer";
+import restaurantIcon from "@/photos/restaurant-icon.png";
+import retailIcon from "@/photos/retail-icon.png";
+import servicesIcon from "@/photos/services-icon.png";
 import HardwareDevices from "@/components/HardwareDevices";
 import SolutionCard from "@/components/SolutionCard";
 import { texts, header } from "@/data/findSolution.js";
-import WhyLimm from "@/components/WhyLimm";
 
 export default async function HomeFindSection() {
   // Wait for cookies before accessing them
@@ -63,9 +62,6 @@ export default async function HomeFindSection() {
           />
         </div>
       </div>
-      <AnimatedContainer>
-        <WhyLimm />
-      </AnimatedContainer>
       <AnimatedContainer>
         <HardwareDevices />
       </AnimatedContainer>

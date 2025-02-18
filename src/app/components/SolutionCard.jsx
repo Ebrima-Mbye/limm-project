@@ -21,9 +21,9 @@ export default function HomeSolutionCard(props) {
   const { title, identifier, text } = props;
 
   const arrowMap = {
-    restaurant: "/images/find-solutions/restaurant-plate.png",
-    retail: "/images/find-solutions/retail.png",
-    services: "/images/find-solutions/services.png",
+    restaurant: "/images/find-solutions/restaurant-icon.png",
+    retail: "/images/find-solutions/retail-icon.png",
+    services: "/images/find-solutions/services-icon.png",
   };
 
   useEffect(() => {
@@ -67,14 +67,14 @@ export default function HomeSolutionCard(props) {
         className="mt-16 flex flex-col text-[16px]"
         style={styles.textSection}
       >
-        <p className="mb-12 text-sm leading-relaxed">{text}</p>
-        <Link
+        <p className="text-sm leading-relaxed">{text}</p>
+        {/* <Link
           href="#"
           className="self-start hover:shadow-xl hover:scale-110 transition-all duration-300 rounded-[20px] px-4 py-2 leading-[28.5px]"
           style={styles.button}
         >
           {buttonText}
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

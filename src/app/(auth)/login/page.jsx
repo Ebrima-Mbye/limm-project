@@ -1,16 +1,22 @@
-import { cookies } from "next/headers";
+"use client";
+
+// Login page UI
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/lib/firebaseConfig"; // Firebase config file
 
-const logo = "/images/limm.logo.logo 1.png";
-
+import logo from "@/photos/limm.logo.logo 1.png";
 import AuthTopBar from "../components/AuthTopBar";
 import MyPasswordField from "@/components/MyPasswordField";
 import SubmitButton from "./components/SubmitButton";
+import { useLanguage } from "@/hooks/LanguageContext";
 
-export default async function LoginPage() {
-  const cookieStore = await cookies();
-  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+export default function LoginPage() {
+  const router = useRouter();
+  const { language } = useLanguage();
 
   const getForgotPasswordText = {
     en: "Forgot Password?",
@@ -20,57 +26,63 @@ export default async function LoginPage() {
 
   const forgotPasswordText = getForgotPasswordText[language];
 
-  // This Page has more z-index that the main header Component. This way this page effectively hides the header
-  return (
-    <div className="realtive fixed top-0 z-[101] flex h-screen w-[100vw] flex-col items-center justify-center bg-inherit">
-      {/* Top Left Link */}
-      <AuthTopBar />
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-      {/* Login Card */}
-      <div className="z-[3] w-full max-w-sm rounded-lg border border-gray-200 bg-background px-8 py-12 shadow-md">
-        {/* Logo */}
-        <div className="mb-7 flex w-full flex-col items-center justify-center">
-          <Image
-            src={logo}
-            alt="logo"
-            width={70}
-            height={40}
-            className="mb-6"
-          />
-          <p className="mt-2 text-[28px] font-medium leading-[38.4px] text-gray-500">
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      alert("Login successful!");
+      router.push("/");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="fixed top-0 z-[101] flex h-screen w-[100vw] flex-col items-center justify-center bg-background">
+      <AuthTopBar />
+      <div className="z-[3] w-full max-w-sm rounded-lg border border-gray-200 bg-background p-8 shadow-md">
+        <div className="mb-6 flex w-full flex-col items-center justify-center">
+          <Image src={logo} alt="logo" className="mb-3" />
+          <p className="mb-2 mt-2 text-[28px] font-medium leading-[38.4px] text-gray-500">
             Login
           </p>
         </div>
 
-        {/* Form */}
-        <form className="space-y-6">
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full rounded-md border border-[#AAB7C9] bg-background px-4 py-2 focus:right-2 focus:outline-none focus:ring-blue-400"
-            />
-          </div>
+        <form className="space-y-6" onSubmit={handleSubmit}>
+          {error && <p className="text-red-500">{error}</p>}
 
-          <div>
-            <MyPasswordField placeholder="Password" />
-            <div className="mb-9 mt-2 text-right">
-              <Link
-                href="#"
-                className="text-[14px] leading-[19.2px] text-[#356BB7] underline hover:underline"
-              >
-                {forgotPasswordText}
-              </Link>
-            </div>
-          </div>
-          <SubmitButton/>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full rounded-md border px-4 py-2"
+            required
+          />
+          <MyPasswordField
+            name="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <SubmitButton loading={loading} text="Login" />
         </form>
 
-        {/* Sign up Link */}
         <div className="mt-6 text-center">
           <Link
             href="/register"
-            className="font-bold leading-[28.8px] text-[#356BB7] hover:underline"
+            className="font-bold text-[#356BB7] hover:underline"
           >
             Sign up
           </Link>

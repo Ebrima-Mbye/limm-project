@@ -1,9 +1,10 @@
+import BusinessCards from "@/components/BusinessCards";
+import manCalculating from "@/photos/restaurants/man-calculating.png";
+import smileyWoman from "@/photos/restaurants/smiley-woman.png";
+import womanWithTablet from "@/photos/restaurants/woman-reading-tablet.png";
 import { cookies } from "next/headers";
-import BusinessCards from "../components/BusinessCards";
-import manCalculating from "../photos/restaurants/man-calculating.png";
-import smileyWoman from "../photos/restaurants/smiley-woman.png";
-import womanWithTablet from "../photos/restaurants/woman-reading-tablet.png";
-const phoneImage = "/images/restaurants/phone.png";
+// const phoneImage = "/images/restaurants/phone.png";
+import phoneImage from "@/photos/restaurants/phone-2.png";
 
 // "Identifier" used to distinguish between the different pages of the website
 export default async function Restaurant() {

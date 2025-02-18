@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { useCurrency } from "@/hooks/CurrencyContext";
 import { useLanguage } from "@/hooks/LanguageContext";
@@ -10,8 +9,6 @@ export default function HardwareDeviceText({ device }) {
   const [price, setPrice] = useState("");
   const [buttonText, setButtonText] = useState("");
   const [forText, setForText] = useState("");
-  const buttonStyles =
-    "relative rounded-lg overflow-hidden bg-white before:absolute before:inset-[-50%] before:bg-custom-conic before:animate-spin-slow";
 
   const getButtonText = {
     en: "Order now",
@@ -28,13 +25,14 @@ export default function HardwareDeviceText({ device }) {
   useEffect(() => {
     setButtonText(getButtonText[language]);
     setForText(getForText[language]);
-  }, []);
+  }, [language]);
+
   useEffect(() => {
     setPrice(device.price[selectedCurrency]);
   }, [selectedCurrency]);
 
   return (
-    <div className="min-h-full flex-1 rounded-md border border-gray-100 p-4">
+    <div className="min-h-full flex-1 rounded-md p-4">
       <p className="hidden text-2xl font-bold text-[#325bb7]">{device.name}</p>
       <p className="my-2 text-[19px]">{device.description}</p>
       <hr className="mb-3 mt-2" />

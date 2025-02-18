@@ -1,13 +1,17 @@
 "use client";
 
+// Register page
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "@/lib/firebaseConfig"; // Ensure you have this setup
+
 import logo from "@/photos/limm.logo.logo 1.png";
 import selectIcon from "@/photos/login/select-icon.png";
 import MyPasswordField from "@/components/MyPasswordField";
 import AuthTopBar from "../components/AuthTopBar";
-import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -15,6 +19,7 @@ export default function RegisterPage() {
     email: "",
     password: "",
     confirmPassword: "",
+    name: "", // Added for the user's full name
     sector: "Sector of Activity",
     country: "Select Country",
   });
@@ -51,21 +56,34 @@ export default function RegisterPage() {
     }
 
     try {
-      const response = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData), // Send the entire formData
-      });
+      // Add full name to Firebase Auth registration
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password,
+      );
 
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error);
+      // Handle successful registration by passing the full name
+      await fetch("/api/register", {
+        method: "POST",
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+          name: formData.name, // Send the full name
+          sector: formData.sector,
+          country: formData.country,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       alert("Registration successful!");
       setFormData({
-        // Reset the form
         email: "",
         password: "",
         confirmPassword: "",
+        name: "", // Reset name
         sector: "Sector of Activity",
         country: "Select Country",
       });
@@ -80,7 +98,6 @@ export default function RegisterPage() {
   return (
     <div className="fixed top-0 z-[101] flex h-screen w-[100vw] flex-col items-center justify-center bg-background">
       <AuthTopBar />
-
       <div className="z-[3] w-full max-w-sm rounded-lg border border-gray-200 bg-background p-8 shadow-md">
         <div className="mb-6 flex w-full flex-col items-center justify-center">
           <Image src={logo} alt="logo" className="mb-3" />
@@ -91,6 +108,16 @@ export default function RegisterPage() {
 
         <form className="space-y-6" onSubmit={handleSubmit}>
           {error && <p className="text-red-500">{error}</p>}
+
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full rounded-md border border-[#AAB7C9] bg-background px-4 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-400"
+            required
+          />
 
           <input
             type="email"
@@ -126,7 +153,7 @@ export default function RegisterPage() {
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-4 right-4 items-center">
+            <div className="pointer-events-none absolute inset-y-4 right-4">
               <Image src={selectIcon} alt="select icon" />
             </div>
           </div>
@@ -144,7 +171,7 @@ export default function RegisterPage() {
                 </option>
               ))}
             </select>
-            <div className="pointer-events-none absolute inset-y-4 right-4 items-center">
+            <div className="pointer-events-none absolute inset-y-4 right-4">
               <Image src={selectIcon} alt="select icon" />
             </div>
           </div>

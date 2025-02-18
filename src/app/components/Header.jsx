@@ -7,8 +7,10 @@ import { useState, useEffect, useRef } from "react";
 import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
 import { getText2 } from "@/data/bookADemo.js";
 import { useLanguage } from "@/hooks/LanguageContext";
+import { useDeviceSize } from "@/hooks/DeviceSizeContext";
 
 export default function HomeHeader() {
+  const { isWideScreen } = useDeviceSize();
   const { language } = useLanguage();
   const menuTranslateY = "75vh";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,16 +45,16 @@ export default function HomeHeader() {
     }
   }
   if (typeof window !== "undefined") {
-    // window.addEventListener("scroll", () => {
-    //   const scrollPosition = window.scrollY;
-    //   if (window.innerWidth > 800) {
-    //     if (scrollPosition > 60) {
-    //       headerToTop();
-    //     } else {
-    //       headerToDown();
-    //     }
-    //   }
-    // });
+    window.addEventListener("scroll", () => {
+      const scrollPosition = window.scrollY;
+      if (window.innerWidth > 800) {
+        if (scrollPosition > 60) {
+          headerToTop();
+        } else {
+          headerToDown();
+        }
+      }
+    });
     window.addEventListener("resize", () => {
       if (window.innerWidth < 800) {
         headerToTop();

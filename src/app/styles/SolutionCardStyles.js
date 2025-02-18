@@ -4,8 +4,8 @@ export default function getStyles(props, showText, deviceSizeContext) {
     container: {
       backgroundColor: props.bg,
       color: props.color,
-      minHeight: isWideScreen ? "450px" : isMiddleScreen ? "350px" : "400px",
-      maxHeight: isWideScreen ? "450px" : isMiddleScreen ? "350px" : "400px",
+      minHeight: isWideScreen ? "380px" : isMiddleScreen ? "300px" : "300px",
+      maxHeight: isWideScreen ? "380px" : isMiddleScreen ? "300px" : "300px",
     },
     hoverOverlay: {
       zIndex: "10",

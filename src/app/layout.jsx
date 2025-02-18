@@ -4,6 +4,7 @@ import "@/globals.css";
 import { Inter } from "next/font/google";
 import { LanguageProvider } from "@/hooks/LanguageContext";
 import { DeviceSizeProvider } from "@/hooks/DeviceSizeContext";
+import { AuthProvider } from "@/hooks/AuthContext";
 import { cookies } from "next/headers";
 import { CurrencyProvider } from "@/hooks/CurrencyContext";
 
@@ -24,6 +25,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <body>
+      <AuthProvider>
         <DeviceSizeProvider>
           <LanguageProvider defaultLanguage={language}>
             <CurrencyProvider>
@@ -32,6 +34,7 @@ export default async function RootLayout({ children }) {
             </CurrencyProvider>
           </LanguageProvider>
         </DeviceSizeProvider>
+      </AuthProvider>
       </body>
     </html>
   );
