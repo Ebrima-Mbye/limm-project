@@ -45,20 +45,21 @@ export default function HardwareDevices() {
                   // determine the flex direction based on the id - "row" or "row-reverse"
                   flexDirection: getFlexDirection(device.id),
                 }}
-                className="mb-12 flex flex-col gap-4 rounded-[20px] border border-gray-100 p-1 md:p-14 lg:flex-row lg:p-12"
+                className="border-gray-300 border mb-12 flex flex-col gap-4 rounded-[20px] p-1 md:p-14 lg:flex-row lg:p-12"
               >
                 {/* Container for the picture of the hardware device */}
-                <div className="flex flex-1 flex-col items-center justify-between rounded-[20px] px-4 py-6 md:min-h-[400px] lg:px-8 lg:pb-4 lg:pt-6">
+                <div className="border-gray-300 border flex flex-1 items-center justify-center rounded-[20px] px-4 py-6 md:min-h-[400px] lg:px-8 lg:pb-4 lg:pt-6">
                   {/* Image of this hardware device */}
-                  <div className="flex min-h-full w-full flex-1 items-end justify-center rounded-2xl border border-gray-200 p-4">
-                    <Image
-                      src={device.image}
-                      width={300}
-                      height={300}
-                      alt="Scanner with background"
-                      className="lg:min-h-[300px] lg:min-w-[300px]"
-                    />
-                  </div>
+                  {/* <div className="flex min-h-full w-full flex-1 items-end justify-center rounded-2xl border border-gray-200 p-4"> */}
+                  <Image
+                    src={device.image}
+                    width={300}
+                    height={300}
+                    alt="Scanner with background"
+                    // className="lg:min-h-[300px] lg:min-w-[300px]"
+                    className="w-[70%]"
+                  />
+                  {/* </div> */}
                 </div>
 
                 {/* HARWARE DEVICE TEXT */}

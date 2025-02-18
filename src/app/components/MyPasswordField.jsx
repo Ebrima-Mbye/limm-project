@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 const showIcon = "/images/eye-icon.svg"; // Make sure the path is correct
 const hideIcon = "/images/eye-password-hide.svg"; // Make sure the path is correct
-import { useState } from "react";
 
 export default function MyPasswordField({ placeholder, name, onChange }) {
   const [showPassword, setShowPassword] = useState(false);

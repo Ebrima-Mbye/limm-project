@@ -1,12 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { getText } from "@/data/bookADemo.js";
-import { useEffect, useState } from "react";
-import { useLanguage } from "@/hooks/LanguageContext";
 import { useDeviceSize } from "@/hooks/DeviceSizeContext";
+import { useLanguage } from "@/hooks/LanguageContext";
 import getStyles from "@/styles/SolutionCardStyles.js";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function HomeSolutionCard(props) {
   const deviceSizeContext = useDeviceSize();

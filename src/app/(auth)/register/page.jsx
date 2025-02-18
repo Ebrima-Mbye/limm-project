@@ -1,20 +1,16 @@
 "use client";
 
 // Register page
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebaseConfig"; // Ensure you have this setup
+import { useState } from "react";
 
+import MyPasswordField from "@/components/MyPasswordField";
 import logo from "@/photos/limm.logo.logo 1.png";
 import selectIcon from "@/photos/login/select-icon.png";
-import MyPasswordField from "@/components/MyPasswordField";
 import AuthTopBar from "../components/AuthTopBar";
 
 export default function RegisterPage() {
-  const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -23,9 +19,6 @@ export default function RegisterPage() {
     sector: "Sector of Activity",
     country: "Select Country",
   });
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   const supportedSectors = [
     "Sector of Activity",
@@ -44,56 +37,56 @@ export default function RegisterPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setError("");
 
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match");
-      setLoading(false);
-      return;
-    }
+  //   if (formData.password !== formData.confirmPassword) {
+  //     setError("Passwords do not match");
+  //     setLoading(false);
+  //     return;
+  //   }
 
-    try {
-      // Add full name to Firebase Auth registration
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        formData.email,
-        formData.password,
-      );
+  //   try {
+  //     // Add full name to Firebase Auth registration
+  //     const userCredential = await createUserWithEmailAndPassword(
+  //       auth,
+  //       formData.email,
+  //       formData.password,
+  //     );
 
-      // Handle successful registration by passing the full name
-      await fetch("/api/register", {
-        method: "POST",
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-          name: formData.name, // Send the full name
-          sector: formData.sector,
-          country: formData.country,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+  //     // Handle successful registration by passing the full name
+  //     await fetch("/api/register", {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         email: formData.email,
+  //         password: formData.password,
+  //         name: formData.name, // Send the full name
+  //         sector: formData.sector,
+  //         country: formData.country,
+  //       }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
 
-      alert("Registration successful!");
-      setFormData({
-        email: "",
-        password: "",
-        confirmPassword: "",
-        name: "", // Reset name
-        sector: "Sector of Activity",
-        country: "Select Country",
-      });
-      router.push("/");
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     alert("Registration successful!");
+  //     setFormData({
+  //       email: "",
+  //       password: "",
+  //       confirmPassword: "",
+  //       name: "", // Reset name
+  //       sector: "Sector of Activity",
+  //       country: "Select Country",
+  //     });
+  //     router.push("/");
+  //   } catch (err) {
+  //     setError(err.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   return (
     <div className="fixed top-0 z-[101] flex h-screen w-[100vw] flex-col items-center justify-center bg-background">
@@ -106,19 +99,8 @@ export default function RegisterPage() {
           </p>
         </div>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          {error && <p className="text-red-500">{error}</p>}
-
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full rounded-md border border-[#AAB7C9] bg-background px-4 py-2 text-foreground focus:outline-none focus:ring-2 focus:ring-blue-400"
-            required
-          />
-
+        <form className="space-y-6">
+          {/* {error && <p className="text-red-500">{error}</p>} */}
           <input
             type="email"
             name="email"
@@ -189,10 +171,11 @@ export default function RegisterPage() {
 
           <button
             type="submit"
-            disabled={loading}
+            // disabled={loading}
             className="w-full rounded-[12px] bg-[#356BB7] py-2 text-white transition-colors duration-300 hover:bg-blue-600"
           >
-            {loading ? "Signing up..." : "Sign up"}
+            {/* {loading ? "Signing up..." : "Sign up"} */}
+            Sign up
           </button>
         </form>
 

@@ -1,8 +1,7 @@
-import { cookies } from "next/headers";
-import { pageHeading, bottomText } from "@/data/hero.js";
-import { getText2 } from "@/data/bookADemo.js";
 import HeroCards from "@/components/HeroCards";
-import { useAuth } from "@/hooks/AuthContext";
+import { getText2 } from "@/data/bookADemo.js";
+import { bottomText, pageHeading } from "@/data/hero.js";
+import { cookies } from "next/headers";
 
 export default async function HomeHero() {
   // Wait for cookies before accessing them

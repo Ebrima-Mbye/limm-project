@@ -58,23 +58,29 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="" onSubmit={handleSubmit}>
           {error && <p className="text-red-500">{error}</p>}
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-md border px-4 py-2"
-            required
-          />
-          <MyPasswordField
-            name="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div className="space-y-6">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="border-[#AAB7C9] w-full rounded-md border px-4 py-2"
+              required
+            />
+            <MyPasswordField
+              name="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <p className="mb-8 mt-3 text-end text-[14px] text-blue-800">
+            {forgotPasswordText}
+          </p>
 
           <SubmitButton loading={loading} text="Login" />
         </form>

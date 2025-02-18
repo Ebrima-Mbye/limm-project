@@ -1,18 +1,18 @@
 "use client";
 
-import Image from "next/image";
-const logo = "/images/limm.logo.logo 1.png";
-import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
 import { getText2 } from "@/data/bookADemo.js";
-import { useLanguage } from "@/hooks/LanguageContext";
+import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
 import { useDeviceSize } from "@/hooks/DeviceSizeContext";
+import { useLanguage } from "@/hooks/LanguageContext";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+const logo = "/images/limm.logo.logo 1.png";
 
 export default function HomeHeader() {
   const { isWideScreen } = useDeviceSize();
   const { language } = useLanguage();
-  const menuTranslateY = "75vh";
+  const menuOpenHeight = "75vh";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState("60px");
   const [rightLinks, setRightLinks] = useState([]);
@@ -78,7 +78,7 @@ export default function HomeHeader() {
   return (
     <div
       style={{
-        height: isMenuOpen ? menuTranslateY : "9vh",
+        minHeight: isMenuOpen ? menuOpenHeight : isWideScreen ? "10vh" : "9vh",
         overflowY: "hidden",
         maxHeight: maxHeight,
         backgroundColor: isMenuOpen ? "white" : "rgba(255, 255, 255, 0.6)",

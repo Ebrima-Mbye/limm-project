@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
 import { useCurrency } from "@/hooks/CurrencyContext";
 import { useLanguage } from "@/hooks/LanguageContext";
+import { useEffect, useState } from "react";
 
 export default function HardwareDeviceText({ device }) {
   const { selectedCurrency } = useCurrency();
@@ -41,6 +41,8 @@ export default function HardwareDeviceText({ device }) {
         <div key={index}>
           <p className="mb-1 mt-4 text-xl font-medium">{detail.heading}</p>
           <p className="my-2 font-light text-gray-500">{detail.text}</p>
+          {/* Render a horizontal line if this is not the last detail */}
+          {index !== device.details.length - 1 && <hr />}
         </div>
       ))}
       <div className="mt-10 flex items-center gap-3">

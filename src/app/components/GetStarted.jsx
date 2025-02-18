@@ -19,7 +19,7 @@ export default async function HomeGetStarted() {
   const text = getText[language];
   return (
     // <section className="hidden p-12 md:block md:h-[100vh]">
-    <section className="border border-red-500 px-5 py-6 md:p-12 md:block">
+    <section className="px-5 py-6 md:block md:p-12">
       <Image
         src={mainImage}
         width={1100}
@@ -35,7 +35,7 @@ export default async function HomeGetStarted() {
           {text}
         </Link>
       </div>
-      <div className="flex items-center justify-center gap-14 border h-20 border-yellow-500">
+      <div className="flex h-20 items-center justify-center gap-14">
         <div className="cursor-pointer">
           <Image
             src={appStoreImage}
