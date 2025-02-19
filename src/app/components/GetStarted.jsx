@@ -1,10 +1,8 @@
 import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
-// import appStoreImage from "@/photos/get-it-on-apple.png";
-// import googlePlayStoreImage from "@/photos/get-it-on-google.png";
-import appStoreImage from "@/photos/apple-light.png";
-import googlePlayStoreImage from "@/photos/google-light.png";
+const appStoreImage = "/images/apple-light-modern.png";
+const googlePlayStoreImage = "/images/google-light-modern.png";
 const mainImage = "/images/get-started-main-photo.png";
 
 export default async function HomeGetStarted() {
@@ -29,7 +27,7 @@ export default async function HomeGetStarted() {
         alt="man pointing at phone"
         className="lg:min-w-auto mx-auto min-w-[99%] md:min-w-[40%]"
       />
-      <div className="my-7 md:my-12 text-center font-bold text-blue-400">
+      <div className="my-7 text-center font-bold text-blue-400 md:my-12">
         <Link
           className="cursor-pointer text-2xl text-[#356BB7] md:text-4xl"
           href="/"
@@ -42,6 +40,8 @@ export default async function HomeGetStarted() {
           <Image
             src={appStoreImage}
             alt="app store image"
+            width={500}
+            height={30}
             className="transition-all hover:scale-[1.1] hover:shadow-sm md:w-[200px]"
           />
         </div>
@@ -49,6 +49,8 @@ export default async function HomeGetStarted() {
           <Image
             src={googlePlayStoreImage}
             alt="google play store image"
+            width={500}
+            height={30}
             className="transition-all hover:scale-[1.1] hover:shadow-sm md:w-[200px]"
           />
         </div>

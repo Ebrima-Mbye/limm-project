@@ -4,6 +4,7 @@ import { cookies } from "next/headers";
 
 export default async function FooterBottom(props) {
   // Wait for cookies before accessing them
+  const year = new Date().getFullYear();
   const cookieStore = await cookies();
   const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
 
@@ -45,7 +46,7 @@ export default async function FooterBottom(props) {
             {isWhite ? (
               <span>Copyright &copy; 2024 Limm</span>
             ) : (
-              <span>&copy; 2024 Limm</span>
+              <span>&copy; {year} Limm</span>
             )}
           </div>
           <div

@@ -4,6 +4,7 @@ import { getText2 } from "@/data/bookADemo.js";
 import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
 import { useDeviceSize } from "@/hooks/DeviceSizeContext";
 import { useLanguage } from "@/hooks/LanguageContext";
+import { formLink } from "@/utils/myLinks";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -19,7 +20,7 @@ export default function HomeHeader() {
   const [leftLinks, setLeftLinks] = useState([]);
   const [buttonText, setButtonText] = useState("");
   const headerRef = useRef();
-  
+
   useEffect(() => {
     setMaxHeight(isMenuOpen ? "100vh" : "60px");
     setRightLinks(getRightLinks[language]);
@@ -160,12 +161,14 @@ export default function HomeHeader() {
             ))}
 
             <div className="mt-3 lg:mt-0">
-              <button
+              <Link
+                href={formLink}
+                target="_blank"
                 onClick={closeMenu}
                 className="ml-4 w-full text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-lg text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
               >
                 {buttonText}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

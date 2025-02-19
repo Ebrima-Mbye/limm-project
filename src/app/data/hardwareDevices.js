@@ -6,17 +6,16 @@ const limmBluetoothPrinter = "/images/limm_bluetooth.png";
 // The text that marks the start of the section
 export const header = {
   en: {
-    heading: "SEGMENTS",
-    subHeading: "Find the Solution that best fits your Business",
+    heading: "HARDWARE DEVICES",
+    subHeading: "Manage all aspects of your business in one place",
   },
   fr: {
-    heading: "SEGMENTS",
-    subHeading:
-      "Trouvez la solution qui correspond le mieux à votre entreprise",
+    heading: "APPAREILS MATÉRIELS",
+    subHeading: "Gérez tous les aspects de votre entreprise en un seul endroit",
   },
   es: {
-    heading: "SEGMENTOS",
-    subHeading: "Encuentra la solución que mejor se adapte a tu negocio",
+    heading: "DISPOSITIVOS DE HARDWARE",
+    subHeading: "Administra todos los aspectos de tu negocio en un solo lugar",
   },
 };
 
