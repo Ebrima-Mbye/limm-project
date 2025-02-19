@@ -1,8 +1,8 @@
 import { cookies } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
-const appStoreImage = "/images/apple-light-modern.png";
-const googlePlayStoreImage = "/images/google-light-modern.png";
+const appStoreImage = "/images/apple-dark-modern.png";
+const googlePlayStoreImage = "/images/google-dark-modern.png";
 const mainImage = "/images/get-started-main-photo.png";
 
 export default async function HomeGetStarted() {
@@ -42,7 +42,7 @@ export default async function HomeGetStarted() {
             alt="app store image"
             width={500}
             height={30}
-            className="transition-all hover:scale-[1.1] hover:shadow-sm md:w-[200px]"
+            className="transition-all hover:scale-[1.1] hover:shadow-sm md:w-[250px]"
           />
         </div>
         <div className="cursor-pointer">
@@ -51,7 +51,7 @@ export default async function HomeGetStarted() {
             alt="google play store image"
             width={500}
             height={30}
-            className="transition-all hover:scale-[1.1] hover:shadow-sm md:w-[200px]"
+            className="transition-all hover:scale-[1.1] hover:shadow-sm md:w-[250px]"
           />
         </div>
       </div>
