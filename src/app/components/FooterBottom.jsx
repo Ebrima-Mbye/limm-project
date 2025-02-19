@@ -1,12 +1,18 @@
-import Link from "next/link";
-import LanguageSelector from "@/components/LanguageSelector";
-import { cookies } from "next/headers";
+"use client";
 
-export default async function FooterBottom(props) {
+import LanguageSelector from "@/components/LanguageSelector";
+import { useLanguage } from "@/hooks/LanguageContext";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+export default function FooterBottom(props) {
+  const [year, setYear] = useState("");
   // Wait for cookies before accessing them
-  const year = new Date().getFullYear();
-  const cookieStore = await cookies();
-  const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   const links = {
     en: [

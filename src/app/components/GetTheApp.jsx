@@ -1,6 +1,6 @@
+import GetTheAppLinks from "@/components/GetTheAppLinks";
 import iphone14 from "@/photos/iPhone 14.png";
 import Image from "next/image";
-import GetTheAppLinks from "@/components/GetTheAppLinks";
 
 export default function GetTheApp() {
   // This component is only visible in small and middle screens.
