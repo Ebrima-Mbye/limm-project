@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Send } from "lucide-react";
+import { HomeIcon, Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import FullPage from "@/components/FullPage";
+import Link from "next/link";
 
 export default function Home() {
   const initialContext = [
@@ -140,6 +141,9 @@ export default function Home() {
         onSubmit={handleSubmit}
         className="flex h-full w-full items-center gap-2"
       >
+        <Link title="Go to Home" href="/">
+          <HomeIcon />
+        </Link>
         <input
           type="text"
           value={input}
@@ -186,7 +190,7 @@ export default function Home() {
     <FullPage>
       <main className="flex min-h-screen flex-col items-center p-12 font-[family-name:var(--font-geist-sans)] dark:text-black">
         {RenderForm()}
-        {aiGeneratingRespponse && <p>Limm AI is generating a response...</p>}
+        {aiGeneratingRespponse && <p className="text-sm text-gray-500">Limm AI is generating a response...</p>}
         {RenderMessages()}
       </main>
     </FullPage>
