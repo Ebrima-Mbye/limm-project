@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import GetStarted from "@/components/GetStarted";
 import FindSolution from "@/components/FindSolution";
+import LinkToAI from "@/components/LinkToAI"; 
 import FAQ from "@/components/FAQ";
 import BlackFooter from "@/components/BlackFooter";
 import GetTheApp from "@/components/GetTheApp";
@@ -23,6 +24,7 @@ export default function Home() {
         <FAQ />
       </AnimatedContainer>
       <BlackFooter />
+      <LinkToAI />
     </div>
   );
 }
