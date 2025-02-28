@@ -107,7 +107,7 @@ export default function Home() {
       >
         <Link
           title="Go to Home"
-          className="fixed bottom-4 left-4 z-[100] flex rounded-full border bg-background shadow-md"
+          className="fixed left-1 top-1 z-[100] flex rounded-full border bg-background shadow-md md:bottom-4 md:left-4"
           href="/"
           onClick={() => setMessages([])}
         >
