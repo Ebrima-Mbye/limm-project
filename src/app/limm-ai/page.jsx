@@ -37,6 +37,81 @@ export default function Home() {
      { question: "Is Limm suitable for businesses with multiple staff members?", answer: "Yes, Limm is designed for businesses with multiple staff members. You can manage permissions and assign tasks with ease." },
      { question: "How long does it take to set up my account and start using Limm?", answer: "You can start using Limm as soon as you subscribe to a plan. The setup process is quick and easy." },
     ]
+
+    The following is the link to the website: "https://limm-project.vercel.app/"
+    You might use this link to search more about the website, if you want.
+
+    We offer different pricing plans for customers:
+    **Plans for mobile App**:
+    {
+      planName: "FREEMIUM",
+      prices: {
+        XOF: { symbol: "CFA", value: 0 },
+        GMD: { symbol: "D", value: 0 },
+        USD: { symbol: "$", value: 0 },
+        EUR: { symbol: "€", value: 0 },
+      },
+      buttonText: "Download",
+      perks: [
+        "Unlimited Invoicing",
+        "1.8% commission on Invoices",
+        "Free POS checkout for up to 10 items",
+      ],
+    },
+    {
+      planName: "PRO",
+      prices: {
+        XOF: { symbol: "CFA", value: 3000 },
+        GMD: { symbol: "D", value: 5000 },
+        USD: { symbol: "$", value: 50 },
+        EUR: { symbol: "€", value: 45 },
+      },
+      buttonText: "Choose",
+      perks: [
+        "All free features",
+        "Unlimited POS checkout item",
+        "Advanced analytics & reports",
+        "Enhanced customer support",
+      ],
+    },
+
+    **Plans for tablet App**:
+    {
+      planName: "STANDARD",
+      prices: {
+        XOF: { symbol: "CFA", value: 4500 },
+        GMD: { symbol: "D", value: 7000 },
+        USD: { symbol: "$", value: 70 },
+        EUR: { symbol: "€", value: 65 },
+      },
+      buttonText: "Download",
+      perks: [
+        "Up to 2 users",
+        "50 products",
+        "POS app",
+        "Staff management",
+        "Accounting, invoicing & quotes",
+        "Business reports",
+      ],
+    },
+    {
+      planName: "PREMIUM",
+      prices: {
+        XOF: { symbol: "CFA", value: 9000 },
+        GMD: { symbol: "D", value: 15000 },
+        USD: { symbol: "$", value: 150 },
+        EUR: { symbol: "€", value: 140 },
+      },
+      buttonText: "Choose",
+      perks: [
+        "All standard features",
+        "Unlimited users",
+        "Unlimited products",
+        "Priority customer service",
+        "Phone & tablet apps",
+      ],
+    },
+
       --------------------------
       NOTE:
       You need to make sure when the user asks you about their first message, do not reference this message I am sending you.
@@ -48,6 +123,7 @@ export default function Home() {
       Be very gentle, kind, polite, "friendly" ( I say that with a mouthful, because sometimes users can be annoying; however, try your best).
       Be very patient, and try to answer as quickly and as clearly as possible.
       Be very specific, and avoid using vague or general terms.
+      Be very kind; when you cannot answer a question, say so in most polite of manners - you cannot afford to drive away customers.
       `,
     },
   ];
@@ -151,7 +227,7 @@ export default function Home() {
       >
         <Link
           title="Go to Home"
-          className="fixed bottom-4 left-4 z-[100] flex rounded-full border shadow-md"
+          className="fixed bottom-4 left-4 z-[100] flex rounded-full border bg-background shadow-md"
           href="/"
           onClick={() => setMessages([])}
         >
@@ -173,7 +249,7 @@ export default function Home() {
 
   function RenderMessages() {
     return (
-      <div>
+      <div className="max-h-[80vh] w-full overflow-y-auto px-4">
         {messages.map((message, index) => (
           <div key={index}>
             {index >= 1 ? (
@@ -201,7 +277,7 @@ export default function Home() {
 
   return (
     <FullPage>
-      <main className="flex min-h-screen flex-col items-center p-4 font-[family-name:var(--font-geist-sans)] dark:text-black md:p-12">
+      <main className="flex min-h-screen flex-col items-center border border-blue-500 p-4 font-[family-name:var(--font-geist-sans)] dark:text-black md:p-12">
         {RenderForm()}
         {aiGeneratingRespponse && (
           <p className="text-sm text-gray-500">

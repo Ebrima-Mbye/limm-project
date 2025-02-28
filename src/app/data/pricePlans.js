@@ -8,7 +8,6 @@ export const getTabletAppHeader = {
   fr: "TABLETTE POS",
   es: "TABLETA POS",
 };
-
 export const getPlansForMobileApp = {
   en: [
     {

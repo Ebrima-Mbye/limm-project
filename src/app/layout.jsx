@@ -7,6 +7,7 @@ import { DeviceSizeProvider } from "@/hooks/DeviceSizeContext";
 import { AuthProvider } from "@/hooks/AuthContext";
 import { cookies } from "next/headers";
 import { CurrencyProvider } from "@/hooks/CurrencyContext";
+import LinkToAI from "@/components/LinkToAI";
 
 // Set up the font
 const inter = Inter({
@@ -25,16 +26,17 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <body>
-      <AuthProvider>
-        <DeviceSizeProvider>
-          <LanguageProvider defaultLanguage={language}>
-            <CurrencyProvider>
-              <Header />
-              {children}
-            </CurrencyProvider>
-          </LanguageProvider>
-        </DeviceSizeProvider>
-      </AuthProvider>
+        <AuthProvider>
+          <DeviceSizeProvider>
+            <LanguageProvider defaultLanguage={language}>
+              <CurrencyProvider>
+                <Header />
+                {children}
+                <LinkToAI />
+              </CurrencyProvider>
+            </LanguageProvider>
+          </DeviceSizeProvider>
+        </AuthProvider>
       </body>
     </html>
   );
