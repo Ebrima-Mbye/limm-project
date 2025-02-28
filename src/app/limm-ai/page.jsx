@@ -92,7 +92,10 @@ export default function Home() {
       setMessages((prevMessages) => [...prevMessages, aiMessage]);
     } catch (error) {
       console.error("Error:", error);
-      const errorMessage = { role: "model", content: "Something went wrong." };
+      const errorMessage = {
+        role: "model",
+        content: "Something went wrong. Please try again later...",
+      };
       setMessages((prevMessages) => [...prevMessages, errorMessage]);
     } finally {
       setAiGeneratingRespponse(false);
@@ -107,7 +110,7 @@ export default function Home() {
       >
         <Link
           title="Go to Home"
-          className="fixed left-1 top-1 md:top-auto z-[100] flex rounded-full border bg-background shadow-md md:bottom-4 md:left-4"
+          className="fixed left-1 top-1 z-[100] flex rounded-full border bg-background shadow-md md:bottom-4 md:left-4 md:top-auto"
           href="/"
           onClick={() => setMessages([])}
         >
