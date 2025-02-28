@@ -54,10 +54,8 @@ export default async function Page() {
           <CurrencySelector />
         </div>
 
-        {/* <CurrencyProvider value={selectedCurrency}> */}
         <PriceTree appType={mobileHeader} plans={plansForMobileApp} />
         <PriceTree appType={tabletHeader} plans={plansForTabletApp} />
-        {/* </CurrencyProvider> */}
 
         <div>
           <LimmPerks />
