@@ -1,11 +1,10 @@
 "use client";
 
+import AnimatedButton from "@/components/AnimatedButton";
 import { useCurrency } from "@/hooks/CurrencyContext";
 import { useLanguage } from "@/hooks/LanguageContext";
-import AnimatedButton from "@/components/AnimatedButton";
-import { useEffect, useState } from "react";
 import { formLink } from "@/utils/myLinks";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function HardwareDeviceText({ device }) {
   const { selectedCurrency } = useCurrency();
