@@ -1,6 +1,8 @@
 "use client";
+
 import { useCurrency } from "@/hooks/CurrencyContext";
 import { useLanguage } from "@/hooks/LanguageContext";
+import AnimatedButton from "@/components/AnimatedButton";
 import { useEffect, useState } from "react";
 import { formLink } from "@/utils/myLinks";
 import Link from "next/link";
@@ -48,13 +50,9 @@ export default function HardwareDeviceText({ device }) {
         </div>
       ))}
       <div className="mt-10 flex items-center gap-3">
-        <Link
-          href={formLink}
-          target="_blank"
-          className={`rounded-full border-4 border-white bg-blue-600 from-black via-blue-900 to-blue-600 bg-[size:150%] bg-[position:0%] px-4 py-2 text-white transition-all duration-300 hover:bg-gradient-to-r hover:bg-[position:100%]`}
-        >
+        <AnimatedButton href={formLink} className={`rounded-full`}>
           {buttonText}
-        </Link>
+        </AnimatedButton>
         <p>
           {forText} <span className="text-xl font-medium">{price}</span>
         </p>

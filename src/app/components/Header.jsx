@@ -3,6 +3,7 @@
 import { getText2 } from "@/data/bookADemo.js";
 import { getLeftLinks, getRightLinks } from "@/data/headerLinks";
 import { useDeviceSize } from "@/hooks/DeviceSizeContext";
+import AnimatedButton from "@/components/AnimatedButton";
 import { useLanguage } from "@/hooks/LanguageContext";
 import { formLink } from "@/utils/myLinks";
 import Image from "next/image";
@@ -83,7 +84,7 @@ export default function HomeHeader() {
       }}
       ref={headerRef}
       id="header"
-      className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col rounded-bl-lg rounded-br-lg text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-all duration-300 lg:left-[4%] lg:right-[4%] lg:top-8 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:rounded-lg lg:px-6 lg:text-xl lg:shadow-none"
+      className="fixed left-0 right-0 z-[10] flex h-[75vh] w-[100vw] flex-col overflow-x-hidden rounded-bl-lg rounded-br-lg text-xl font-medium leading-[28.8px] text-gray-500 shadow-sm transition-all duration-300 lg:left-[4%] lg:right-[4%] lg:top-8 lg:h-12 lg:w-[92%] lg:flex-row lg:items-center lg:justify-between lg:rounded-lg lg:px-6 lg:text-xl lg:shadow-none"
     >
       <div className="lg:min-h-auto mb-3 mt-0 flex max-h-[9vh] min-h-[9vh] w-full items-center justify-between px-[12%] md:mt-3 md:min-h-[6vh] lg:mb-0 lg:h-full lg:w-auto lg:justify-center lg:p-2">
         <div className="flex h-full items-center lg:h-auto">
@@ -161,14 +162,23 @@ export default function HomeHeader() {
             ))}
 
             <div className="mt-3 lg:mt-0">
-              <Link
+              {/* <Link
                 href={formLink}
                 target="_blank"
                 onClick={closeMenu}
                 className="ml-4 w-full text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-lg text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
               >
                 {buttonText}
-              </Link>
+              </Link> */}
+              <AnimatedButton
+                href={formLink}
+                target="_blank"
+                onClick={closeMenu}
+                withGradient={false}
+                className="ml-4 w-full p-0 text-nowrap rounded-[50px] bg-slate-500 px-6 py-3 text-lg text-white transition-colors duration-150 hover:bg-gray-600 lg:block lg:w-auto lg:px-3 lg:py-1 lg:text-[12px]"
+              >
+                {buttonText}
+              </AnimatedButton>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HomeIcon, Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import FullPage from "@/components/FullPage";
@@ -11,6 +11,7 @@ export default function Home() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [aiGeneratingRespponse, setAiGeneratingRespponse] = useState(false);
+  const messageAreaRef = useRef();
 
   useEffect(() => {
     setMessages(aiTrainingData);
@@ -23,6 +24,12 @@ export default function Home() {
       setAiGeneratingRespponse(false);
     };
   }, []);
+
+  useEffect(() => {
+    // scroll the messsage are to the bottom, in a smooth way
+    if (messageAreaRef.current)
+      messageAreaRef.current.scrollTo(0, messageAreaRef.current.scrollHeight);
+  }, [messages]);
 
   const fetchGreeting = async () => {
     setAiGeneratingRespponse(true);
@@ -132,7 +139,10 @@ export default function Home() {
 
   function RenderMessages() {
     return (
-      <div className="max-h-[75vh] w-full overflow-y-auto px-4 md:max-h-[80vh]">
+      <div
+        ref={messageAreaRef}
+        className="max-h-[75vh] w-full overflow-y-auto px-4 md:max-h-[80vh]"
+      >
         {messages.map((message, index) => (
           <div key={index}>
             {index >= 1 ? (

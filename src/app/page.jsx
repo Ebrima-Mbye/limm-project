@@ -8,7 +8,7 @@ import AnimatedContainer from "@/components/AnimatedContainer";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Hero />
       <AnimatedContainer>
         <GetStarted />
