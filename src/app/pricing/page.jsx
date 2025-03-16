@@ -4,12 +4,7 @@ import PlanFrequencySelection from "./components/PlanFrequencySelection";
 import PriceTree from "./components/PriceTree";
 import LimmPerks from "./components/LimmPerks";
 import CurrencySelector from "./components/CurrencySelector";
-import {
-  getPlansForMobileApp,
-  getPlansForTabletApp,
-  getMobileAppHeader,
-  getTabletAppHeader,
-} from "../data/pricePlans.js";
+import { getPricingPlans } from "../data/pricingPage";
 import BlackFooter from "../components/BlackFooter";
 import { header } from "@/data/pricing.js";
 import { cookies } from "next/headers";
@@ -18,10 +13,9 @@ export default async function Page() {
   const cookieStore = await cookies();
   const language = cookieStore.get("language")?.value || "en"; // Default to 'en'
 
-  const plansForMobileApp = getPlansForMobileApp[language];
-  const plansForTabletApp = getPlansForTabletApp[language];
-  const mobileHeader = getMobileAppHeader[language];
-  const tabletHeader = getTabletAppHeader[language];
+  const pricingPlans = getPricingPlans[language];
+  // const mobilePlans = pricingPlans.filter(plan => plan.planCategory === "Mobile app");
+  // const posPlans = pricingPlans.filter(plan => plan.planCategory === "POS");
 
   const headerData = header[language];
   return (
@@ -54,8 +48,8 @@ export default async function Page() {
           <CurrencySelector />
         </div>
 
-        <PriceTree appType={mobileHeader} plans={plansForMobileApp} />
-        <PriceTree appType={tabletHeader} plans={plansForTabletApp} />
+        <PriceTree appType="MOBILE APP" plans={pricingPlans} />
+        {/* <PriceTree appType="POS" plans={posPlans} /> */}
 
         <div>
           <LimmPerks />
